@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>DatabaseDesign</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p align="left"><a href="Project2.htm">Project2</a></p>
+<p align="center"><b><font size="4">Designing a Database</font></b></p>
+<p><br>
+  Before you use Microsoft Access to actually build the tables, forms, and other 
+  objects that will make up your database, it is important to <i>take time to 
+  design your database</i>. Whether you are using a Microsoft Access database 
+  or a Microsoft Access project, good database design is the keystone to creating 
+  a database that does what you want it to do effectively, accurately, and efficiently. 
+</p>
+<p>Steps in designing a database:<br>
+  1. Determine the purpose of your database<br>
+  2. Determine the tables you need in the database<br>
+  3. Determine the fields you need in the tables<br>
+  4. Identify fields with unique values in each record<br>
+  5. Determine the relationships between tables<br>
+  6. Refine your design<br>
+  7. Enter data and create other database objects<br>
+  8. Use Microsoft Access analysis tools </p>
+<p><br>
+  1 Determine the purpose of your database<br>
+  The first step in designing a database is to determine its purpose and how it's 
+  to be used. You need to know what information you want from the database. From 
+  that, you can determine what subjects you need to store facts about (the tables) 
+  and what facts you need to store about each subject (the fields in the tables).</p>
+<p>Talk to people who will use the database. Brainstorm about the questions you 
+  and they would like the database to answer. Sketch out the reports you'd like 
+  it to produce. Gather the forms you currently use to record your data. Examine 
+  well-designed databases similar to the one you are designing.</p>
+<p>2 Determine the tables you need<br>
+  Determining the tables can be the trickiest step in the database design process. 
+  That's because the results you want from your database &#151; the reports you 
+  want to print, the forms you want to use, the questions you want answered &#151; 
+  don't necessarily provide clues about the structure of the tables that produce 
+  them.</p>
+<p>You don't need to design your tables using Microsoft Access. In fact, it may 
+  be better to sketch out and rework your design on paper first. When you design 
+  your tables, divide up pieces of information by keeping these fundamental design 
+  principles in mind: </p>
+<p>A table should not contain duplicate information, and information should not 
+  be duplicated between tables. In this respect, a table in a relational database 
+  differs from a table in a flat-file application such as a spreadsheet. <br>
+  When each piece of information is stored in only one table, you update it in 
+  one place. This is more efficient, and it also eliminates the possibility of 
+  duplicate entries that contain different information. For example, you would 
+  want to store each customer address and phone number only once, in one table. 
+</p>
+<p>Each table should contain information about one subject. <br>
+  When each table contains facts about only one subject, you can maintain information 
+  about each subject independently from other subjects. For example, you would 
+  store customer addresses in a different table from the customers' orders, so 
+  that you could delete one order and still maintain the customer information. 
+</p>
+<p>3 Determine the fields you need<br>
+  Each table contains information about the same subject, and each field in a 
+  table contains individual facts about the table's subject. For example, a customer 
+  table may include company name, address, city, state, and phone number fields. 
+  When sketching out the fields for each table, keep these tips in mind: </p>
+<p>Relate each field directly to the subject of the table.<br>
+  Don't include derived or calculated data (data that is the result of an expression).<br>
+  Include all the information you need.<br>
+  Store information in its smallest logical parts (for example, First Name and 
+  Last Name, rather than Name). <br>
+  Compare field data types in an Access database with those in an Access project.</p>
+<p>4 Identify the field or fields with unique values in each record<br>
+  In order for Microsoft Access to connect information stored in separate tables 
+  &#151; for example, to connect a customer with all the customer's orders &#151; 
+  each table in your database must include a field or set of fields that uniquely 
+  identifies each individual record in the table. Such a field or set of fields 
+  is called a primary key.</p>
+<p>5 Determine the relationships between tables<br>
+  Now that you've divided your information into tables and identified primary 
+  key fields, you need a way to tell Microsoft Access how to bring related information 
+  back together again in meaningful ways. To do this, you define relationships 
+  between tables in a Microsoft Access database.</p>
+<p>You may find it useful to view the relationships in an existing well-designed 
+  database. For example, open the Northwind sample database and click Relationships 
+  on the Tools menu to see the relationships between its tables. </p>
+<p>6 Refine your design<br>
+  After you have designed the tables, fields, and relationships you need, it's 
+  time to study the design and detect any flaws that might remain. It is easier 
+  to change your database design now than it will be after you have filled the 
+  tables with data.</p>
+<p>Use Microsoft Access to create your tables, specify relationships between the 
+  tables, and enter enough sample data in your tables so you can test your design. 
+  To test the relationships in your database, see if you can create queries to 
+  get the answers you want. Create rough drafts of your forms and reports and 
+  see if they show the data you expect. Look for unnecessary duplications of data 
+  and eliminate them. If you find problems, refine the design.</p>
+<p>7 Enter data and create other database objects<br>
+  When you are satisfied that the table structures meet the design principles 
+  described here, then it's time to go ahead and add all your existing data to 
+  the tables. You can then create any queries, forms, reports, data access pages, 
+  macros, and modules that you may want.</p>
+<p>8 Use Microsoft Access analysis tools<br>
+  Microsoft Access includes two tools that can help you to refine the design of 
+  your Microsoft Access database. The Table Analyzer Wizard can analyze the design 
+  of one table at a time, can propose new table structures and relationships if 
+  appropriate, and can divide a table into new related tables if that makes sense. 
+</p>
+<p>The Performance Analyzer can analyze your entire database and make recommendations 
+  and suggestions for improving it. The wizard can also implement these recommendations 
+  and suggestions. </p>
+<p>For additional ideas on designing a Microsoft Access database, you may want 
+  to look at the design of the Northwind sample database or of one of the databases 
+  that you can create with the Database Wizard. </p>
+<p><a href="Project2.htm">Project2</a></p>
+</body>
+</html>

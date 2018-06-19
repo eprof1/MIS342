@@ -1,0 +1,5 @@
+Function GermanFreight()
+    GermanFreight = DAvg("Freight", "Orders", "shipcountry = 'germany'")
+	'add formatting
+	GermanFreight = Format(GermanFreight, "$#.##")
+End Function
