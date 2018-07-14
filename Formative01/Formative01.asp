@@ -61,6 +61,7 @@
 
 
 <p>(<strong>150 points</strong>)</p>
+
 <p>Complete your personal information in the above section.<br>
   Complete this problem by placing your answer in the space provided  below.<br>
   Press the submit button.<br>
