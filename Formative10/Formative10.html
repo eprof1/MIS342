@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+	<link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
+    <script src="../js/constants.js"></script>
+
+    <!-- model MIS342 Formative file, version 1 released 2018/07/01 PgP -->
+
+    <title>MIS342Formative10</title>
+</head>
+
+<body onload="setVariables()"> 
+
+  <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+    <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+    <h1 class=" text-center">VBA Coding</h1>
+
+      <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+    <div class="row col-lg-12">
+      <div class="col-lg-3">
+        <label class="text-primary" for="FirstName">First Name:</label>
+        <input class="form-control" name="FirstName" id="FirstName"  type="text" value="default first name" readonly="readonly">
+      </div>
+      <div class="col-lg-3">
+        <label class="text-primary" for="LastName">Last Name:</label>
+        <input class="form-control" name="LastName" id="LastName"  type="text" value="default last name" readonly="readonly">
+      </div>
+      <div class="col-lg-3">
+        <label class="text-primary" for="pin">StarID:</label>
+        <input class="form-control" name="pin" id="pin"  type="text" value="default StarID" readonly="readonly">
+      </div>
+      <div class="col-lg-3">
+        <label class="text-primary" for="email">Email:</label>
+        <input class="form-control" name="email" id="email"  type="email" value="default email address" readonly="readonly">
+      </div>
+    </div>
+
+    <div class="row col-lg-12">
+      <div class="col-lg-3">
+        <label class="text-primary" for="semester">Semester:</label>
+        <input class="form-control" name="semester" id="semester"  type="text" value="default" readonly="readonly">
+     </div>
+      <div class="col-lg-3">
+        <label class="text-primary" for="class">Class:</label>
+        <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+      </div>
+      <div class="col-lg-3">
+        <label class="text-primary" for="section">Section:</label>
+        <input class="form-control" name="section" id="section"  value="default" type="text"  readonly="readonly">
+      </div>
+      <div class="col-lg-3"> 
+        <label class="text-primary" for="assignment">Assignment:</label>
+        <input class="form-control" name="assignment" id="assignment" value="Formative10" type="text" readonly="readonly">
+      </div>    
+    </div>
+<!-- -end-Student, class and assignment information-end -->
+
+      <!-- Calculate the correct path for saving the files -->
+<script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script> 
+
+
+        <div class="col-lg-12">
+            <br /><input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit"> <br />
+        </div>
+  
+        <div class="col-lg-12 h3 text-danger">
+            150 Points <hr />
+        </div>
+
+       <p>Complete your personal information in the above section.<br />
+  Complete this problem by placing your answer in the space provided  below.<br />
+Press the submit button.<br />
+Save the confirmation page as an .htm file. </p>
+
+      <!-- -start-objectives-start -->
+    <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>      
+      <div id="Objectives" class=" collapse in col-lg-12">
+
+          </div>
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-VBA Coding</a></div>        
+      
+       <div id="Exercise01" class="collapse in  col-lg-12"> 
+
+       <p>Answer the following questions using the Northwind.mdb database file located
+    at: </p>
+           \\store\classes\ YearTerm&nbsp; &amp; courseid &amp; &quot;\ReadOnly\Northwind.mdb&quot; )<br /> <br />
+
+            <p>In Microsoft Access remember to press &#39;Alt + F11&#39; in order to bring up the VBA IDE.<br /></p>
+
+         <p> <b>You will use  the Orders table as a data
+      source.<br />
+  Create a function called 'GermanFreight' that will return the  average value
+        from the 'Freight' field of the Orders table, where the value of the
+        'Ship
+        Country'
+        field
+  is 'Germany'.</b></p> 
+
+         <p><b> Hint: use Davg( )</b></p> 
+
+          <ul><li>Find the value of the 'GermanFreight' function by creating a form that contains a text box.</li> 
+              <li>Set the text box data source to the function 'GermanFreight'</li>
+               <li>View the form in datasheet mode.</li>   
+           </ul> 
+
+          <p><b>OR by using the Immediate Window.</b> </p>
+
+         <p> (<b>50</b>) 1. Paste the code for the 'GermanFreight' function in this text box:</p> 
+
+            <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Code:" type="text"> <br />
+
+           <p>(<b>50</b>) 2. Paste or type the value
+          of the 'GermanFreight' function in this text box. <br />
+        Note:  You will get no credit for this part if you have not answered
+        the first part.</p>
+
+           <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Value:" type="text"> <br />
+
+         <p>(<b>50</b>) 3. Evaluate the following expression using Access:</p> 
+
+        <p> <strong> log(2.7182889) + (17 * 7^4.8) \ 4 + log(34) - 15 mod 6 </strong>  </p> 
+
+          <ul> 
+              <li>Paste your answer below.</li>
+              <li>Make sure your answer is to 4 decimal places. </li>
+              <li>Remember the Immediate Window</li>
+           </ul> 
+
+           <p><img src="ImmediateWindow.png" class="img-responsive" alt="Immediate Window" /></p><br />
+
+            <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Result:" type="text"> <br />
+
+
+           </div>
+
+        <div class="col-lg-12"><br /><input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit"> <br /></div>
+
+  
+  </form> 
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted" ></div>
+
+   <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="../js/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed --> 
+	<script src="../js/bootstrap.js"></script>
+  
+</body></html>
+
+      
+
+
