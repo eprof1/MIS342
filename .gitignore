@@ -6,7 +6,7 @@
 ## PgP@WSU try ignoring constants.js so that once students modify it, it does not revert back to defaults  6/7/2018
 constants.js
 ## PgP@WSU ignore publishing path
-*.pubxml
+**/App_Data/PublishProfiles/*.pubxml
 
 # =========================
 # Visual Studio - https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
