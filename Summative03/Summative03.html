@@ -11,13 +11,12 @@
     <!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
     <script src="../js/constants.js"></script>
 
-
     <!-- model assignment file, version 1 released 2018/02/18 PgP -->
 
     <title>MIS342Summative03</title>
 </head>
 
-<body onload="setVariables()">
+<body onload="setVariables()"> 
 
   <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
     <input name="InstID" id="InstID" value="00617282" type="hidden">
@@ -76,253 +75,17 @@
             650 Points <hr />
         </div>
       
+<!-- -start-objectives-start -->
+    <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>      
+      <div id="Objectives" class=" collapse in col-lg-12">
+
+<!--Above this line similar except for Assignment number and title   -->
 
 
-</body>
-</html>
+          <hr />
+<h2 class=" text-center">Concepts</h2>
 
-
-
-
-
-<!--Summative03 asp-->
-<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<!-- DW6 -->
-<!-- #include virtual ="/Code/constants.asp" -->
-<!-- #include virtual ="/MIS342/ClassConstants.asp" -->
-<head>
-<title>MIS342Summative03</title>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link href="../../../../global.css" rel="stylesheet" type="text/css" />
-    <style type="text/css">
-        .auto-style1 {
-            color: #0000FF;
-        }
-        .auto-style2 {
-            width: 967px;
-            height: 51px;
-        }
-    </style>
-</head>
-
-<body bgcolor="#FFFFFF" text="#000000">
-<form action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmHW" id="frmHW"> 
-<h2 align="center"><font color="#cc00FF"><i>MIS 342 
-      Summative03-Relationships and Queries</i></font></h2>
-
-  <table width="100%" border="1" cellspacing="1" cellpadding="1">
-    <tr bgcolor="#00FFFF">
-      <td width="36%">Email Address:
-      
-        <!-- Enter your winona.edu email address in the VALUE field below   GROK --> 
-        <input type="text" name="email" id="email" size="30" maxlength="50" value=""/><br />
-      a valid  email address is required</td>
-       
-      <td width="40%">First Name:
-      
-        <!-- Enter your first name in the VALUE field below   GROK --> 
-      <input type="text" name="FirstName" size="30" maxlength="50" value="EnterYour FirstName"/></td>
-      
-      <td width="24%">Last Name:
-      
-        <!-- Enter your last name in the VALUE field below   GROK --> 
-      <input type="text" name="LastName" size="25" maxlength="50" value="EnterYourLastName"/></td>
-    </tr>
-    <tr bgcolor="#00FFFF">
-      <td width="36%">Semester: <input type="text" name="Semester" value=<% response.write(semester)%> />  </td>
-      <td>Class:  <input type="text" name="Class" value=<% response.write(xClass)%> />    </td>
-      <td><input name="InstID" type="hidden" id="InstID" value="00617282" />       StarID:
-        
-        <!-- Enter your StarID in the VALUE field below   GROK --> 
-      <input type="text" name="PIN" value="EnterYourStarID" /></td>
-    </tr>
-    <tr bgcolor="#00FFFF">
-      <td width="36%">Section:  <input type="text" name="Section" value="01"/>
-      </td>
-      <td colspan="2"> Assignment: <input  name="Assignment" type="text" value="Summative03"/>
-      </td>
-    </tr>
-    <tr bgcolor="#00FFFF">
-      <td colspan="3">&nbsp;</td>
-    </tr>
-    <tr bgcolor="#FF0000">
-      <td colspan="3"><div align="center">
-          <input type="submit" name="Submit" value="Submit" />
-        </div></td>
-    </tr>
-  </table>
-
- <p><br />
-     <font color="#FF0000"><b>650 points</b></font></p>
- <h1 align="center">Microsoft Access<br />
-    </h1>
- <h1>School Club  Database</h1>
- <p>You are the  Director of Students at Wilfred Academy, a  school in New England. Your have just hired a new assistant to help  with the clubs at the school. You want to be able to have instant access to the  clubs and the faculty advisor for each club. You set up the <strong>Clubs.accdb</strong> database with two tables,  Club and Advisor. There are currently 12 clubs in the table and you need to  enter the faculty data. You research the Internet for information on the clubs  and work with this database to complete the Club and Advisor tables.</p>
- <ol start="1" type="1">
-   <li>Start Access and open the <strong><a href="Clubs_Tutorial3.accdb">Clubs.accdb</a></strong> database. Save the       database as <strong>Clubs-TA3.accdb</strong>. </li>
-   <li>As the director, you want the       database to include one Web site that is a primary source of information       for each club. You also want the database to include the name of one       magazine that the club should subscribe to.</li>
-   <li>Use your favorite search engine to       research Web sites and magazines for each of the 12 clubs.</li>
-   <li>Add a new hyperlink field in the       Club table and enter one Web site URL for each club.</li>
-   <li>Add a new text field in the Club       table for the magazine name. Enter a magazine for each club. View the       table datasheet, and then resize all columns to their best fit.<br />
-   (<strong>50</strong>) In the space below, provide a screen shot of the Club   table, <strong>datasheet view</strong>.<br />
-     <table height="84" cellspacing="2" cellpadding="2" width="90%" border="2">
-       <tbody>
-         <tr>
-           <th scope="col">Ex5ScreenShot</th>
-         </tr>
-       </tbody>
-     </table>
-   </li>
-   <li>Enter yourself as a new record in       the Advisor table, and resize all columns to their best fit. Enter at       least six more records in the table.<br />
-   (<strong>50</strong>) In the space below, provide a screen shot of the Advisor   table, <strong>datasheet view</strong>.<br />
-       <table height="84" cellspacing="2" cellpadding="2" width="90%" border="2">
-         <tbody>
-           <tr>
-             <th scope="col">Ex6ScreenShot</th>
-           </tr>
-         </tbody>
-       </table>
-      <br />
-   </li>
-   <li>Edit the advisor IDs in the Club       table records, leaving one advisor ID null and having one or more advisors       advise more than one club.</li>
-   <li>Use the Relationships window to join       the two tables based on the advisor ID field. Enforce referential       integrity.<br />
-   (<strong>50</strong>) In the space below, provide a screen shot of the <strong>Relationships window</strong>.<br />
-     <table height="84" cellspacing="2" cellpadding="2" width="90%" border="2">
-       <tbody>
-         <tr>
-           <th scope="col">Ex8ScreenShot</th>
-         </tr>
-       </tbody>
-     </table>
-   </li>
-   <li>Create a query that displays clubs       and their advisors. Include the club name, club description, first Name,       and last Name fields, and sort in ascending order by club name. Name the       query <strong>ClubsAndAdvisors</strong>.<br />
-   (<strong>50</strong>) In the space below, provide a screen shot of the ClubAndAdvisors query, <strong>datasheet view</strong>.<br />
-     <table height="84" cellspacing="2" cellpadding="2" width="90%" border="2">
-       <tbody>
-         <tr>
-           <th scope="col">Ex9ScreenShot</th>
-         </tr>
-       </tbody>
-     </table>
-   </li>
-   <li>Create a query that displays clubs       by club type. Name the query <strong>ClubsByType</strong>.       Sort the resulting datasheet in ascending order by club type.<br />
-   (<strong>50</strong>) In the space below, provide a screen shot of the ClubByType query, <strong>datasheet view</strong>.<br />
-     <table height="84" cellspacing="2" cellpadding="2" width="90%" border="2">
-       <tbody>
-         <tr>
-           <th scope="col">Ex10ScreenShot</th>
-         </tr>
-       </tbody>
-     </table>
-   </li>
-   <li>&nbsp;View the Advisor table to view related       records and find out which clubs display for each advisor by expanding the       plus sign.</li>
-   <li>Use the Query window to create a query       displaying all advisor and club data, sorting in ascending order by       advisor ID and then in ascending order by club name. Hide the start date       field from the query. Name the query <strong>AdvisorsAndClubs</strong>.<br />
-   (<strong>50</strong>) In the space below, provide a screen shot of the AdvisorsAndClubs query, <strong>datasheet view</strong>.<br />
-     <table height="84" cellspacing="2" cellpadding="2" width="90%" border="2">
-       <tbody>
-         <tr>
-           <th scope="col">Ex12ScreenShot</th>
-         </tr>
-       </tbody>
-     </table>
-   </li>
-   <li>View the AdvisorsAndClubs query       datasheet. Change the query to display those records with Language or       Science club types. Sort the datasheet in ascending order by club name.<br />
-   (<strong>50</strong>) In the space below, provide a screen shot of the AdvisorsAndClubs query, <strong>design</strong> <strong>view</strong>.<br />
-     <table height="84" cellspacing="2" cellpadding="2" width="90%" border="2">
-       <tbody>
-         <tr>
-           <th scope="col">Ex13ScreenShot</th>
-         </tr>
-       </tbody>
-     </table>
-   </li>
-   <li>Close the database and then exit       Access.</li>
-   <li><span class="FormQuestion">(<strong>100</strong>) <span class="auto-style1"><strong>Briefly explain the value to a business of an employee who can create queries from verbal or written input provided by other employees or customers.</strong></span></span><br />
-     <label for="q1"></label>
-
-
-       <input id="q15" type="text" class="auto-style2" maxlength="120" name="q15" size="120" 
-
-           value="Value of employee who can create queries:  
-           
-           " align="top" style="background-color: #00FFFF" />
-   </li>
-  </ol>
- <hr />
-    <div>
-    <article class="h3">
-        <div class="col-lg-12">&nbsp;<a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Assignment as pdf</a></div>
-      </article>
-      
-    <div id="Exercise04" class="collapse">
-      <article class="row">
-        <div class="col-lg-12"><p>For this Exercise, please read all of these instructions.<br>
-        Make sure that you have completed all the previous exercises by 
-filling in your answers, and publishing them to your website.<br>
-        Then browse to your http://classes.winona.edu webiste, ensure all 
-the Exercises are complete, then save your assignment as a .pdf file in the same
- location that you saved all of your screen shots for this assignment.<br>
-        </p>
-        </div>
-        <div>          
-            <div class="col-lg-12 w3-label w3-text-blue">
-            (<strong>100</strong>) 16. Assignment .pdf file creation.<br />
-                <br>
-            </div>  
-        </div>     
-      </article>
-     </div>
-     
-      
-      <article class="h3">
-        <div class="col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Combine Assignment and Screen Shots</a></div>
-      </article>
-      
-    <div id="Exercise05" class="collapse"> 
-      <article class="row">
-
-        <div class="col-lg-12"> 
-        <p>To proceed you must have Windows 10 which includes &#39;Print to PDF&#39; installed. You know it is installed when one of the print dialog box choices is &quot;Microsoft Print to PDF&quot;<br />
-            <img alt="print to pdf" class="auto-style1" src="F00_PrintToPDF.JPG" />
-            
-            <br><br />
-
-            Refer to this url and follow these steps.  <a href="https://www.howtogeek.com/248462/how-to-combine-images-into-one-pdf-file-in-windows/" target="_blank">https://www.howtogeek.com/248462/how-to-combine-images-into-one-pdf-file-in-windows/</a>  <br />
-            You will be creating one .pdf (portable document format) file from the screen shots that you have taken, and combine it with your completed assignment from your website.</p>
-        
-        <ol>
-            
-              
-          <li> Open File Explorer, make sure the screen shot files are properly named(Ex1.. , Ex2.. , Ex3.. ) and sorted in Ascending order.&nbsp; </li>
-            <li> Select the screen shots to be combined. </li>         
-          <li>Right Click and select &#39;Print&#39; from the pop-up menu.      </li>    
-          <li>See the howtogeek article for more options.</li>
-            <li>Click on &#39;Print&#39; and save the file with a name such as &quot;xxx...ScreenShots.pdf&quot; in an appropriate location where you can easily find it again, such as OneDrive-MNSCU/...            </li>
-            <li>Remember to use PDFill to Merge the screen shot .pdf file with your completed assignment .pdf file, save it as Summative03.pdf</li>
-          </ol>  
-        <div class="col-lg-12 w3-label w3-text-blue">
-
-
-        <p>(<strong>100</strong>) 17. Upload your file 'Summative03.pdf' to the D2L Assignment Folder 'Summative03'</p>
-
-        </div>
-        </div> 
-      </article>
-    </div>
-       
-<div>When all the Exercises are completed, while viewing this assignment
- on your https://classes.winona.edu/... website, press the Submit button
- below. </div>
-
-     </div>
- <hr />
- <p><br />
-  </p>
-<h1 align="center">Concepts</h1>
- <p>Sample focus question: What are the key components and uses of queries?</p>
+<p>Sample focus question: What are the key components and uses of queries?</p>
  <p>Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
  <ul>
    <li>Updating data</li>
@@ -341,13 +104,300 @@ the Exercises are complete, then save your assignment as a .pdf file in the same
 
 
  <hr />
-   
-<table width="100%" border="1" cellspacing="1" cellpadding="1"> 
-	<tr bgcolor="#FF0000"><td><div align="center">
-		<input type="submit" name="Submit" value="Submit" />
-</div></td></tr> 
-</table>
-</form>
-	
-</body>
-</html>
+
+          </div>
+
+
+      <!--Exercise 1-->
+
+       <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Club Table</a></div>        
+      
+     <div id="Exercise01" class="collapse in  col-lg-12"> 
+         <br />
+
+          <p>You are the  Director of Students at Wilfred Academy, a  school in New England. Your have just hired a new assistant to help  with the clubs at the school. 
+           You want to be able to have instant access to the  clubs and the faculty advisor for each club. You set up the <strong>Clubs.accdb</strong> database with two tables,  Club and Advisor. 
+           There are currently 12 clubs in the table and you need to  enter the faculty data. 
+              You research the Internet for information on the clubs  and work with this database to complete the Club and Advisor tables.</p>
+<ul>
+   <li>Start Access and open the <strong><a href="Clubs_Tutorial3.accdb">Clubs.accdb</a></strong> database. Save the       database as <strong>Clubs-TA3.accdb</strong>. </li>
+   <li>As the director, you want the database to include one Web site that is a primary source of information for each club. You also want the database to include the name of one magazine that the club should subscribe to.</li>
+   <li>Use your favorite search engine to       research Web sites and magazines for each of the 12 clubs.</li>
+   <li>Add a new hyperlink field in the       Club table and enter one Web site URL for each club.</li>
+   <li>Add a new text field in the Club       table for the magazine name. Enter a magazine for each club. View the       table datasheet, and then resize all columns to their best fit.</li>
+ 
+    </ul>
+
+      <p>  (<strong>50</strong>) 1. In the space below, provide a screen shot of the Club   table, <strong>datasheet view</strong>. </p> <br />
+
+         </div>
+
+       <div  class="col-lg-12 text-danger" >
+         <h2>Screen Shot Ex1</h2>
+          <hr />
+      </div>
+
+
+      <!--Exercise 2-->
+
+
+ <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Advisor Table</a></div>        
+      
+     <div id="Exercise02" class="collapse in  col-lg-12"> 
+         <br />
+
+         <ul>
+              <li>Enter yourself as a new record in       the Advisor table, and resize all columns to their best fit. Enter at       least six more records in the table.</li>
+         </ul>
+
+     <p> (<strong>50</strong>) 2. In the space below, provide a screen shot of the Advisor table, <strong>datasheet view</strong>.</p><br />
+
+         </div>
+
+       <div  class="col-lg-12 text-danger" >
+         <h2>Screen Shot Ex2</h2>
+          <hr />
+      </div>
+
+
+
+      <!--Exercise 3-->
+
+
+<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Relationships Window</a></div>        
+      
+     <div id="Exercise03" class="collapse in  col-lg-12"> 
+         <br />
+
+<ul>
+    <li>Edit the advisor IDs in the Club       table records, leaving one advisor ID null and having one or more advisors       advise more than one club.</li>
+   <li>Use the Relationships window to join       the two tables based on the advisor ID field. Enforce referential       integrity.</li>
+
+</ul>
+       <p>(<strong>50</strong>) 3. In the space below, provide a screen shot of the <strong>Relationships window</strong>. </p>  <br />
+
+         </div>
+
+       <div  class="col-lg-12 text-danger" >
+         <h2>Screen Shot Ex3</h2>
+          <hr />
+      </div>
+
+      <!--Exercise 4-->
+
+      <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Club and Advisors Query</a></div>        
+      
+     <div id="Exercise04" class="collapse in  col-lg-12"> 
+         <br />
+
+
+      <ul>
+      <li>Create a query that displays clubs       and their advisors. Include the club name, club description, first Name,       and last Name fields, and sort in ascending order by club name. 
+           Name the       query <strong>ClubsAndAdvisors</strong>.</li>
+   </ul>
+
+    <p>(<strong>50</strong>) 4. In the space below, provide a screen shot of the ClubAndAdvisors query, <strong>datasheet view</strong>. </p>  <br />
+
+         </div>
+
+       <div  class="col-lg-12 text-danger" >
+         <h2>Screen Shot Ex4</h2>
+          <hr />
+      </div>
+
+
+      <!--Exercise 5-->
+
+       <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5- Club by Type Query</a></div>        
+      
+     <div id="Exercise05" class="collapse in  col-lg-12">
+         <br />
+         
+         <ul>
+          <li>Create a query that displays clubs       by club type. Name the query <strong>ClubsByType</strong>.       Sort the resulting datasheet in ascending order by club type.</li>
+            </ul>
+
+         <p>(<strong>50</strong>) 5. In the space below, provide a screen shot of the ClubByType query, <strong>datasheet view</strong>. </p> <br />
+
+
+         </div>
+
+       <div  class="col-lg-12 text-danger" >
+         <h2>Screen Shot Ex5</h2>
+          <hr />
+      </div>
+
+
+
+      <!--Exercise 6-->
+
+ <div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Exercise 6- Advisors and Clubs Query</a></div>        
+      
+     <div id="Exercise06" class="collapse in  col-lg-12">
+         <br />
+
+        <ul>
+         <li>&nbsp;View the Advisor table to view related       records and find out which clubs display for each advisor by expanding the       plus sign.</li>
+   <li>Use the Query window to create a query displaying all advisor and club data, sorting in ascending order by advisor ID and then in ascending order by club name.
+       Hide the start date field from the query. Name the query <strong>AdvisorsAndClubs</strong>.</li>
+  </ul>
+
+       <p>  (<strong>50</strong>) 6. In the space below, provide a screen shot of the AdvisorsAndClubs query, <strong>datasheet view</strong>.</p><br />
+
+         </div>
+
+       <div  class="col-lg-12 text-danger" >
+         <h2>Screen Shot Ex6</h2>
+          <hr />
+      </div>
+
+
+      <!--Exercise 7-->
+
+       <div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Exercise 7- Advisors and Clubs Query Pt 2</a></div>        
+      
+     <div id="Exercise07" class="collapse in  col-lg-12">
+         <br />
+
+      <ul>
+         <li>View the AdvisorsAndClubs query datasheet. Change the query to display those records with Language or  Science club types. Sort the datasheet in ascending order by club name.</li>
+        </ul>
+
+       <p> (<strong>50</strong>) 7. In the space below, provide a screen shot of the AdvisorsAndClubs query, <strong>design</strong> <strong>view</strong>. </p> <br />
+        
+         </div>
+
+        <div  class="col-lg-12 text-danger" >
+         <h2>Screen Shot Ex7</h2>
+          <hr />
+      </div>
+
+      <!--Exercise 8-->
+
+       <div class=" col-lg-12"><a href="#Exercise08" class="btn btn-info" data-toggle="collapse">Exercise 8- Advisors and Clubs Query Pt 2</a></div>        
+      
+     <div id="Exercise08" class="collapse in  col-lg-12">
+         <br />
+
+         <ul>
+      <li>Close the database and then exit       Access.</li>
+             </ul>
+
+   <p>(<strong>100</strong>) 8. <strong>Briefly explain the value to a business of an employee who can create queries from verbal or written input provided by other employees or customers.</strong></p><br />
+
+          <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Value of Employee who can create Queries:" type="text"> <br />
+         </div>
+
+
+
+     <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+     
+    <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+      
+    <div id="ExercisePDF" class="collapse in  col-lg-12"> 
+            <p>Use a web browser to verify that you have published your website to https://classes.winona.edu/... <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible. <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                  <span id="dPath" ></span>              
+<script>document.getElementById("dPath").innerHTML = Path; </script>' folder.<br /> 
+</p>
+           <br />
+               
+          <p>(50) 9. Save your file 'WebPage.pdf' to the ' 
+                  <span id="ePath" ></span>              
+<script>document.getElementById("ePath").innerHTML = Path; </script>' folder.<br /> 
+
+
+          </p>
+
+      <div  class="text-danger" >
+         <h2>WebPage.pdf</h2>
+          <hr />
+      </div>
+
+        <p>  Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+        
+        <ol>             
+          <li> Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+          <li> Select all of the screen shots to be combined. </li>         
+          <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+          <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>    
+          <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+              <span id="fPath" ></span>              
+              <script>document.getElementById("fPath").innerHTML = Path; </script>' folder.<br /> </li>
+        </ol>
+
+
+          <p>(50) 10. Save your file 'ScreenShots.pdf' to the ' 
+                  <span id="gPath" ></span>              
+<script>document.getElementById("gPath").innerHTML = Path; </script>' folder.<br /> 
+
+          </p>
+
+      <div  class="text-danger" >
+         <h2>ScreenShots.pdf</h2>
+          <hr />
+      </div>
+
+
+       <p>  &nbsp;</p>
+         <p>  Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative01.pdf</strong>&#39; in ' 
+                  <span id="hPath" ></span>              
+<script>document.getElementById("hPath").innerHTML = Path; </script>' folder.<br /> 
+
+         </p>
+
+
+        <p>(50) 11. Upload your file 'Summative01.pdf' to the D2L 'Summative01' Assignment folder.</p>
+
+      <div  class="text-danger" >
+         <h2>Summative01.pdf</h2>
+      </div>
+      <hr />
+
+        </div> 
+
+
+
+
+  <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+ 
+  <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+                <p>Use a browser to view your completed and published website at: https://classes.winona.edu/...      <br /> 
+                    Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>  </p>
+
+            (50) 12. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br /><br />
+
+            (50) 13. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.</div> 
+           <hr />
+
+ 
+     
+      <div class="col-lg-12"><br /><input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit"> <br /></div>
+
+  
+  </form> 
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted" ></div>
+
+   <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="../js/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed --> 
+	<script src="../js/bootstrap.js"></script>
+  
+</body></html>
+
+
+
