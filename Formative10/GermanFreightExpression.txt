@@ -1,3 +1,0 @@
-this is the expression to type into the Access VBA Immediate Window for Northwind.mdb for ICE 10, answer is:   92.4859 
-
-?DAvg("Freight", "Orders", "shipcountry = 'germany'")
