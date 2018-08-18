@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap -->
-	<link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
 
     <!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
     <script src="../js/constants.js"></script>
@@ -16,234 +16,348 @@
     <title>MIS342Formative07</title>
 </head>
 
-  <body onload="setVariables()"> 
+<body onload="setVariables()">
 
-  <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
-    <input name="InstID" id="InstID" value="00617282" type="hidden">
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
 
-    <h1 class=" text-center"> Advanced Reports</h1>
+        <h1 class=" text-center">Advanced Reports</h1>
 
-<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
-    <div class="row col-lg-12">
-      <div class="col-lg-3">
-        <label class="text-primary" for="FirstName">First Name:</label>
-        <input class="form-control" name="FirstName" id="FirstName"  type="text" value="default first name" readonly="readonly">
-      </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="LastName">Last Name:</label>
-        <input class="form-control" name="LastName" id="LastName"  type="text" value="default last name" readonly="readonly">
-      </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="pin">StarID:</label>
-        <input class="form-control" name="pin" id="pin"  type="text" value="default StarID" readonly="readonly">
-      </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="email">Email:</label>
-        <input class="form-control" name="email" id="email"  type="email" value="default email address" readonly="readonly">
-      </div>
-    </div>
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
 
-    <div class="row col-lg-12">
-      <div class="col-lg-3">
-        <label class="text-primary" for="semester">Semester:</label>
-        <input class="form-control" name="semester" id="semester"  type="text" value="default" readonly="readonly">
-     </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="class">Class:</label>
-        <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
-      </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="section">Section:</label>
-        <input class="form-control" name="section" id="section"  value="default" type="text"  readonly="readonly">
-      </div>
-      <div class="col-lg-3"> 
-        <label class="text-primary" for="assignment">Assignment:</label>
-        <input class="form-control" name="assignment" id="assignment" value="Formative07" type="text" readonly="readonly">
-      </div>    
-    </div>
-<!-- -end-Student, class and assignment information-end -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="Formative07" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
 
-      <!-- Calculate the correct path for saving the files -->
-<script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script> 
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
 
 
         <div class="col-lg-12">
-            <br /><input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit"> <br />
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
         </div>
-  
+
         <div class="col-lg-12 h3 text-danger">
-            500 Points <hr />
+            500 Points
+            <hr />
         </div>
 
-      <p>Note: 
-  Save this  assignment to your website.<br />
-    </p>
-    <p>Complete your personal information in the above section.<br />
-  Complete this problem by placing your answers in the spaces provided  below.<br />
-Press the submit button.<br />
-        It is a good idea to save the confirmation page as an .htm or .pdf file. </p>
+        <div class="col-lg-12">
 
-      <!-- -start-objectives-start -->
-    <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>      
-      <div id="Objectives" class=" collapse in col-lg-12">
-
-          </div>
-
-      <!-- End of objectives-->
-
-      <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1- Advanced Reports</a></div>        
-      
-       <div id="Exercise01" class="collapse in  col-lg-12"> <br />
+            <p>
+                Note: Make sure to follow the instructions on this page.<br />
+                This assignment is published to your website per Project1 instructions.<br />
+            </p>
+            <p>
+                Answer the following questions using a copy of the <strong>Northwind.mdb</strong> database file located on the class network drive at:  \\store\classes\ YearTerm&nbsp; &amp;
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                Save the Northwind.mdb file in your ' 
+                  <span id="baPath"></span>
+                <script>document.getElementById("baPath").innerHTML = Path </script>
+                ' folder.<br />
+            </p>
+        </div>
 
 
-       <p>Refer to the <a href="../../Presentations/Chapter07.ppt">Advanced Report Tips</a> presentation and create the following report using the <strong>Northwind.mdb</strong> database file located at: <br />
-            \\store\classes\ YearTerm&nbsp; &amp; courseid &amp; &quot;\ReadOnly\&quot; )
-             <br />
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+            Demonstrate the ability to create complex reports.
+        </div>
+        <hr />
+        <!-- End of objectives-->
 
-     </p>
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1- Advanced Reports</a></div>
 
-      <p>Create a report that meets the following requirements and contains the following fields, criteria, sort order
-
-    </p>
-    <table   class="width: 100%;">
-        <tr>
-            <th>field</th>
-            <th>criteria or sort</th>
-            <th>Notes</th>
-        </tr>
-        <tr>
-            <td class="auto-style6">CustomerID</td>
-            <td class="auto-style6"></td>
-            <td class="auto-style6"></td>
-        </tr>
-        <tr>
-            <td>OrderID</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>ProductID</td>
-            <td>Ascending</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>OrderDate</td>
-            <td>between 1/1/1998 and 12/31/1998</td>
-            <td>ordered in 1998, but not output to report</td>
-        </tr>
-        <tr>
-            <td>UnitPrice</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>Quantity</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>ExtendedPrice</td>
-            <td>UnitPrice * Quantity</td>
-            <td>calculated field</td>
-        </tr>
-    </table>
-
-           <br /> <br />
-
-     <ul>
-      <li> Make use of the Report Wizard
-        (note it will do most, but not all of the work for you)</li> 
-    <li>
-        Group by CustomerID and OrderID</li>
-    <li>
-        Sort by ProductID
-        </li>
-    <li>
-        Use the Summary Options to create ExtendedPrice sub-totals for each ProductID</li>
-    </ul>
-          <br />
-       <p>(50) 1. Explain why is it very good practice to make a SQL statement, instead of a query, the data source for any report.</p> 
-
-           
-           <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="SQL vs Query: " type="text"> <br />
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <br />
 
 
-           </div>
+            <p>
+                Refer to the <a href="https://eprofessor.azurewebsites.net/MIS342/Presentations/Chapter07.ppt" class="bg-info text-white" target="_blank">Advanced Report Tips</a> presentation and create the following report using the Northwind.mdb database file.             
+                <br />
 
-                    <!-- Exercise 2-->
-        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2- Potential Problems</a></div>        
-      
-       <div id="Exercise02" class="collapse in  col-lg-12"> <br />
+            </p>
 
-       <p>When the followng dialog box appears in the Report Wizard make sure to choose the following settings-choose Landscape orientation, and uncheck "Adjust the field..." or suffer the consequences. </p>
-           <img alt="Report Wizard" src="ReportWizardFormatSettings.JPG" class="img-responsive" /> 
-           
-          <br /> <br />
+            <p>
+                Create a report that meets the following requirements and contains the following fields, criteria, sort order
 
-<ul>
-            <li>Keep in mind that the Report Wizard can save a lot of time, but rarely produces the final product.  After the Wizard is done you will need to make adjustments in the Report Design View.</li> 
-            <li>Plan on your report output being on Legal Paper (8 1/2 x 14 inches) with .25 inch margins.</li>
-            <li>This will provide a 14 - 1/2 or 13 1/2 inches for workspace in the Report Design View.</li>
-            <li>You are advised to adjust the left and width properties of any object that extends beyond the 13.5 inch ruler mark.</li>
-            <li>You can traverse all the objects on the report in design view by selecting the object from the dropdown list at the top of the Property Sheet and arrowing down.</li>
-            <li>Each will be highlighted and violators will be easy to spot.</li> 
-    </ul>
+            </p>
+            <table class="table table-bordered" >
+                <tr>
+                    <th>field</th>
+                    <th>criteria or sort</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>CustomerID</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>OrderID</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>ProductID</td>
+                    <td>Ascending</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>OrderDate</td>
+                    <td>between 1/1/1998 and 12/31/1998</td>
+                    <td>ordered in 1998, but not output to report</td>
+                </tr>
+                <tr>
+                    <td>UnitPrice</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Quantity</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>ExtendedPrice</td>
+                    <td>UnitPrice * Quantity</td>
+                    <td>calculated field</td>
+                </tr>
+            </table>
+
+            <br />
+            <br />
+
+            <ul>
+                <li>Make use of the Report Wizard<br />
+                    report wizard will do most, but not all of the work</li>
+                <li>Group by CustomerID and OrderID</li>
+                <li>Sort by ProductID
+                </li>
+                <li>Use the Summary Options to create ExtendedPrice sub-totals for each ProductID</li>
+            </ul>
+            <br />
+            <p>(50) 1. Briefly explain why is it very good practice to make a SQL statement, instead of a query, the data source for any report.</p>
+
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="SQL vs Query: " type="text">
+            <br />
+            <hr />
+
+        </div>
+
+        <!-- Exercise 2-->
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2- Report Wizard</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+            <br />
+
+            <p>When the following dialog box appears in the Report Wizard make sure to choose the following settings-choose Landscape orientation, and uncheck "Adjust the field..." or suffer the consequences. </p>
+            <img alt="Report Wizard" src="ReportWizardFormatSettings.JPG" class="img-responsive" />
+
+            <br />
+            <br />
+
+            <ul>
+                <li>Keep in mind that the Report Wizard can save a lot of time, but rarely produces the final product.<br />
+                    After the Wizard is done you will need to make adjustments in the Report Design View.</li>
+                <li>Plan on your report output being on Legal Paper (8 1/2 x 14 inches) with .25 inch margins.</li>
+                <li>This will provide a 14 - 1/2 or 13 1/2 inches for workspace in the Report Design View.</li>
+                <li>You are advised to adjust the left and width properties of any object that extends beyond the 13.5 inch ruler mark.</li>
+                <li>You can traverse all the objects on the report in design view by selecting the object from the dropdown list at the top of the Property Sheet and arrowing down.</li>
+            </ul>
             <img alt="Report Design" src="ReportDesignViewIssues.JPG" class="img-responsive" />
 
-           <br /> <br />
+            <br />
+            <br />
 
-          <p> Beware of formatting errors such as <strong>text boxes too narrow</strong> and lead to truncated fields.<br />
+            <p>
+                Beware of formatting errors such as <strong>text boxes too narrow</strong> that lead to truncated fields.<br />
 
-               <img alt="Field Width" src="FieldWidthProblems.JPG" class="img-responsive" />
+                <img alt="Field Width" src="FieldWidthProblems.JPG" class="img-responsive" />
 
-              <br /> <br />
+                <br />
+                <br />
 
-           <p> View of totals, and Grand Total at end of report-make them look nice by setting number format to Currency, and decimal places to 0 (Zero)</p>
-                <img alt="GrandTotal" src="GrandTotal.JPG" class="img-responsive" />
+                <p>Make the totals and Grand Total at end of report look nice by setting number format to Currency, and decimal places to 0 (Zero)</p>
+            <img alt="GrandTotal" src="GrandTotal.JPG" class="img-responsive" />
 
-           <br /> <br />
+            <br />
+            <br />
 
             <strong>Realize that it may take several attempts using the Report Wizard to get a satisfactory report.
-    </strong>
-           <br /> <br />
-              <p>To proceed you must have Windows 10 which includes 'Print to PDF' installed. You know it is installed when one of the print dialog box choices is "Microsoft Print to PDF"<br />
-            <img alt="print to pdf" src="../Formative05/F00_PrintToPDF.JPG" class="img-responsive"/><br><br />
-
-         <ul>
-           <li> When done, print your Report as a .pdf file named "<strong>Formative07.pdf</strong>"</li>
-            <li>Use Legal size paper.</li>
-            <li>Make sure that the report is in Landscape mode.</li>
-                </ul>
-
-            <p>(<strong>450</strong>) 2. Upload your file 'Formative07.pdf' to the D2L Assignment Folder 'Formative07'</p>
+            </strong>
+            <br />
+            <br />
 
 
-           </div>
 
 
-  
- <div class="col-lg-12"><br /><input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit"> <br /></div>
+            <ul>
+                <li>When the report is done, print it as a .pdf file with the following settings</li>
+                <li>Use Legal size paper.</li>
+                <li>Make sure that the report is in Landscape mode.</li>
+            </ul>
 
-  
-  </form> 
+            <p>
+                (250) 2. In Report View, print all pages as a .pdf file.
+                <br />
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                Save the report  as &quot;Ex2&quot; in your ' 
+                  <span id="aaPath"></span>
+                <script>document.getElementById("aaPath").innerHTML = Path </script>
+                ' folder.<br />
+
+                You will be combining this pdf file with the assignment file.
+            </p>
+
+        </div>
+
+                <div class="col-lg-12 text-danger">
+            <h2>Ex2.pdf</h2>
+            <hr />
+        </div>
+
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                  <span id="dPath"></span>
+                <script>document.getElementById("dPath").innerHTML = Path; </script>
+                ' folder.<br />
+            </p>
+            <br />
+
+            <p>
+                (50) 3. Save your file 'WebPage.pdf' to the ' 
+                  <span id="ePath"></span>
+                <script>document.getElementById("ePath").innerHTML = Path; </script>
+                ' folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
+
+
+
+            <p>&nbsp;</p>
+            <p>
+                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>Ex2 pdf </strong>file, and save it as &#39;<strong>Formative07.pdf</strong>&#39; in ' 
+                  <span id="hPath"></span>
+                <script>document.getElementById("hPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
+
+
+            <p>(50) 4. Upload your file 'Formative07.pdf' to the D2L 'Formative07' Assignment folder.</p>
+
+            <div class="text-danger">
+                <h2>Formative07.pdf</h2>
+            </div>
+            <hr />
+
+        </div>
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 5. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 6. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
 
     <!-- Creative Commons License Info -->
-    <div id="xLicense" class=" col-lg-12 text-muted" ></div>
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
 
-   <div id="xfooter" class=" col-lg-12 text-muted"></div>
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../js/jquery-1.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.js"></script>
 
-	<!-- Include all compiled plugins (below), or include individual files as needed --> 
-	<script src="../js/bootstrap.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.js"></script>
 
-</body></html>
-
-
-
-
-
-
+</body>
+</html>
 
