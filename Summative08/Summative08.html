@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap -->
-	<link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
 
     <!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
     <script src="../js/constants.js"></script>
@@ -16,333 +16,422 @@
     <title>MIS342Summative08</title>
 </head>
 
-<body onload="setVariables()"> 
+<body onload="setVariables()">
 
-  <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
-    <input name="InstID" id="InstID" value="00617282" type="hidden">
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
 
-    <h1 class=" text-center">Sharing, Integrating, and Analyzing Data</h1>
+        <h1 class=" text-center">Sharing, Integrating, and Analyzing Data</h1>
 
-<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
-    <div class="row col-lg-12">
-      <div class="col-lg-3">
-        <label class="text-primary" for="FirstName">First Name:</label>
-        <input class="form-control" name="FirstName" id="FirstName"  type="text" value="default first name" readonly="readonly">
-      </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="LastName">Last Name:</label>
-        <input class="form-control" name="LastName" id="LastName"  type="text" value="default last name" readonly="readonly">
-      </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="pin">StarID:</label>
-        <input class="form-control" name="pin" id="pin"  type="text" value="default StarID" readonly="readonly">
-      </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="email">Email:</label>
-        <input class="form-control" name="email" id="email"  type="email" value="default email address" readonly="readonly">
-      </div>
-    </div>
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
 
-    <div class="row col-lg-12">
-      <div class="col-lg-3">
-        <label class="text-primary" for="semester">Semester:</label>
-        <input class="form-control" name="semester" id="semester"  type="text" value="default" readonly="readonly">
-     </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="class">Class:</label>
-        <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
-      </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="section">Section:</label>
-        <input class="form-control" name="section" id="section"  value="default" type="text"  readonly="readonly">
-      </div>
-      <div class="col-lg-3"> 
-        <label class="text-primary" for="assignment">Assignment:</label>
-        <input class="form-control" name="assignment" id="assignment" value="Summative08" type="text" readonly="readonly">
-      </div>    
-    </div>
-<!-- -end-Student, class and assignment information-end -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="Summative08" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
 
-<!-- Calculate the correct path for saving the files -->
-<script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script> 
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
 
 
         <div class="col-lg-12">
-            <br /><input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit"> <br />
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
         </div>
-  
+
         <div class="col-lg-12 h3 text-danger">
-            400 Points <hr />
+            550 Points
+            <hr />
         </div>
-      
-<!-- -start-objectives-start -->
-    <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>      
-      <div id="Objectives" class=" collapse in col-lg-12">
 
-<!--Above this line similar except for Assignment number and title   -->
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
 
-
-          <hr />
-<h2 class=" text-center">Concepts</h2>
-
-<p>Sample focus question: In what ways can Access data be used outside of an Access database?</p>
-<p> Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
-<ul>
-  <li>Exporting data</li>
-  <li>HTML</li>
-  <li>CSV files</li>
-  <li>Table Analyzer</li>
-  <li>XML</li>
-  <li>PivotTable</li>
-  <li>PivotChart</li>
-  <li>Forms with tabs</li>
-  <li>Forms with charts</li>
-  <li>Linked data</li>
-</ul>
-<hr />
- <hr />
-
-          </div>
+            <!--Above this line similar except for Assignment number and title   -->
 
 
+            <hr />
+            <h2 class=" text-center">Concepts</h2>
 
-<!--Exercise 1-->
+            <p>Sample focus question: In what ways can Access data be used outside of an Access database?</p>
+            <p>Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
+            <ul>
+                <li>Exporting data</li>
+                <li>HTML</li>
+                <li>CSV files</li>
+                <li>Table Analyzer</li>
+                <li>XML</li>
+                <li>PivotTable</li>
+                <li>PivotChart</li>
+                <li>Forms with tabs</li>
+                <li>Forms with charts</li>
+                <li>Linked data</li>
+            </ul>
+            <hr />
+            <hr />
 
-       <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1- Tire Type HTML Document</a></div>        
-      
-     <div id="Exercise01" class="collapse in  col-lg-12"> 
-         <br />
-
-
-<p><em>You  will need  to download the <strong>LuckyTire</strong> database, LuckyTire07.accdb, along with two data files, <br />
-   Service.csv<br />
-   Locatons.xlsx.<br />
-They are availabe at:<br />
-\\store\classes\20185001248\ReadOnl<strong>y\Part08Project\</strong></em></p>
- <hr />
- <p>Len Phan is the owner of  Lucky Tire, a chain of tire and auto service centers. Len would like to create  a couple forms. You&rsquo;ll do so by completing the following:<br />
-  &nbsp; </p>
-
-  <ul>
-         <li>Open the <strong>LuckyTire </strong>database. </li>
-
-       </ul>
-
-    <ul>
-       <li>Export the rptTireType report as an HTML       document; do not use a template, 
-   do not save the export steps. </li>
-        
-       <li>Make sure to select 'Unicode' encoding.</li>
-        <li> Use your Web       browser to open the <strong>rptTireType </strong>HTML       document. </li>
-        <li>Then scroll to the bottom of the page; use the First, Previous,       Next, and Last links to navigate through the document.</li>
-    </ul>
-
-          <p>(<strong>25</strong>) 1. Print the document as a .pdf and save it where you save the screen shots for this assignment.<br /></p>
-
-         </div>
-
-        <div  class="col-lg-12 text-danger" >
-         <h2> Ex1- Tire Type</h2>
-          <hr />
-      </div>
+        </div>
 
 
 
-      <!--Exercise 2-->
+        <!--Exercise 1-->
 
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1- Tire Type HTML Document</a></div>
 
-       <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2- Table Analyzer</a></div>        
-      
-     <div id="Exercise02" class="collapse in  col-lg-12"> 
-         <br />
-
-
-         <p>Import the CSV file named <strong>Service</strong>.csv,        as a new table in the database. Index the Invoice field with no       duplicates, choose your own primary key, name the table <strong>tblService</strong>, run the Table       Analyzer, and record the Table Analyzer&rsquo;s recommendation, but do not       accept the recommendation. Do not save the import steps.</p>
-     <br />
-
-  <p> (<strong>25</strong>) 2. Provide a screen shot of the Table Analyer Dialog Box </p> <br />
-
-         </div>
-
-      <div  class="col-lg-12 text-danger" >
-         <h2> Ex2 Screen Shot- Table Analyzer Wizard</h2>
-          <hr />
-      </div>
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <br />
 
 
 
-      <!--Exercise 3-->
+            <p>
+                Data Files needed for the Tutorial Project:<br />
+                <a href="LuckyTire.accdb" class="bg-info text-white" target="_blank">LuckyTire07.accdb</a>
+                <br />
+                Answer the following questions using a copy of the <strong>LuckyTire07.accdb</strong> database file, along with these files:<br />
+                Service.csv<br />
+                Locatons.xlsx.<br />
 
 
-        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3- Customer Table XML File</a></div>        
-      
-     <div id="Exercise03" class="collapse in  col-lg-12"> 
-         <br />
-
-
-         <ul>
-        <li>Export the tblCustomer table as an XML file       named <strong>tblCustomer</strong>;<strong> </strong>do not create a separate XSD       file.</li>
-        <li>Save the export steps.</li>
-        <li> Make sure to save the file as tblCustomer.xml in your Assignment08 folder.</li>
-
-              </ul>
-
-             <p>(<strong>25</strong>) 3. Print the file as a .pdf file:<br /></p>
-
-         </div>
-
-      <div  class="col-lg-12 text-danger" >
-         <h2> Ex3- XML File</h2>
-          <hr />
-      </div>
-
-
-
-      <!--Exercise 4-->
-
-       <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4- Locations Table</a></div>        
-      
-     <div id="Exercise04" class="collapse in  col-lg-12"> 
-         <br />
-
-        
-        <p>Link to the Locations.xlsx workbook,  using <strong>tblLocations </strong>as the table name. <br />
-        Add a new record to the Locations       workbook as follows:</p>
-          <ul>
-        <li> LocID <strong>103</strong></li>
-        <li> Address <strong>888 W 6th St</strong></li>
-        <li> City <strong>Corona</strong></li>
-        <li> Zip <strong>92882</strong></li>
-        <li> Phone <strong>951-555-8800</strong></li>
-        <li>Type your name in the Manager cell.</li>
-         </ul>
-
-      <p>  (<strong>50</strong>) 4. Open the linked table in Design View (ignore the warning stating the design cannot be modified), open the table properties dialog box, and paste below the contents of the Description property. It will be a long string.</p>
-
-          <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Description: " type="text"> <br />
-         <br />
-         
-        <p> <strong>Compact and repair the LuckyTire database, close the database, and then exit Access.</strong></p><br />
-       
-
-  <p>(<strong>75</strong>) 5. Briefly explain  the value of Microsoft Access in an organization that uses many programs to store data in different formats, while requiring that data to be used in multiple formats on a daily basis.</p>
-
-          <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Benefit: " type="text"> <br />
-
-         </div>
+                They are located on the class network drive at:  \\store\classes\ YearTerm&nbsp; &amp; courseid &amp; &quot;\ReadOnly\&quot; ) 
+                <br />
+            </p>
 
 
 
 
-      <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
 
-     
-    <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
-      
-    <div id="ExercisePDF" class="collapse in  col-lg-12"> 
-            <p>Use a web browser to verify that you have published your website to https://classes.winona.edu/... <br />
-                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible. <br />
+
+
+
+            <hr />
+            <p>
+                Len Phan is the owner of  Lucky Tire, a chain of tire and auto service centers.<br />
+                Len would like to create  a couple forms.
+                <br />
+                You&rsquo;ll do so by completing the following:<br />
+                &nbsp;
+            </p>
+
+            <ul>
+                <li>Open the <strong>LuckyTire </strong>database. </li>
+            </ul>
+
+            <ul>
+                <li>Export the rptTireType report as an HTML document<br />
+                    Do not use a template.<br />
+                    Do not save the export steps. </li>
+
+                <li>Make sure to select 'Unicode' encoding.</li>
+                <li>Use your Web       browser to open the <strong>rptTireType </strong>HTML       document. </li>
+                <li>Then scroll to the bottom of the page.<br />
+                    Use the First, Previous,       Next, and Last links to navigate through the document.</li>
+            </ul>
+
+            <p>
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (50) 1. Print all pages of the report.<br />
+                Save the report  as &quot;Ex1&quot; in your ' 
+                  <span id="aaPath"></span>
+                <script>document.getElementById("aaPath").innerHTML = Path; </script>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Ex1.pdf</h2>
+            <hr />
+        </div>
+
+
+
+        <!--Exercise 2-->
+
+
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2- Table Analyzer</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+            <br />
+
+
+            <p>
+                Import the CSV file named <strong>Service</strong>.csv,        as a new table in the database.
+                <br />
+                Index the Invoice field with no       duplicates, choose your own primary key, name the table <strong>tblService</strong>.<br />
+                Run the Table       Analyzer.<br />
+                Review and print as a .pdf file the Table Analyzer&rsquo;s recommendation, but do not       accept the recommendation.<br />
+                Do not save the import steps.
+            </p>
+            <br />
+
+            <p>
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (50) 2. Print all pages of the report.<br />
+                Save the report  as &quot;Ex2&quot; in your ' 
+                  <span id="abPath"></span>
+                <script>document.getElementById("abPath").innerHTML = Path; </script>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Ex2.pdf</h2>
+            <hr />
+        </div>
+
+
+
+
+
+        <!--Exercise 3-->
+
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3- Create XML File</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+            <br />
+
+
+            <ul>
+                <li>Export the tblCustomer table as an XML file named <strong>tblCustomer</strong>.<br />
+                    Do not create a separate XSD       file.</li>
+                <li>Do not save the export steps.</li>
+            </ul>
+
+            <p>
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (50) 3. Save all pages as an .xml file.<br />
+                Save the report  as &quot;Ex3.xml&quot; in your ' 
+                  <span id="acPath"></span>
+                <script>document.getElementById("acPath").innerHTML = Path; </script>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Ex3.xml</h2>
+            <hr />
+        </div>
+
+
+
+
+
+        <!--Exercise 4-->
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4- Linking Files</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+            <br />
+
+
+            <p>
+                Link to the Locations.xlsx workbook,  using <strong>tblLocations </strong>as the table name.
+                <br />
+                Add a new record to the Locations workbook as follows:
+            </p>
+            <ul>
+                <li>LocID <strong>103</strong></li>
+                <li>Address <strong>888 W 6th St</strong></li>
+                <li>City <strong>Corona</strong></li>
+                <li>Zip <strong>92882</strong></li>
+                <li>Phone <strong>951-555-8800</strong></li>
+                <li>Type your name in the Manager cell.</li>
+            </ul>
+
+            <p>
+                (<strong>50</strong>) 4. Open the linked table in Design View (ignore the warning stating the design cannot be modified).<br />
+                Open the table properties dialog box.<br />
+                Copy and paste below the contents of the Description property.<br />
+                It will be a long string.
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="Description: " type="text">
+            <br />
+            <br />
+
+            <p><strong>Compact and repair the LuckyTire database, close the database, and then exit Access.</strong></p>
+            <br />
+
+
+            <p>(<strong>100</strong>) 5. Briefly explain  the value of Microsoft Access in an organization that uses many programs to store data in different formats, while requiring that data to be used in multiple formats on a daily basis.</p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Benefit: " type="text">
+            <br />
+
+        </div>
+
+        <br />
+
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
                 From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
-                  <span id="dPath" ></span>              
-<script>document.getElementById("dPath").innerHTML = Path; </script>' folder.<br /> 
-</p>
-           <br />
-               
-          <p>(50) 6. Save your file 'WebPage.pdf' to the ' 
-                  <span id="ePath" ></span>              
-<script>document.getElementById("ePath").innerHTML = Path; </script>' folder.<br /> 
+                  <span id="dPath"></span>
+                <script>document.getElementById("dPath").innerHTML = Path; </script>
+                ' folder.<br />
+            </p>
+            <br />
+
+            <p>
+                (50) 6. Save your file 'WebPage.pdf' to the ' 
+                  <span id="ePath"></span>
+                <script>document.getElementById("ePath").innerHTML = Path; </script>
+                ' folder.<br />
 
 
-          </p>
+            </p>
 
-      <div  class="text-danger" >
-         <h2>WebPage.pdf</h2>
-          <hr />
-      </div>
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
 
-        <p>  Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
-        
-        <ol>             
-          <li> Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
-          <li> Select all of the screen shots to be combined. </li>         
-          <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
-          <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>    
-          <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
-              <span id="fPath" ></span>              
-              <script>document.getElementById("fPath").innerHTML = Path; </script>' folder.<br /> </li>
-        </ol>
+            <p>Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
 
-
-          <p>(50) 7. Save your file 'ScreenShots.pdf' to the ' 
-                  <span id="gPath" ></span>              
-<script>document.getElementById("gPath").innerHTML = Path; </script>' folder.<br /> 
-
-          </p>
-
-      <div  class="text-danger" >
-         <h2>ScreenShots.pdf</h2>
-          <hr />
-      </div>
+            <ol>
+                <li>Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+                <li>Select all of the screen shots to be combined. </li>
+                <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+                <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+                <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+              <span id="fPath"></span>
+                    <script>document.getElementById("fPath").innerHTML = Path; </script>
+                    ' folder.<br />
+                </li>
+            </ol>
 
 
-       <p>  &nbsp;</p>
-         <p>  Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative01.pdf</strong>&#39; in ' 
-                  <span id="hPath" ></span>              
-<script>document.getElementById("hPath").innerHTML = Path; </script>' folder.<br /> 
+            <p>
+                (50) 7. Save your file 'ScreenShots.pdf' to the ' 
+                  <span id="gPath"></span>
+                <script>document.getElementById("gPath").innerHTML = Path; </script>
+                ' folder.<br />
 
-         </p>
+            </p>
 
-
-        <p>(50) 8. Upload your file 'Summative01.pdf' to the D2L 'Summative01' Assignment folder.</p>
-
-      <div  class="text-danger" >
-         <h2>Summative01.pdf</h2>
-      </div>
-      <hr />
-
-        </div> 
+            <div class="text-danger">
+                <h2>ScreenShots.pdf</h2>
+                <hr />
+            </div>
 
 
+            <p>&nbsp;</p>
+            <p>
+                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative08.pdf</strong>&#39; in ' 
+                  <span id="hPath"></span>
+                <script>document.getElementById("hPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
 
 
-  <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
- 
-  <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
-                <p>Use a browser to view your completed and published website at: https://classes.winona.edu/...      <br /> 
-                    Ensure that you have linked this assignment on your home page.
-                Note that your screen shots do not have to be completed to perform this step.<br>  </p>
+            <p>(50) 8. Upload your file 'Summative08.pdf' to the D2L 'Summative08' Assignment folder.</p>
+
+            <div class="text-danger">
+                <h2>Summative08.pdf</h2>
+            </div>
+            <hr />
+
+        </div>
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
 
             (50) 9. Home Page Hyperlink<br />
-            Check and verify that this assignment is hyperlinked on your home page.<br /><br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
 
             (50) 10. Assignment submission<br />
             Press the Submit button at the top or bottom of this page.
-                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.</div> 
-           <hr />
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
 
- 
-     
-      <div class="col-lg-12"><br /><input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit"> <br /></div>
 
-  
-  </form> 
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
 
 
 
     <!-- Creative Commons License Info -->
-    <div id="xLicense" class=" col-lg-12 text-muted" ></div>
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
 
-   <div id="xfooter" class=" col-lg-12 text-muted"></div>
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../js/jquery-1.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.js"></script>
 
-	<!-- Include all compiled plugins (below), or include individual files as needed --> 
-	<script src="../js/bootstrap.js"></script>
-  
-</body></html>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.js"></script>
+
+</body>
+</html>
 
 
 
