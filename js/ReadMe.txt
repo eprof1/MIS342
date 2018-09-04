@@ -39,7 +39,7 @@ var xzPath = "/</code>";
 
 // current semester
 var xSemester = "Fall2018";
-var xClass = "MIS202";
+var xClass = "MIS342";
 
 // variables below tell students where to save screen shot and .pdf files
 var startPath = "<code> C:&#92;Users&#92;";
