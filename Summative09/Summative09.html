@@ -120,7 +120,7 @@
 
             <p>
                 Data Files needed for the Tutorial Project:<br />
-                <a href="LuckyTire.accdb" class="bg-info text-white" target="_blank">LuckyTire09.accdb</a>
+                <a href="LuckyTire_09.accdb" class="bg-info text-white" target="_blank">LuckyTire09.accdb</a>
                 <br />
                 Answer the following questions using a copy of the <strong>LuckyTire09.accdb</strong> database file also located on the class network drive at:  \\store\classes\ YearTerm&nbsp; &amp; courseid &amp; &quot;\ReadOnly\&quot; ) 
                 <br />
@@ -135,15 +135,21 @@
             <hr />
 
             <p>
-                Len Phan is the owner of  Lucky Tire, a chain of tire and auto service centers. <br />
-           Len has an Access  database named LuckyTire to store information about customers, tires,  manufacturers, invoices, and credit cards. <br />
-          The tblCustomer table contains data  about Lucky Tire&rsquo;s customers;<br />
+                Len Phan is the owner of  Lucky Tire, a chain of tire and auto service centers.
+                <br />
+                Len has an Access  database named LuckyTire to store information about customers, tires,  manufacturers, invoices, and credit cards.
+                <br />
+                The tblCustomer table contains data  about Lucky Tire&rsquo;s customers;<br />
                 tblTires contains data about the tires stocked by  Lucky Tires;<br />
                 the tblSales contains data about tire sales;<br />
-                the tblEmployee  contains data about Lucky Tire&rsquo;s employees; <br />
-                the tblAssignment contains data  about which invoices which employees worked on; <br />
-                and the tblCreditCard contains  data about the credit cards used to pay invoices. <br />
-           Len asks you to define table  relationships and create some new queries for him. <br />
+                the tblEmployee  contains data about Lucky Tire&rsquo;s employees;
+                <br />
+                the tblAssignment contains data  about which invoices which employees worked on;
+                <br />
+                and the tblCreditCard contains  data about the credit cards used to pay invoices.
+                <br />
+                Len asks you to define table  relationships and create some new queries for him.
+                <br />
                 You&rsquo;ll do so by completing  the following:<br />
                 &nbsp;
             </p>
@@ -152,13 +158,12 @@
                 <li>Open the <strong>LuckyTire </strong>database. </li>
                 <li>Change the first record in the <strong>tblCustomer </strong>table datasheet so the       First Name and Last Name columns contain your first and last names.<br />
                     Close       the table.</li>
-                <li>
-                Define a many-to-many relationship between the       tblSales and tbEmployee tables.<br />
+                <li>Define a many-to-many relationship between the       tblSales and tbEmployee tables.<br />
                     Use the tblAssignment table as the related or intermediate table. 
             </ul>
 
             <p>
-               Use the Snipping Tool to provide a screen shot of the Relationships window 
+                Use the Snipping Tool to provide a screen shot of the Relationships window 
    showing the three tables.
             </p>
             <br />
@@ -195,7 +200,8 @@
             <br />
 
             <p>
-                Define a one-to-one relationship between the primary tblCustomer table and the related tblCreditCard table. <br />
+                Define a one-to-one relationship between the primary tblCustomer table and the related tblCreditCard table.
+                <br />
                 Select the referential integrity option and the cascade updates option for the       relationships.
             </p>
             <br />
@@ -219,9 +225,11 @@
 
             <p>
                 Create a make-table query based on the qryInvoiceTotal query.<br />
-                Select all fields from the query and only those records where the TireType field value is <strong>Performance</strong> or <strong>Truck</strong>. <br />
-         Use <strong>tblSpecialTire </strong>as the new table name.<br />
-                Store the table in the current database. <br />
+                Select all fields from the query and only those records where the TireType field value is <strong>Performance</strong> or <strong>Truck</strong>.
+                <br />
+                Use <strong>tblSpecialTire </strong>as the new table name.<br />
+                Store the table in the current database.
+                <br />
                 Run the query, and then save the query as qryMake_tblSpecialTire.
             </p>
             <br />
@@ -235,7 +243,8 @@
 
             <p>
                 Create an append query based on the qryInvoiceTotal query.<br />
-                Select all fields and selecting only those records where the ModelName field value is <strong>Harmony</strong>, <strong>Kestral</strong>, or <strong>Peregrine</strong>.                 <br />
+                Select all fields and selecting only those records where the ModelName field value is <strong>Harmony</strong>, <strong>Kestral</strong>, or <strong>Peregrine</strong>.                
+                <br />
                 Append the records to the tblSpecialTire table, run the query, and then save the query as qryAppend_tblSpecialTire.
             </p>
             <br />
@@ -248,7 +257,8 @@
 
             <p>
                 Create an update query to select all records in the tblSpecialTire table where the TireType field value is <strong>Performance</strong>.<br />
-                Change (update) the field value to <strong>PerfPlus</strong>. <br />
+                Change (update) the field value to <strong>PerfPlus</strong>.
+                <br />
                 Run the query, and then save the query as qryUpdate_tblSpecialTire.
             </p>
             <br />
@@ -261,7 +271,8 @@
 
 
             <p>
-                Create a delete query that deletes all records in the tblSpecialTire table in which the UnitPrice field value is less than <strong>30</strong>.     <br />
+                Create a delete query that deletes all records in the tblSpecialTire table in which the UnitPrice field value is less than <strong>30</strong>.    
+                <br />
                 Run the query, and then save the query as qryDelete_UnitPrice. 
                 <br />
                 Open the <strong>tblSpecialTire </strong>table, resize all columns to their best fit, and then save and close the table.<br />
@@ -274,8 +285,9 @@
             <br />
 
             <p>
-                Create an outer join between the tblCustomer and tblCreditCard tables.<br />
-                Select all records from the tblCreditCard table and any matching records from the tblCustomer table. <br />
+                Create a query that performs an outer join between the tblCustomer and tblCreditCard tables.<br />
+                Select all records from the tblCreditCard table and any matching records from the tblCustomer table.
+                <br />
                 Display the       First and Last fields from the tblCustomer table, and the FirstName and       LastName fields from the tblCreditCard table.<br />
                 Change the column names for       the FirstName and LastName fields from the tblCreditCard table to <strong>Credit First Name </strong>and <strong>Credit Last Name</strong>.
                 <br />
@@ -301,15 +313,16 @@
             <br />
 
 
-            <p>Open the <strong>tblSpecialTire </strong>table in Design view.<br />
+            <p>
+                Open the <strong>tblSpecialTire </strong>table in Design view.<br />
                 Add an index for the CustID field, allowing duplicates.<br />
                 Add an index for the TireType field, allowing duplicates.<br />
-                Save and close the table. </p>
+                Save and close the table.
+            </p>
             <br />
 
             <p>
-
-            Provide a screen shot of the Indexes dialog box, showing the appropriate settings.<br />
+                Provide a screen shot of the Indexes dialog box, showing the appropriate settings.<br />
 
                 <!--  PgP 2/4/2018 create path using constants and current document assignment -->
                 (50) 8. Save the screen shot  as &quot;Ex8&quot; in your ' 
