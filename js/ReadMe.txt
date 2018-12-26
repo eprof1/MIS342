@@ -22,7 +22,7 @@ var xLastName = "YourLastName";
 
 var xStarID = "YourStarID";
 
-var xSection = "YourSection";
+var xSection = "01";
 
 
 // student-do no modify variables below here, unless told to do so.
@@ -38,7 +38,7 @@ var zzPath = "<code> C:/Users/";
 var xzPath = "/</code>";
 
 // current semester
-var xSemester = "Fall2018";
+var xSemester = "Spring2019";
 var xClass = "MIS342";
 
 // variables below tell students where to save screen shot and .pdf files
