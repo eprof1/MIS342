@@ -1,9 +1,25 @@
-# MIS342
-complete set of MIS342 student assignment files
+PgP 12/26/2018
+
+   * This repository contains all files and assignments for Winona State University MIS 202, Microcomputers in Business class for the spring of 2019.
+   * Using GitHub repos to distribute assignments
+   * students create and maintain a website in order to complete these assignments.
+   * Using Visual Studio 2017 Enterprise.
+
+
+PgP 12/25/2018
+* all assignments updated based on fall 2018 feeback and lessons learned
+* ready to send to eprof1, and subset to eProfessor for spring 2019
+
+PgP 12/1/2018
+* have been correcting typos found in assignments, also clarifying instructions
+* getting repo ready for spring 2019 classes
+
+
+PgP 8/20/2018
+* This is a complete repository of all files and assignments for Winona State University MIS 342, Advanced Business Computer Applications class for the fall of 2018.
+* This is an experiment using GitHub repos to distribue assignments, students create and maintain a website in order to complete these assignments.  This semester we are using Visual Studio 2017 Enterprise.
 
 PgP 7/1/2018
-Assignment and project files ready for conversion to RWD/Bootstrap.
-Materials from spring 2018 course.
-Update based on new book to be used in the fall 2018 semester.
+Assignment and project files ready for conversion to RWD/Bootstrap. 
 
-* Attendance.html and default.html have been converted.
+
