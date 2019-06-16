@@ -2,18 +2,23 @@
 <html lang="en">
 
 <head>
+
+    <title>MIS342Summative03</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
 
-    <!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
-    <script src="../js/constants.js"></script>
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
 
     <!-- model assignment file, version 1 released 2018/02/18 PgP -->
 
-    <title>MIS342Summative03</title>
 </head>
 
 <body onload="setVariables()">
@@ -64,7 +69,7 @@
         <!-- -end-Student, class and assignment information-end -->
 
         <!-- Calculate the correct path for saving the files -->
-        <script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
 
 
         <div class="col-lg-12">
@@ -134,11 +139,11 @@
             </ul>
 
             <p>(<strong>50</strong>) 1. Use the Snipping tool to  provide a screen shot of the Club   table, <strong>datasheet view</strong>. </p>
-                            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-                Save the screen shot  as &quot;Ex1&quot; in your ' 
-                  <span id="aaPath"></span>
-                <script>document.getElementById("aaPath").innerHTML = Path; </script>
-                ' folder.<br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex1&quot; in your ' 
+                 <code><span id="aaPath"></span></code>
+            <script>document.getElementById("aaPath").innerHTML = Path; </script>
+            ' folder.<br />
 
             <br />
 
@@ -163,11 +168,11 @@
             </ul>
 
             <p>(<strong>50</strong>) 2. Use the Snipping tool to  provide a screen shot of the Advisor table, <strong>datasheet view</strong>.</p>
-                            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-                Save the screen shot  as &quot;Ex2&quot; in your ' 
-                  <span id="abPath"></span>
-                <script>document.getElementById("abPath").innerHTML = Path; </script>
-                ' folder.<br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex2&quot; in your ' 
+                  <code><span id="abPath"></span></code>
+            <script>document.getElementById("abPath").innerHTML = Path; </script>
+            ' folder.<br />
 
             <br />
 
@@ -194,11 +199,11 @@
 
             </ul>
             <p>(<strong>50</strong>) 3. Use the Snipping tool to  provide a screen shot of the <strong>Relationships window</strong>. </p>
-                            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-                Save the screen shot  as &quot;Ex3&quot; in your ' 
-                  <span id="acPath"></span>
-                <script>document.getElementById("acPath").innerHTML = Path; </script>
-                ' folder.<br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex3&quot; in your ' 
+                  <code><span id="acPath"></span></code>
+            <script>document.getElementById("acPath").innerHTML = Path; </script>
+            ' folder.<br />
 
             <br />
 
@@ -223,11 +228,11 @@
             </ul>
 
             <p>(<strong>50</strong>) 4. Use the Snipping tool to  provide a screen shot of the ClubAndAdvisors query, <strong>datasheet view</strong>. </p>
-                            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-                Save the screen shot  as &quot;Ex4&quot; in your ' 
-                  <span id="adPath"></span>
-                <script>document.getElementById("adPath").innerHTML = Path; </script>
-                ' folder.<br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex4&quot; in your ' 
+                 <code><span id="adPath"></span></code>
+            <script>document.getElementById("adPath").innerHTML = Path; </script>
+            ' folder.<br />
 
             <br />
 
@@ -251,11 +256,11 @@
             </ul>
 
             <p>(<strong>50</strong>) 5. Use the Snipping tool to  provide a screen shot of the ClubByType query, <strong>datasheet view</strong>. </p>
-                            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-                Save the screen shot  as &quot;Ex5&quot; in your ' 
-                  <span id="aePath"></span>
-                <script>document.getElementById("aePath").innerHTML = Path; </script>
-                ' folder.<br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex5&quot; in your ' 
+                <code><span id="aePath"></span></code>
+            <script>document.getElementById("aePath").innerHTML = Path; </script>
+            ' folder.<br />
 
             <br />
 
@@ -283,11 +288,11 @@
             </ul>
 
             <p>(<strong>50</strong>) 6. Use the Snipping tool to  provide a screen shot of the AdvisorsAndClubs query, <strong>datasheet view</strong>.</p>
-                            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-                Save the screen shot  as &quot;Ex6&quot; in your ' 
-                  <span id="afPath"></span>
-                <script>document.getElementById("afPath").innerHTML = Path; </script>
-                ' folder.<br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex6&quot; in your ' 
+                <code><span id="afPath"></span></code>
+            <script>document.getElementById("afPath").innerHTML = Path; </script>
+            ' folder.<br />
 
             <br />
 
@@ -303,18 +308,19 @@
 
         <div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Exercise 7- Advisors and Clubs Query Pt 2</a></div>
 
-        <div id="Exercise07" class="collapse in  col-lg-12">            <br />
+        <div id="Exercise07" class="collapse in  col-lg-12">
+            <br />
 
             <ul>
                 <li>View the AdvisorsAndClubs query datasheet. Change the query to display those records with Language or  Science club types. Sort the datasheet in ascending order by club name.</li>
             </ul>
 
             <p>(<strong>50</strong>) 7. Use the Snipping tool to  provide a screen shot of the AdvisorsAndClubs query, <strong>design</strong> <strong>view</strong>. </p>
-                            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-                Save the screen shot  as &quot;Ex7&quot; in your ' 
-                  <span id="ahPath"></span>
-                <script>document.getElementById("ahPath").innerHTML = Path; </script>
-                ' folder.<br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex7&quot; in your ' 
+                 <code><span id="ahPath"></span></code>
+            <script>document.getElementById("ahPath").innerHTML = Path; </script>
+            ' folder.<br />
 
             <br />
 
@@ -377,7 +383,7 @@
                 Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
                 <br />
                 From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
-                  <span id="dPath"></span>
+                <code><span id="dPath"></span></code>
                 <script>document.getElementById("dPath").innerHTML = Path; </script>
                 ' folder.<br />
             </p>
@@ -385,7 +391,7 @@
 
             <p>
                 (50) 10. Save your file 'WebPage.pdf' to the ' 
-                  <span id="ePath"></span>
+                 <code><span id="ePath"></span></code>
                 <script>document.getElementById("ePath").innerHTML = Path; </script>
                 ' folder.<br />
 
@@ -405,7 +411,7 @@
                 <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
                 <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
                 <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
-              <span id="fPath"></span>
+              <code><span id="fPath"></span></code>
                     <script>document.getElementById("fPath").innerHTML = Path; </script>
                     ' folder.<br />
                 </li>
@@ -414,7 +420,7 @@
 
             <p>
                 (50) 11. Save your file 'ScreenShots.pdf' to the ' 
-                  <span id="gPath"></span>
+                 <code><span id="gPath"></span></code>
                 <script>document.getElementById("gPath").innerHTML = Path; </script>
                 ' folder.<br />
 
@@ -429,7 +435,7 @@
             <p>&nbsp;</p>
             <p>
                 Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative03.pdf</strong>&#39; in ' 
-                  <span id="hPath"></span>
+                 <code><span id="hPath"></span></code>
                 <script>document.getElementById("hPath").innerHTML = Path; </script>
                 ' folder.<br />
 
@@ -487,10 +493,10 @@
     <div id="xfooter" class=" col-lg-12 text-muted"></div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../js/jquery-1.js"></script>
+    <script src="../../ReadOnly/jquery-1.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
 
 </body>
 </html>
