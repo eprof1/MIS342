@@ -16,5 +16,12 @@ PgP 6/25/2019 this is based on VS2019 pubxml file format, it works for VS2017 if
 <!-- In the line below replace MyNetworkUserName with your WSU network username -->
     <publishUrl>\\winona.edu\dfs\Students\ClassStorage\20203000007\MyNetworkUserName\</publishUrl>
     <DeleteExistingFiles>False</DeleteExistingFiles>
+    <!-- no need to place .git files on classes.winona.edu; PgP 8/20/2018 -->
+    <ExcludeFoldersFromDeployment>.git</ExcludeFoldersFromDeployment>
+    <!-- 
+    consider not deploying certain files shown below.  Not activated yet because must be tested.
+    Professor probably cannot do this in eprof1 master repo, but eprofessor repo?  PgP 8/20/2018
+    <ExcludeFilesFromDeployment>ReadMe.md;.gitattributes;.gitignore</ExcludeFilesFromDeployment>
+    -->
   </PropertyGroup>
 </Project>
