@@ -3,7 +3,7 @@ PgP 7/10/2019
    * This repository contains files and assignments for Winona State University MIS 342, Advanced Business Computer Applications class for the fall of 2019.
    * Using GitHub repos to distribute assignments
    * students create and maintain a website in order to complete these assignments.
-   * Using Visual Studio 2017 Enterprise.
+   * Using Visual Studio 2019 Enterprise.
 
 
 PgP 12/25/2018
