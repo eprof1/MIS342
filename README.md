@@ -1,6 +1,6 @@
-PgP 12/26/2018
+PgP 7/10/2019
 
-   * This repository contains all files and assignments for Winona State University MIS 202, Microcomputers in Business class for the spring of 2019.
+   * This repository contains files and assignments for Winona State University MIS 342, Advanced Business Computer Applications class for the fall of 2019.
    * Using GitHub repos to distribute assignments
    * students create and maintain a website in order to complete these assignments.
    * Using Visual Studio 2017 Enterprise.
