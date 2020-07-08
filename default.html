@@ -3,7 +3,10 @@
 
 <head>
 
-	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!--PgP 7/8/2020 updated page. 
+		constants.js file now completed in Formative00
+		constants.js file controls student information for attendance, email feedback and running assignment submission report. 
+		PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
 	<!-- PgP 2/5/2018  Need to update this page to a real RWD -->
 	<title>MIS342 Home Page</title>
 	<meta charset="utf-8">
@@ -29,23 +32,44 @@
 	</div>
 
 
-	<div class="row col-lg-12">
-		<div class="col-lg-5 h2 text-primary">
-			<!-- Replace USERNAME with your WSU network username in the line below   GROK -->
-			<a href="mailto:you@go.minnstate.edu?subject=MIS342AssignmentFeedback&amp;cc=mista@winona.edu&amp;body=For%20assistance%20correcting%20any%20errors%20please%20contact%20a%20course%20TA" class="bg-info text-white">
+	<!-- 
+		PgP 2/28/2020 Add separate form to submit attendance		
+		PgP 3/1/2020 Attendance form and new .asp script work nicely, modified courseconstants.js also
+	-->
 
-				<!-- PgP 6/15/2019 scirpted First Name  -->
-				Email to 
-                <span id="xName">
-					<script>document.getElementById("xName").innerHTML = xFirstName</script>
-				</span></a>
-		</div>
+	<div class="col-lg-12">
+		<hr />
+	</div>
 
-		<div class="col-lg-3">
-		</div>
+	<div class="col-lg-12">
 
-		<div class="col-lg-4 h2 text-primary ">
-			<a href="Attendance.html" class="bg-info text-white">Attendance</a>
+
+		<form class="container-fluid col-lg-4" action="https://eprofessor.azurewebsites.net/code/SubmitAttendance.asp" method="post" name="frmAttendance" id="frmAttendance">
+
+			<input class="form-control" name="FirstName" id="FirstName3" type="hidden" value="default first name">
+			<input class="form-control" name="LastName" id="LastName3" type="hidden" value="default last name">
+			<input class="form-control" name="pin3" id="pin3" type="hidden" value="default StarID">
+			<input class="form-control" name="email3" id="email3" type="hidden" value="default email address">
+			<input class="form-control" name="semester" id="semester3" type="hidden" value="default">
+			<input class="form-control" name="class" id="class3" value="xClass" type="hidden">
+			<input class="form-control" name="section" id="section3" value="default" type="hidden">
+			<input class="form-control" name="assignment" id="assignment3" value="Attendance" type="hidden">
+			<input name="InstID" id="InstID3" value="00617282" type="hidden">
+
+			<input class="text-danger btn-block btn-lg" type="submit" value="Submit Attendance" />
+			<hr />
+
+		</form>
+
+		<!-- PgP 2/28/2020 End of attendance form  -->
+
+
+		<div class="text-center">
+			<!--PgP 7/8/2020 email feedback to student 
+				PgP 3/2/2020 below is  Java Script generated mail to link -->
+			<div id="emailStudent"></div>
+			<script>document.getElementById("emailStudent").innerHTML = xMailTo</script>
+			<hr />
 		</div>
 	</div>
 
@@ -76,11 +100,6 @@
 		</div>
 
 	</form>
-
-
-
-
-
 
 
 
