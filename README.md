@@ -1,3 +1,9 @@
+PgP 7/8/2020
+  * all files for WSU MIS342 Advanced Business Computer Applications fall 2020
+  * updated home page, default.html, constants.js file populates values for individual student
+  * Project 2 covers connecting Access to mySQL and SQL server databases
+  * Project 3 covers creating an Access application
+
 PgP 7/10/2019
 
    * This repository contains files and assignments for Winona State University MIS 342, Advanced Business Computer Applications class for the fall of 2019.
