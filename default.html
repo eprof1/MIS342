@@ -64,10 +64,7 @@
 
 
 
-
-
 		<form class="container-fluid col-lg-4" action="https://eprofessor.azurewebsites.net/code/grading/CourseAssignmentSubmissions.asp" method="post" name="frmAssignment" id="frmAssignment">
-
 
 			<!-- PgP 6/15/2019 add hidden fields -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
 
@@ -83,21 +80,20 @@
 
 			<!-- -end-Student, class and assignment information-end -->
 
-
 			
-				<input class="text-danger btn-block btn-lg" name="Submit" value="Run Assignment Submissions Report" type="submit">
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Run Assignment Submissions Report" type="submit">
 				<hr />
 
 		</form>
 
+
 		<div class="text-center">
 			<!--PgP 7/8/2020 email feedback to student 
-				PgP 3/2/2020 below is  Java Script generated mail to link -->
+				PgP 3/2/2020 below is Java Script generated mail to link -->
 			<div id="emailStudent"></div>
 			<script>document.getElementById("emailStudent").innerHTML = xMailTo</script>
 			<hr />
 		</div>
-
 
 
 	</div>
@@ -112,8 +108,8 @@
 			</tr>
 			<tr>
 				<td>1</td>
-				<td>Formative00</td>
-				<td>&nbsp;</td>
+				<td><a href="Formative00/Formative00.html">Formative00</a></td>
+				<td>Project01-<a href="https://eprofessor.azurewebsites.net/Code/EntryFormWebsiteURL.asp" target="_blank">submit url</a></td>
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
