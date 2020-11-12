@@ -1,4 +1,6 @@
-this is the expression to type into the Access VBA Immediate Window for Northwind.mdb for Formative10, answer is:   92.4859 
+this is the expression to type into the Access VBA Immediate Window for Northwind.mdb for Formative10
+log(2.7182889) + (17 * 7)^2.8 / 44 + log(34) - 15 mod 6
+answer is:   14727.3235
 
 
 
