@@ -1,3 +1,8 @@
+PgP 5/13/2021
+* Kyle Stay is making me do things correctly
+* Let's try a pull request and see what happens
+* this will go into effect Fall 2021
+
 PgP 7/8/2020
   * all files for WSU MIS342 Advanced Business Computer Applications fall 2020
   * updated home page, default.html, constants.js file populates values for individual student
