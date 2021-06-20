@@ -1,3 +1,6 @@
+PgP 6/20/2021
+* updating for Fall 2021
+
 PgP 5/13/2021
 * Kyle Stay is making me do things correctly
 * Let's try a pull request and see what happens
