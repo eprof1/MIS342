@@ -1,27 +1,22 @@
 <!doctype html>
 <html lang="en">
 
+
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>MIS342Summative01</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
 
-    <!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
-    <!-- Bootstrap -->
-    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+	<!-- model assignment file, version 1 released 2018/02/18 PgP -->
 
-    <!-- constant file for student firstname, lastname, starid on students' pages -->
-    <script src="../constants.js"></script>
-
-    <!-- course constant file that contains semester, class, section pages -->
-    <script src="../../ReadOnly/CourseConstants.js"></script>
-
-    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
-
+	<title>MIS342 Summative01</title>
 </head>
 
-<body onload="setVariables()">
+
+
+<body class="container-fluid" >
 
     <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
         <input name="InstID" id="InstID" value="00617282" type="hidden">
@@ -68,8 +63,8 @@
         </div>
         <!-- -end-Student, class and assignment information-end -->
 
-        <!-- Calculate the correct path for saving the files -->
-        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+        <!-- Calculate the correct path for saving the files
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>   -->
 
 
         <div class="col-lg-12">
@@ -175,8 +170,7 @@
 
                 <!--  PgP 2/4/2018 create path using constants and current document assignment -->
                 Save the screen shot  as &quot;Ex1&quot; in your ' 
-                  <code><span id="aPath"></span></code>
-                <script>document.getElementById("aPath").innerHTML = Path </script>
+                  <code><span id="Path1"></span></code>
                 ' folder.<br />
 
                 You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
@@ -341,6 +335,18 @@
             </p>
 
 
+<div id="screenshotsBlock"></div>
+<script>
+    fetch("../includes/screenshot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("screenshotsBlock").innerHTML = html;
+        });
+</script>
+
+
+
+
             <p>(50) 7. Upload your file 'Summative01.pdf' to the D2L 'Summative01' Assignment folder.</p>
 
             <div class="text-danger">
@@ -385,17 +391,19 @@
     </form>
 
 
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
 
     <!-- Creative Commons License Info -->
-    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
 
-    <div id="xfooter" class=" col-lg-12 text-muted"></div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- ========== Script Includes (Order is Critical) ========== -->
     <script src="../../ReadOnly/jquery-1.js"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../../ReadOnly/bootstrap.js"></script>
-
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
 </body>
 </html>
