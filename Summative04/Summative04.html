@@ -1,75 +1,155 @@
 <!doctype html>
 <html lang="en">
 
-<head>
+<!--
+    PgP 7/30/2025 add LinkedIn Learning as reflective assignment
+	PgP 3/2/2020 updating MIS202 files to align with other assignments 
+-->
 
-    <title>MIS342Summative04</title>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
     <!-- Bootstrap -->
     <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
 
-    <!-- constant file for student firstname, lastname, starid on students' pages -->
-    <script src="../constants.js"></script>
-
-    <!-- course constant file that contains semester, class, section pages -->
-    <script src="../../ReadOnly/CourseConstants.js"></script>
-
     <!-- model assignment file, version 1 released 2018/02/18 PgP -->
 
+    <title>MIS342Summative04</title>
 </head>
 
-<body onload="setVariables()">
+<body class="container-fluid">
 
     <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
         <input name="InstID" id="InstID" value="00617282" type="hidden">
 
-        <h1 class=" text-center">Forms and Report Basics</h1>
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
 
+        <h1 class=" text-center">Form and Report Basics </h1>
+
+        <h2 id="student-info" class="sr-only">Student Information</h2>
         <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
-        <div class="row col-lg-12">
-            <div class="col-lg-3">
-                <label class="text-primary" for="FirstName">First Name:</label>
-                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+        <div class="row" aria-labelledby="student-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="FirstName" class="text-dark">First Name:</label>
+                    <input class="form-control"
+                        name="FirstName"
+                        id="FirstName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="given-name"
+                        aria-label="First Name"
+                        tabindex="0" />
+                </div>
             </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="LastName">Last Name:</label>
-                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="LastName" class="text-dark">Last Name:</label>
+                    <input class="form-control"
+                        name="LastName"
+                        id="LastName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="family-name"
+                        aria-label="Last Name"
+                        tabindex="0" />
+                </div>
             </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="pin">StarID:</label>
-                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="StarID" class="text-dark">StarID:</label>
+                    <input class="form-control"
+                        name="StarID"
+                        id="StarID"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="username"
+                        aria-label="StarID"
+                        tabindex="0" />
+                </div>
             </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="email">Email:</label>
-                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="email" class="text-dark">Email:</label>
+                    <input class="form-control"
+                        name="email"
+                        id="email"
+                        type="email"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="email"
+                        aria-label="Email"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+        <input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+        <h2 id="course-info" class="sr-only">Course Information</h2>
+        <div class="row" aria-labelledby="course-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Semester" class="text-dark">Semester:</label>
+                    <input class="form-control"
+                        name="Semester"
+                        id="Semester"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Semester"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Class" class="text-dark">Class:</label>
+                    <input class="form-control"
+                        name="Class"
+                        id="Class"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Class"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Section" class="text-dark">Section:</label>
+                    <input class="form-control"
+                        name="Section"
+                        id="Section"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Section"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="assignment" class="text-dark">Assignment:</label>
+                    <input class="form-control"
+                        name="assignment"
+                        id="assignment"
+                        type="text"
+                        readonly
+                        value="Summative04"
+                        aria-readonly="true"
+                        aria-label="Assignment"
+                        tabindex="0" />
+                </div>
             </div>
         </div>
 
-        <div class="row col-lg-12">
-            <div class="col-lg-3">
-                <label class="text-primary" for="semester">Semester:</label>
-                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
-            </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="class">Class:</label>
-                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
-            </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="section">Section:</label>
-                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
-            </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="assignment">Assignment:</label>
-                <input class="form-control" name="assignment" id="assignment" value="Summative04" type="text" readonly="readonly">
-            </div>
-        </div>
         <!-- -end-Student, class and assignment information-end -->
 
-        <!-- Calculate the correct path for saving the files -->
-        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
 
 
         <div class="col-lg-12">
@@ -166,8 +246,7 @@
 
                 <!--  PgP 2/4/2018 create path using constants and current document assignment -->
                 Save the screen shot  as &quot;Ex1&quot; in your ' 
-                 <code><span id="bPath"></span></code>
-                <script>document.getElementById("bPath").innerHTML = Path; </script>
+                 <code><span id="Path1"></span></code>
                 ' folder.<br />
                 <br />
             </p>
@@ -206,8 +285,7 @@
 
             <!--  PgP 2/4/2018 create path using constants and current document assignment -->
             Save the screen shot  as &quot;Ex2&quot; in your ' 
-                 <code><span id="aaPath"></span></code>
-            <script>document.getElementById("aaPath").innerHTML = Path; </script>
+                 <code><span id="Path2"></span></code>
             ' folder.<br />
             <br />
 
@@ -240,8 +318,7 @@
 
             <!--  PgP 2/4/2018 create path using constants and current document assignment -->
             Save the screen shot  as &quot;Ex3&quot; in your ' 
-                  <code><span id="abPath"></span></code>
-            <script>document.getElementById("abPath").innerHTML = Path; </script>
+                  <code><span id="Path3"></span></code>
             ' folder.<br />
             <br />
 
@@ -436,8 +513,7 @@
 
                 <!--  PgP 2/4/2018 create path using constants and current document assignment -->
                 Save the screen shot  as &quot;Ex5&quot; in your ' 
-                <code><span id="acPath"></span></code>
-                <script>document.getElementById("acPath").innerHTML = Path; </script>
+                <code><span id="Path4"></span></code>
                 ' folder.<br />
                 <br />
 
@@ -474,8 +550,7 @@
 
                 <!--  PgP 2/4/2018 create path using constants and current document assignment -->
                 Save the screen shot  as &quot;Ex6&quot; in your ' 
-                <code><span id="adPath"></span></code>
-                <script>document.getElementById("adPath").innerHTML = Path; </script>
+                <code><span id="Path5"></span></code>
                 ' folder.<br />
                 <br />
 
@@ -504,8 +579,7 @@
 
                 <!--  PgP 2/4/2018 create path using constants and current document assignment -->
                 Save the screen shot  as &quot;Ex7&quot; in your ' 
-                 <code><span id="aePath"></span></code>
-                <script>document.getElementById("aePath").innerHTML = Path; </script>
+                 <code><span id="Path6"></span></code>
                 ' folder.<br />
                 <br />
 
@@ -556,16 +630,14 @@
                     Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
                     <br />
                     From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
-                <code><span id="dPath"></span></code>
-                    <script>document.getElementById("dPath").innerHTML = Path; </script>
+                <code><span id="Path7"></span></code>
                     ' folder.<br />
                 </p>
                 <br />
 
                 <p>
                     (50) 9. Save your file 'WebPage.pdf' in your ' 
-              <code><span id="ePath"></span></code>
-                    <script>document.getElementById("ePath").innerHTML = Path; </script>
+              <code><span id="Path8"></span></code>
                     ' folder.<br />
 
 
@@ -576,25 +648,28 @@
                     <hr />
                 </div>
 
-                <p>Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+			<p>
+				Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
+			</p>
 
-                <ol>
-                    <li>Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
-                    <li>Select all of the screen shots to be combined. </li>
-                    <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
-                    <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
-                    <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
-             <code><span id="fPath"></span></code>
-                        <script>document.getElementById("fPath").innerHTML = Path; </script>
-                        ' folder.<br />
-                    </li>
-                </ol>
-
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Screenshots</code></li>
+                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path9"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+            </ol>
+            <hr>
 
                 <p>
                     (50) 10. Save your file 'ScreenShots.pdf' in your ' 
-                 <code><span id="gPath"></span></code>
-                    <script>document.getElementById("gPath").innerHTML = Path; </script>
+                 <code><span id="Path10"></span></code>
                     ' folder.<br />
 
                 </p>
@@ -608,8 +683,7 @@
                 <p>&nbsp;</p>
                 <p>
                     Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative04.pdf</strong>&#39; in your ' 
-                  <code><span id="hPath"></span></code>
-                    <script>document.getElementById("hPath").innerHTML = Path; </script>
+                  <code><span id="Path11"></span></code>
                     ' folder.<br />
 
                 </p>
@@ -673,18 +747,20 @@
     </form>
 
 
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
 
     <!-- Creative Commons License Info -->
-    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
 
-    <div id="xfooter" class=" col-lg-12 text-muted"></div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- ========== Script Includes (Order is Critical) ========== -->
     <script src="../../ReadOnly/jquery-1.js"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../../ReadOnly/bootstrap.js"></script>
-
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
 </body>
 </html>
 
