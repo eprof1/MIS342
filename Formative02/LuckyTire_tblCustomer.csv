@@ -1,0 +1,9 @@
+CustID,First,Last,Address,City,State,Zip,Phone,Make,Model,Year
+101,Avery,Johnson,1872 Juniper Ave,Upland,CA,91786,909-555-1101,Toyota,Camry,2020
+102,Jordan,Lee,420 Oak St,Corona,CA,92882,951-555-1202,Honda,CR-V,2018
+103,Morgan,Patel,88 River Rd,Riverside,CA,92501,951-555-1303,Ford,F-150,2021
+104,Taylor,Nguyen,701 Pine Ave,Upland,CA,91784,909-555-1404,Subaru,Outback,2017
+105,Casey,Martin,19 Valley Dr,Ontario,CA,91761,909-555-1505,Chevrolet,Equinox,2022
+106,Riley,Garcia,315 Citrus Ave,Corona,CA,92879,951-555-1606,Nissan,Rogue,2019
+107,Sam,Wilson,990 Main St,Riverside,CA,92507,951-555-1707,Jeep,Cherokee,2016
+108,Alex,Kim,612 Palm Ave,Ontario,CA,91764,909-555-1808,Mazda,CX-5,2018

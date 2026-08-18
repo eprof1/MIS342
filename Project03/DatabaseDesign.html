@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+    <title>MIS342 Project03 Database Structure Review Guide</title>
+</head>
+<body class="container-fluid">
+    <h1>Project03 Database Structure Review Guide</h1>
+
+    <div class="alert alert-info">
+        <strong>Project03 starts with instructor-provided tables and relationships.</strong>
+        Your job is not to redesign the entire database from scratch. Inspect the structure, identify and correct material problems when necessary, and then build the application layer.
+    </div>
+
+    <h2>1. Confirm the business purpose</h2>
+    <ul>
+        <li>What business processes do the supplied tables represent?</li>
+        <li>What information must employees enter, retrieve, update, summarize, and report?</li>
+        <li>What decisions should the application support?</li>
+    </ul>
+
+    <h2>2. Inspect each table</h2>
+    <ul>
+        <li>Does the table represent one main subject?</li>
+        <li>Is there a primary key that uniquely identifies each record?</li>
+        <li>Are field names understandable and data types appropriate?</li>
+        <li>Are required fields, defaults, validation rules, and indexes appropriate for the business rule?</li>
+        <li>Are there repeated groups or obvious duplicated facts that should be stored elsewhere?</li>
+    </ul>
+
+    <h2>3. Inspect relationships and referential integrity</h2>
+    <ul>
+        <li>Identify every primary-key/foreign-key relationship used by the application.</li>
+        <li>Verify one-to-many, one-to-one, and junction-table relationships where present.</li>
+        <li>Confirm that related key fields use compatible data types.</li>
+        <li>Evaluate whether referential integrity should be enforced and whether cascade options are appropriate.</li>
+    </ul>
+
+    <h2>4. Evaluate normalization through at least 3NF</h2>
+    <p>Use normalization as a diagnostic tool, not as a requirement to maximize the number of tables.</p>
+    <ul>
+        <li><strong>1NF:</strong> fields contain atomic values and there are no repeating groups.</li>
+        <li><strong>2NF:</strong> non-key facts depend on the whole key.</li>
+        <li><strong>3NF:</strong> non-key facts depend on the key rather than on other non-key facts.</li>
+    </ul>
+    <p>If you identify a possible normalization issue, explain the business consequence before changing the supplied structure.</p>
+
+    <h2>5. Plan the application objects from business tasks</h2>
+    <p>Do not create objects merely to satisfy a count. Every object must have a stated purpose.</p>
+    <ul>
+        <li><strong>Queries:</strong> what information question or data-change task does each query support?</li>
+        <li><strong>Forms:</strong> who uses the form, for what workflow, and what input/validation controls are needed?</li>
+        <li><strong>Reports:</strong> who is the audience, what decision does the report support, and what grouping/summary is useful?</li>
+        <li><strong>Macros/events/VBA:</strong> what repeated workflow should be automated, and what happens if the automation is wrong?</li>
+    </ul>
+
+    <h2>6. Test before declaring an object complete</h2>
+    <p>For important objects, use a small test plan containing:</p>
+    <ul>
+        <li>normal valid case;</li>
+        <li>boundary or unusual valid case;</li>
+        <li>invalid/missing input;</li>
+        <li>no-match or empty-result case when relevant;</li>
+        <li>multiple-match/duplicate case when relevant;</li>
+        <li>known expected calculation or total.</li>
+    </ul>
+
+    <h2>7. Verify the complete application</h2>
+    <ul>
+        <li>Can a new user navigate the application without depending on the Access Navigation Pane?</li>
+        <li>Do forms update the intended records?</li>
+        <li>Do queries return correct rows/calculations?</li>
+        <li>Do reports agree with their source queries?</li>
+        <li>Do macros/VBA perform the intended business rule?</li>
+        <li>Can the application recover from an error or bad input without damaging the data?</li>
+    </ul>
+
+    <h2>8. Use AI as a reviewer, not as proof</h2>
+    <p>Hermes or the course AI assistant may explain, critique, propose SQL/VBA, generate test cases, and help troubleshoot. A generated answer is not evidence. Test every accepted recommendation in Access and preserve human approval for data-changing or automated actions.</p>
+
+    <p><a href="Project3.htm">Return to Project03</a></p>
+</body>
+</html>

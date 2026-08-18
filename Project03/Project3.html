@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+    <title>MIS342 Project03 — Complete Business Database Application</title>
+</head>
+<body class="container-fluid">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/codex/ProcessAICall.aspx" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+        <input name="assignmentVersion" id="assignmentVersion" value="Project03-FA2026-v1" type="hidden">
+        <input name="reflectionQuestion" id="reflectionQuestion" value="7" type="hidden">
+        <textarea id="datasetContext" name="datasetContext" readonly hidden>Assignment: MIS342 Project03 — Complete Business Database Application. Students receive an instructor-provided Access database containing the required business tables and relationships. They inspect and evaluate the supplied structure, correct only material issues when justified, then build a complete application layer including purposeful queries, forms/subforms, reports, navigation, at least one macro/event workflow, and at least one introductory VBA standard module/function or procedure. Students develop and execute systematic tests, document evidence, and demonstrate the application. Collaboration on planning and troubleshooting is permitted, but every student submits an individual final database and must be able to explain the work. ODBC is not required in Project03. Hermes is optional and Direct Mode is allowed. Primary alignment is CLO 12 with substantial evidence for CLOs 3 through 8 and 11.</textarea>
+
+        <h1 class="text-center">Project03 — Complete Business Database Application</h1>
+        
+        <h2 id="student-info" class="sr-only">Student Information</h2>
+        <div class="row" aria-labelledby="student-info">
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" readonly aria-readonly="true" autocomplete="given-name">
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" readonly aria-readonly="true" autocomplete="family-name">
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="StarID">StarID:</label>
+                <input class="form-control" name="StarID" id="StarID" type="text" readonly aria-readonly="true" autocomplete="username">
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" readonly aria-readonly="true" autocomplete="email">
+            </div></div>
+        </div>
+        <input name="pin" id="pin" type="hidden">
+
+        <h2 id="course-info" class="sr-only">Course Information</h2>
+        <div class="row" aria-labelledby="course-info">
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Semester">Semester:</label>
+                <input class="form-control" name="Semester" id="Semester" type="text" readonly aria-readonly="true">
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Class">Class:</label>
+                <input class="form-control" name="Class" id="Class" type="text" readonly aria-readonly="true">
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Section">Section:</label>
+                <input class="form-control" name="Section" id="Section" type="text" readonly aria-readonly="true">
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" type="text" value="Project03" readonly aria-readonly="true">
+            </div></div>
+        </div>
+
+
+        <div class="col-lg-12"><br><input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit"><br></div>
+        <div class="col-lg-12 h3 text-danger">1000 Points<hr></div>
+
+        
+        <div class="col-lg-12">
+            <a href="#HermesWorkContext" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="HermesWorkContext">Hermes Agent Work Context</a>
+        </div>
+        <div id="HermesWorkContext" class="collapse in col-lg-12">
+            <p><strong>Hermes is optional.</strong> Use the course-specific <code>mis342</code> profile when Hermes would help with explanation, planning, troubleshooting, alternatives, review, or verification.</p>
+            <pre>First use:  /new Project03
+Return later: /resume Project03
+When finished: /quit</pre>
+            <p><strong>Direct Mode:</strong> You may complete routine or entire project steps directly in Access, MariaDB/MySQL tools, Visual Studio, or other required software when you understand the task. You must still verify the result yourself.</p>
+            <p><strong>Suggested Hermes checkpoint:</strong> Ask Hermes to review one application object or test plan and identify a missing business rule, edge case, usability issue, or verification step. Accept, revise, or reject its recommendation after testing in Access.</p>
+            <p>Hermes is a coach. It does not replace hands-on work, independent testing, required project files, or your final judgment. No Hermes screenshot or transcript is required.</p>
+            <p><strong>Security:</strong> never place passwords, API keys, ODBC passwords, private connection strings, or restricted data in prompts, screenshots, source files, GitHub, or the project webpage.</p>
+            <hr>
+        </div>
+
+
+        <div class="col-lg-12"><a href="#Purpose" class="btn btn-info" data-toggle="collapse">Project Purpose and Learning Outcomes</a></div>
+        <div id="Purpose" class="collapse in col-lg-12">
+            <p>Project03 is the capstone Access application project. You are given the relational data foundation; your primary responsibility is to turn that structure into a coherent, tested business application.</p>
+            <p><strong>Primary CLO:</strong> CLO 12 — Develop, document, demonstrate, and evaluate a complete business database application.</p>
+            <p><strong>Supporting CLOs:</strong> CLOs 3, 4, 5, 6, 7, 8, and 11.</p>
+            <p>After completing this project, you will be able to:</p>
+            <ol>
+                <li>Inspect and evaluate an existing relational structure through at least 3NF.</li>
+                <li>Create purposeful queries that retrieve, calculate, summarize, parameterize, or appropriately modify data.</li>
+                <li>Create forms/subforms and navigation that support business workflows.</li>
+                <li>Create reports designed for specific operational or managerial audiences.</li>
+                <li>Automate one appropriate workflow with a macro/event and one introductory VBA module/procedure.</li>
+                <li>Develop and execute a systematic test plan and explain the evidence that the application works.</li>
+            </ol>
+            <div class="alert alert-info"><strong>Individual accountability:</strong> you may collaborate on planning, troubleshooting, and peer review, but every student submits an individual final database and must be able to demonstrate and explain it.</div>
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><a href="#StartingPoint" class="btn btn-info" data-toggle="collapse">Starting Point and Design Boundary</a></div>
+        <div id="StartingPoint" class="collapse in col-lg-12">
+            <ul>
+                <li>Use the instructor-provided Project03 Access database containing the required business tables and relationships.</li>
+                <li>Do <strong>not</strong> create a completely new schema just to increase the number of tables.</li>
+                <li>Use <a href="DatabaseDesign.htm">Project03 Database Structure Review Guide</a> to inspect keys, relationships, data types, referential integrity, and normalization.</li>
+                <li>You may correct a material structural problem, but document the problem, reason, change, and test.</li>
+                <li>ODBC is <strong>not required</strong> for Project03. The project must remain demonstrable even if external servers are unavailable.</li>
+            </ul>
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><a href="#Requirements" class="btn btn-info" data-toggle="collapse">Required Application Components</a></div>
+        <div id="Requirements" class="collapse in col-lg-12">
+            <p>Object counts are minimum evidence, not the goal. Every object must have a clear business purpose and be tested.</p>
+            <table class="table table-striped table-bordered">
+                <thead><tr><th>Component</th><th>Minimum</th><th>Required evidence</th></tr></thead>
+                <tbody>
+                    <tr><td>Relational structure review</td><td>All supplied core tables</td><td>Keys, relationships, RI, normalization through 3NF; documented material changes only</td></tr>
+                    <tr><td>Queries</td><td>5 purposeful queries</td><td>Must collectively include multi-table join, parameter/criteria, calculated field, aggregate/summary, and one appropriate action or exception query</td></tr>
+                    <tr><td>Forms</td><td>3</td><td>At least one main form/subform; at least one data-entry/maintenance form; one navigation/menu interface</td></tr>
+                    <tr><td>Reports</td><td>3</td><td>At least one grouped/summary management report and one operational/detail report</td></tr>
+                    <tr><td>Macro/event automation</td><td>1</td><td>Automate a useful navigation or workflow task</td></tr>
+                    <tr><td>VBA module/procedure</td><td>1</td><td>Implement a simple, testable business calculation, validation, or workflow—not merely decorative code</td></tr>
+                    <tr><td>Testing</td><td>Systematic plan</td><td>Normal, boundary/unusual, invalid/error, and known-result tests as appropriate</td></tr>
+                    <tr><td>Documentation</td><td>Complete</td><td>Object purpose list, test results, known limitations, and user/startup guidance</td></tr>
+                </tbody>
+            </table>
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Phase 1 — Structure Review and Application Plan</a></div>
+        <div id="Exercise01" class="collapse in col-lg-12">
+            <ol>
+                <li>Create a working copy of the instructor-provided database and preserve an untouched original.</li>
+                <li>Use DatabaseDesign.htm to inspect keys, data types, relationships, referential integrity, and normalization.</li>
+                <li>Identify the main business processes represented by the data.</li>
+                <li>Create an object plan: list the purpose of each proposed query, form, report, macro/event, and VBA procedure.</li>
+                <li>Define at least five business questions/tasks the application must support.</li>
+                <li>Create a preliminary test plan before building the final objects.</li>
+            </ol>
+            
+            <p>
+                <label for="q1"><strong>Question 1</strong></label>
+                <textarea class="form-control" id="q1" name="q1" rows="4" readonly aria-readonly="true">What is the most important structural strength or issue you found in the supplied tables/relationships, and what evidence supports your evaluation?</textarea>
+                <br>
+                <label for="a1"><strong>Your answer:</strong></label>
+                <input class="form-control" id="a1" name="a1" type="text" size="500" maxlength="500"
+                    value="[Replace this text with your answer]">
+            </p>
+
+            
+            <p>
+                <label for="q2"><strong>Question 2</strong></label>
+                <textarea class="form-control" id="q2" name="q2" rows="4" readonly aria-readonly="true">Name one planned query, form, and report and briefly state the distinct business purpose of each.</textarea>
+                <br>
+                <label for="a2"><strong>Your answer:</strong></label>
+                <input class="form-control" id="a2" name="a2" type="text" size="500" maxlength="500"
+                    value="[Replace this text with your answer]">
+            </p>
+
+            
+            <h3>Screenshot A — Relationships and Application Plan</h3>
+            <p>Capture the Access Relationships window with the core supplied tables/relationships visible. In the DAN evidence text, connect the structure to at least one planned application object.</p>
+            <p>Paste the screenshot into the project evidence page in OneNote and label it <strong>Screenshot A — Relationships and Application Plan</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> explain what the screenshot proves.</li>
+                <li><strong>Business/course relevance:</strong> explain why the demonstrated result matters.</li>
+            </ul>
+
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Phase 2 — Build the Application Layer</a></div>
+        <div id="Exercise02" class="collapse in col-lg-12">
+            <ol>
+                <li>Create the required purposeful queries and verify representative results.</li>
+                <li>Create the required forms, including a main form/subform and a data-entry/maintenance form.</li>
+                <li>Create a startup/navigation form that allows a user to reach the main application functions without depending on the Navigation Pane.</li>
+                <li>Create three audience-focused reports, including a grouped/summary management report.</li>
+                <li>Create one macro/event workflow.</li>
+                <li>Create one standard VBA module/procedure with a known business rule that can be tested.</li>
+                <li>Use consistent naming such as qry..., frm..., rpt..., mcr.../macro names, and mod... for a standard module.</li>
+            </ol>
+            
+            <p>
+                <label for="q3"><strong>Question 3</strong></label>
+                <textarea class="form-control" id="q3" name="q3" rows="4" readonly aria-readonly="true">Which application object required the most reasoning to design correctly, what business task does it support, and how did you verify it?</textarea>
+                <br>
+                <label for="a3"><strong>Your answer:</strong></label>
+                <input class="form-control" id="a3" name="a3" type="text" size="500" maxlength="500"
+                    value="[Replace this text with your answer]">
+            </p>
+
+            
+            <p>
+                <label for="q4"><strong>Question 4</strong></label>
+                <textarea class="form-control" id="q4" name="q4" rows="4" readonly aria-readonly="true">What business rule does your macro/event or VBA procedure automate, and what could go wrong if the automation were incorrect?</textarea>
+                <br>
+                <label for="a4"><strong>Your answer:</strong></label>
+                <input class="form-control" id="a4" name="a4" type="text" size="500" maxlength="500"
+                    value="[Replace this text with your answer]">
+            </p>
+
+            
+            <h3>Screenshot B — Application Workflow</h3>
+            <p>Capture the startup/navigation form with a meaningful working form/subform or report visible after navigation. The screenshot should demonstrate a coherent user workflow, not just object existence.</p>
+            <p>Paste the screenshot into the project evidence page in OneNote and label it <strong>Screenshot B — Application Workflow</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> explain what the screenshot proves.</li>
+                <li><strong>Business/course relevance:</strong> explain why the demonstrated result matters.</li>
+            </ul>
+
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Phase 3 — Test, Evaluate, and Demonstrate</a></div>
+        <div id="Exercise03" class="collapse in col-lg-12">
+            <ol>
+                <li>Execute the planned normal, boundary/unusual, invalid/error, and known-result tests.</li>
+                <li>Correct defects and rerun the failed tests.</li>
+                <li>Verify at least one query result against source records, one report total against its source query, one form edit against the underlying table, and one VBA/macro result against a known expected outcome.</li>
+                <li>Document any known limitation that remains and explain why it is acceptable or how it should be addressed later.</li>
+                <li>Have another student perform a short usability test if class time permits; incorporate a useful improvement when justified.</li>
+                <li>Prepare a concise demonstration that shows the business workflow rather than clicking randomly through objects.</li>
+            </ol>
+            
+            <p>
+                <label for="q5"><strong>Question 5</strong></label>
+                <textarea class="form-control" id="q5" name="q5" rows="4" readonly aria-readonly="true">Describe one defect or weakness your testing found, how you corrected it, and what retest proved the correction worked.</textarea>
+                <br>
+                <label for="a5"><strong>Your answer:</strong></label>
+                <input class="form-control" id="a5" name="a5" type="text" size="500" maxlength="500"
+                    value="[Replace this text with your answer]">
+            </p>
+
+            
+            <p>
+                <label for="q6"><strong>Question 6</strong></label>
+                <textarea class="form-control" id="q6" name="q6" rows="4" readonly aria-readonly="true">What is the strongest evidence that your final database is an integrated business application rather than merely a collection of Access objects?</textarea>
+                <br>
+                <label for="a6"><strong>Your answer:</strong></label>
+                <input class="form-control" id="a6" name="a6" type="text" size="500" maxlength="500"
+                    value="[Replace this text with your answer]">
+            </p>
+
+            
+            <h3>Screenshot C — Verified Final Application</h3>
+            <p>Capture the final application showing a meaningful result such as a tested report total, query result, or automated workflow together with enough interface context to identify the application.</p>
+            <p>Paste the screenshot into the project evidence page in OneNote and label it <strong>Screenshot C — Verified Final Application</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> explain what the screenshot proves.</li>
+                <li><strong>Business/course relevance:</strong> explain why the demonstrated result matters.</li>
+            </ul>
+
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><a href="#Reflection" class="btn btn-info" data-toggle="collapse">Final Reflection</a></div>
+        <div id="Reflection" class="collapse in col-lg-12">
+            <label for="q7"><strong>Final Reflection</strong></label>
+            <textarea class="form-control" id="q7" name="q7" rows="7" readonly aria-readonly="true">Looking across the entire Project03 application, what design or testing decision most improved the reliability or usability of your database? Explain the evidence that led you to that conclusion and identify one improvement you would make if the application were deployed to real employees.</textarea>
+            <br>
+            <label for="a7"><strong>Your reflection:</strong></label>
+            <textarea class="form-control" id="a7" name="a7" rows="12" maxlength="3000" placeholder="Type or paste your reflection here..."></textarea>
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><a href="#Deliverables" class="btn btn-info" data-toggle="collapse">Final Deliverables and Grading</a></div>
+        <div id="Deliverables" class="collapse in col-lg-12">
+            <h2>Required individual files</h2>
+            <ol>
+                <li><strong>Project03.accdb</strong> — your complete working database application.</li>
+                <li><strong>Project03.pdf</strong> — exported OneNote project evidence page containing Screenshot A, B, C, verification/relevance statements, final reflection, and WebPage.pdf.</li>
+                <li>Any separately required source file such as a `.bas` export when directed by the instructor.</li>
+            </ol>
+            <p><strong>Do not submit only screenshots.</strong> The executable Access database is the primary artifact.</p>
+
+            <h2>Grading emphasis</h2>
+            <table class="table table-striped table-bordered">
+                <tbody>
+                    <tr><th>Structure review and integrity</th><td>15%</td></tr>
+                    <tr><th>Queries and information logic</th><td>20%</td></tr>
+                    <tr><th>Forms, navigation, and usability</th><td>20%</td></tr>
+                    <tr><th>Reports and communication</th><td>15%</td></tr>
+                    <tr><th>Macro/VBA automation</th><td>10%</td></tr>
+                    <tr><th>Testing, troubleshooting, and verification</th><td>15%</td></tr>
+                    <tr><th>Documentation and demonstration</th><td>5%</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>Quality matters more than object count.</strong> A smaller number of correct, purposeful, integrated objects will score higher than unnecessary objects created only to satisfy a checklist.</p>
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><a href="#Submission" class="btn btn-info" data-toggle="collapse">Complete and Submit Project03</a></div>
+        <div id="Submission" class="collapse in col-lg-12">
+            <ol>
+                <li>Verify the final database opens without startup errors and that the main navigation form works.</li>
+                <li>Confirm Screenshot A, B, and C and their verification/relevance statements are complete in OneNote.</li>
+                <li>Print the published Project03 webpage to WebPage.pdf and insert it as a readable printout.</li>
+                <li>Export the evidence page as Project03.pdf.</li>
+                <li>Upload Project03.accdb and Project03.pdf to the Project03 D2L folder.</li>
+                <li>Submit the published webpage to the web database and review the formative AI feedback.</li>
+                <li>Be prepared to demonstrate and explain your individual database.</li>
+            </ol>
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><br><input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit"><br></div>
+
+    </form>
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+</body>
+</html>

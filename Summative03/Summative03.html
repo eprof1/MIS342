@@ -2,617 +2,388 @@
 <html lang="en">
 
 <!--
-    PgP 7/30/2025 add LinkedIn Learning as reflective assignment
-	PgP 3/2/2020 updating MIS202 files to align with other assignments 
+PgP 8/16/2026 MIS342 Summative03 redesign
+- aligned to LuckyTire Formative03
+- structure based on approved modified MIS342 Summative01
+- maximum three exercises, maximum two questions per exercise
+- Digital Artifact Notebook evidence limited to one screenshot per exercise
+- Personal Hermes Agent optional beginning with Summative04; Direct Mode remains available
 -->
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap -->
     <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
-
-    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
-
-    <title>MIS342Summative03</title>
+    <title>MIS342 Summative03</title>
 </head>
 
 <body class="container-fluid">
 
-    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/codex/ProcessAICall.aspx" method="post" name="frmAssignment" id="frmAssignment">
 
         <input name="InstID" id="InstID" value="00617282" type="hidden">
+        <input name="assignmentVersion" id="assignmentVersion" value="Summative03-FA2026-v1" type="hidden">
+        <input name="reflectionQuestion" id="reflectionQuestion" value="7" type="hidden">
 
-        <!-- had to put assignment here, because it is used in the path calculation -->
-        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+        <textarea id="datasetContext" name="datasetContext" readonly hidden>Assignment: MIS342 Summative03 — LuckyTire Relationships and Queries. Aligned with Formative03. Students begin with a clean normalized LuckyTire Access database, inspect relationships, create a multi-table customer-sales-tire query with a calculated ExtendedAmount field, apply meaningful criteria/sorting, inspect Access SQL, and independently verify returned rows and calculations. Three exercises, six short answers, three DAN screenshots, one reflection, standard completion for 700 points. Direct Mode is standard; Personal Hermes Agent is not used yet. Reward correct join logic, criteria, calculations, Access SQL interpretation, and evidence-based verification.</textarea>
 
-        <h1 class=" text-center">Relationships and Queries </h1>
+        <h1 class="text-center">LuckyTire Relationships and Queries</h1>
 
         <h2 id="student-info" class="sr-only">Student Information</h2>
-        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
         <div class="row" aria-labelledby="student-info">
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="FirstName" class="text-dark">First Name:</label>
-                    <input class="form-control"
-                        name="FirstName"
-                        id="FirstName"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        autocomplete="given-name"
-                        aria-label="First Name"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="LastName" class="text-dark">Last Name:</label>
-                    <input class="form-control"
-                        name="LastName"
-                        id="LastName"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        autocomplete="family-name"
-                        aria-label="Last Name"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="StarID" class="text-dark">StarID:</label>
-                    <input class="form-control"
-                        name="StarID"
-                        id="StarID"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        autocomplete="username"
-                        aria-label="StarID"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="email" class="text-dark">Email:</label>
-                    <input class="form-control"
-                        name="email"
-                        id="email"
-                        type="email"
-                        readonly
-                        aria-readonly="true"
-                        autocomplete="email"
-                        aria-label="Email"
-                        tabindex="0" />
-                </div>
-            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="FirstName" class="text-dark">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" readonly aria-readonly="true" autocomplete="given-name" aria-label="First Name" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="LastName" class="text-dark">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" readonly aria-readonly="true" autocomplete="family-name" aria-label="Last Name" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="StarID" class="text-dark">StarID:</label>
+                <input class="form-control" name="StarID" id="StarID" type="text" readonly aria-readonly="true" autocomplete="username" aria-label="StarID" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="email" class="text-dark">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" readonly aria-readonly="true" autocomplete="email" aria-label="Email" tabindex="0" />
+            </div></div>
         </div>
-        <input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+        <input name="pin" id="pin" type="hidden" />
 
         <h2 id="course-info" class="sr-only">Course Information</h2>
         <div class="row" aria-labelledby="course-info">
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="Semester" class="text-dark">Semester:</label>
-                    <input class="form-control"
-                        name="Semester"
-                        id="Semester"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        aria-label="Semester"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="Class" class="text-dark">Class:</label>
-                    <input class="form-control"
-                        name="Class"
-                        id="Class"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        aria-label="Class"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="Section" class="text-dark">Section:</label>
-                    <input class="form-control"
-                        name="Section"
-                        id="Section"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        aria-label="Section"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="assignment" class="text-dark">Assignment:</label>
-                    <input class="form-control"
-                        name="assignment"
-                        id="assignment"
-                        type="text"
-                        readonly
-                        value="Summative03"
-                        aria-readonly="true"
-                        aria-label="Assignment"
-                        tabindex="0" />
-                </div>
-            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Semester" class="text-dark">Semester:</label>
+                <input class="form-control" name="Semester" id="Semester" type="text" readonly aria-readonly="true" aria-label="Semester" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Class" class="text-dark">Class:</label>
+                <input class="form-control" name="Class" id="Class" type="text" readonly aria-readonly="true" aria-label="Class" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Section" class="text-dark">Section:</label>
+                <input class="form-control" name="Section" id="Section" type="text" readonly aria-readonly="true" aria-label="Section" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="assignment" class="text-dark">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" type="text" readonly value="Summative03" aria-readonly="true" aria-label="Assignment" tabindex="0" />
+            </div></div>
         </div>
-
-        <!-- -end-Student, class and assignment information-end -->
 
         <div class="col-lg-12">
             <br />
-            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit">
             <br />
         </div>
 
         <div class="col-lg-12 h3 text-danger">
-            800 Points
+            700 Points
             <hr />
         </div>
 
-        <!-- -start-objectives-start -->
-        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
-        <div id="Objectives" class=" collapse in col-lg-12">
-
-            <!--Above this line similar except for Assignment number and title   -->
-
-
-
-
-
-                        <h2 >Learning Objectives</h2>
-            <ol start="1" type="1">
-                <li  ><b>Update data within tables using basic queries.</b>  
-                    <ul type="circle">
-                        <li  ><i>Example</i>: A retailer uses a query to update the price of all products from a specific supplier after a negotiation for a new pricing structure.  </li>
-                    </ul>
-                </li>
-                <li  ><b>Design and execute multi-table queries to extract meaningful information.</b>  
-                    <ul type="circle">
-                        <li  ><i>Example</i>: A travel agency creates a multi-table query to display customer details alongside their booked trips to generate customized itineraries.  </li>
-                    </ul>
-                </li>
-                <li  ><b>Apply sorting and filtering techniques to organize query results.</b>  
-                    <ul type="circle">
-                        <li  ><i>Example</i>: An automotive parts distributor sorts and filters inventory data to quickly find parts below a certain stock level, aiding in reordering decisions.  </li>
-                    </ul>
-                </li>
-                <li  ><b>Use query criteria and multiple query conditions to refine data selection.</b>  
-                    <ul type="circle">
-                        <li  ><i>Example</i>: A financial analyst uses query criteria to filter transactions by date and amount to identify high-value transactions for auditing.  </li>
-                    </ul>
-                </li>
-                <li  ><b>Create calculated fields and use aggregate functions to perform data analysis.</b>  
-                    <ul type="circle">
-                        <li  ><i>Example</i>: A real estate firm calculates the average sale price of homes in different neighborhoods to guide pricing strategies.  </li>
-                    </ul>
-                </li>
-            </ol>
-
-
-
-
-            <hr />
-            <h2 >Concepts</h2>
-
-            <p>Sample focus question: What are the key components and uses of queries?</p>
-            <p>Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
-            <ul>
-                <li>Updating data</li>
-                <li>Query design</li>
-                <li>Multi-table queries</li>
-                <li>Sorting data</li>
-                <li>Filtering data</li>
-                <li>Query criteria</li>
-                <li>Query format</li>
-                <li>Multiple query criteria</li>
-                <li>Calculated fields</li>
-                <li>Aggregate functions</li>
-            </ul>
-            <hr />
-
-
-
-            <hr />
-
+        
+        <!-- ========== AI Work Context / Direct Mode ========== -->
+        <div class="col-lg-12">
+            <a href="#AIWorkContext" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="AIWorkContext">AI Work Context — Direct Mode</a>
         </div>
-
-
-        <!--Exercise 1-->
-
-        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Club Table</a></div>
-
-        <div id="Exercise01" class="collapse in  col-lg-12">
-            <br />
-
-            <p>
-                You are the  Director of Students at Wilfred Academy, a  school in New England. Your have just hired a new assistant to help  with the clubs at the school. 
-           You want to be able to have instant access to the  clubs and the faculty advisor for each club. You set up the <strong>Clubs.accdb</strong> database with two tables,  Club and Advisor. 
-           There are currently 12 clubs in the table and you need to  enter the faculty data. 
-              You research the Internet for information on the clubs  and work with this database to complete the Club and Advisor tables.
-            </p>
-            <ul>
-                <li>Start Access and open the <strong>Clubs.accdb</strong> database. Save the       database as <strong>Clubs-TA3.accdb</strong>. </li>
-                <li>As the director, you want the database to include one Web site that is a primary source of information for each club. You also want the database to include the name of one magazine that the club should subscribe to.</li>
-                <li>Use your favorite search engine to       research Web sites and magazines for each of the 12 clubs.</li>
-                <li>Add a new hyperlink field in the       Club table and enter one Web site URL for each club.</li>
-                <li>Add a new text field in the Club       table for the magazine name. Enter a magazine for each club. View the       table datasheet, and then resize all columns to their best fit.</li>
-
-            </ul>
-
-            <p>(<strong>50</strong>) 1. Use the Snipping tool to  provide a screen shot of the Club   table, <strong>datasheet view</strong>. </p>
-            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-            Save the screen shot  as &quot;Ex1&quot; in your ' 
-                 <code><span id="Path1"></span></code>
-            ' folder.<br />
-
-            <br />
-
-        </div>
-
-        <div class="col-lg-12 text-danger">
-            <h2>Screen Shot Ex1</h2>
+        <div id="AIWorkContext" class="collapse in col-lg-12">
+            <p><strong>Direct Mode is the standard workflow for Summative03.</strong> Complete the required hands-on work directly in Microsoft Access and Visual Studio, and verify the results yourself.</p>
+            <p>The instructor-provided MIS342 course AI assistant may be used for explanation, planning, or troubleshooting. Treat AI output as a candidate solution until you verify it in Access.</p>
+            <p><strong>Personal Hermes Agent is not used in Summative03.</strong> Personal Hermes Agent use begins with Summative04. When Hermes is introduced, Direct Mode will remain an acceptable option.</p>
+            <p>Do not include AI chat screenshots merely to prove AI use. The required evidence for this assignment is your database work.</p>
             <hr />
         </div>
 
 
-        <!--Exercise 2-->
-
-
-        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Advisor Table</a></div>
-
-        <div id="Exercise02" class="collapse in  col-lg-12">
-            <br />
-
-            <ul>
-                <li>Enter yourself as a new record in       the Advisor table, and resize all columns to their best fit. Enter at       least six more records in the table.</li>
-            </ul>
-
-            <p>(<strong>50</strong>) 2. Use the Snipping tool to  provide a screen shot of the Advisor table, <strong>datasheet view</strong>.</p>
-            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-            Save the screen shot  as &quot;Ex2&quot; in your ' 
-                  <code><span id="Path2"></span></code>
-            ' folder.<br />
-
-            <br />
-
-        </div>
-
-        <div class="col-lg-12 text-danger">
-            <h2>Screen Shot Ex2</h2>
-            <hr />
-        </div>
-
-
-
-        <!--Exercise 3-->
-
-
-        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Relationships Window</a></div>
-
-        <div id="Exercise03" class="collapse in  col-lg-12">
-            <br />
-
-            <ul>
-                <li>Edit the advisor IDs in the Club       table records, leaving one advisor ID null and having one or more advisors       advise more than one club.</li>
-                <li>Use the Relationships window to join       the two tables based on the advisor ID field. Enforce referential       integrity.</li>
-
-            </ul>
-            <p>(<strong>50</strong>) 3. Use the Snipping tool to  provide a screen shot of the <strong>Relationships window</strong>. </p>
-            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-            Save the screen shot  as &quot;Ex3&quot; in your ' 
-                  <code><span id="Path3"></span></code>
-            ' folder.<br />
-
-            <br />
-
-        </div>
-
-        <div class="col-lg-12 text-danger">
-            <h2>Screen Shot Ex3</h2>
-            <hr />
-        </div>
-
-        <!--Exercise 4-->
-
-        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Club and Advisors Query</a></div>
-
-        <div id="Exercise04" class="collapse in  col-lg-12">
-            <br />
-
-
-            <ul>
-                <li>Create a query that displays clubs       and their advisors. Include the club name, club description, first Name,       and last Name fields, and sort in ascending order by club name. 
-           Name the       query <strong>ClubsAndAdvisors</strong>.</li>
-            </ul>
-
-            <p>(<strong>50</strong>) 4. Use the Snipping tool to  provide a screen shot of the ClubAndAdvisors query, <strong>datasheet view</strong>. </p>
-            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-            Save the screen shot  as &quot;Ex4&quot; in your ' 
-                 <code><span id="Path4"></span></code>
-            ' folder.<br />
-
-            <br />
-
-        </div>
-
-        <div class="col-lg-12 text-danger">
-            <h2>ScreenShot Ex4</h2>
-            <hr />
-        </div>
-
-
-        <!--Exercise 5-->
-
-        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5- Club by Type Query</a></div>
-
-        <div id="Exercise05" class="collapse in  col-lg-12">
-            <br />
-
-            <ul>
-                <li>Create a query that displays both the clubs and club type fields. Name the query <strong>ClubsByType</strong>.       Sort the resulting datasheet in ascending order by club type.</li>
-            </ul>
-
-            <p>(<strong>50</strong>) 5. Use the Snipping tool to  provide a screen shot of the ClubByType query, <strong>datasheet view</strong>. </p>
-            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-            Save the screen shot  as &quot;Ex5&quot; in your ' 
-                <code><span id="Path5"></span></code>
-            ' folder.<br />
-
-            <br />
-
-
-        </div>
-
-        <div class="col-lg-12 text-danger">
-            <h2>ScreenShot Ex5</h2>
-            <hr />
-        </div>
-
-
-
-        <!--Exercise 6-->
-
-        <div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Exercise 6- Advisors and Clubs Query</a></div>
-
-        <div id="Exercise06" class="collapse in  col-lg-12">
-            <br />
-
-            <ul>
-                <li>&nbsp;View the Advisor table to view related       records and find out which clubs display for each advisor by expanding the       plus sign.</li>
-                <li>Use the Query window to create a query displaying all advisor and club data, sorting in ascending order by advisor ID and then in ascending order by club name.
-       Hide the start date field from the query. Name the query <strong>AdvisorsAndClubs</strong>.</li>
-            </ul>
-
-            <p>(<strong>50</strong>) 6. Use the Snipping tool to  provide a screen shot of the AdvisorsAndClubs query, <strong>datasheet view</strong>.</p>
-            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-            Save the screen shot  as &quot;Ex6&quot; in your ' 
-                <code><span id="Path6"></span></code>
-            ' folder.<br />
-
-            <br />
-
-        </div>
-
-        <div class="col-lg-12 text-danger">
-            <h2>ScreenShot Ex6</h2>
-            <hr />
-        </div>
-
-
-        <!--Exercise 7-->
-
-        <div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Exercise 7- Advisors and Clubs Query Pt 2</a></div>
-
-        <div id="Exercise07" class="collapse in  col-lg-12">
-            <br />
-
-            <ul>
-                <li>View the AdvisorsAndClubs query datasheet. Change the query to display those records with Language or  Science club types. Sort the datasheet in ascending order by club name.</li>
-            </ul>
-
-            <p>(<strong>50</strong>) 7. Use the Snipping tool to  provide a screen shot of the AdvisorsAndClubs query, <strong>design</strong> <strong>view</strong>. </p>
-            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-            Save the screen shot  as &quot;Ex7&quot; in your ' 
-                 <code><span id="Path7"></span></code>
-            ' folder.<br />
-
-            <br />
-
-        </div>
-
-        <div class="col-lg-12 text-danger">
-            <h2>Screen Shot Ex7</h2>
-            <hr />
-        </div>
-
-        <!--Exercise 8-->
-
-        <div class=" col-lg-12"><a href="#Exercise08" class="btn btn-info" data-toggle="collapse">Exercise 8- Advisors and Clubs Query Pt 2</a></div>
-
-        <div id="Exercise08" class="collapse in  col-lg-12">
-            <br />
-
-            <ul>
-                <li>Close the database and then exit       Access.</li>
-            </ul>
-
-            <p>(<strong>100</strong>) 8. <strong>Briefly explain the value to a business of an employee who can create queries from verbal or written input provided by other employees or customers.</strong></p>
-            <br />
-
-            <!-- Enter your answer in the VALUE field below   GROK -->
-            <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Value of Employee who can create Queries:" type="text">
-            <br />
-        </div>
-
-
-
-        <!-- Upload Access Database -->
-
-        <div class=" col-lg-12"><a href="#ExerciseUpload" class="btn btn-info" data-toggle="collapse">Exercise-Upload Database</a></div>
-
-        <div id="ExerciseUpload" class="collapse in  col-lg-12">
-
-
-            <p>
-                (100) 9. <a href="https://support.office.com/en-us/article/Compact-and-repair-a-database-6EE60F16-AED0-40AC-BF22-85FA9F4005B2" class="bg-info text-white" target="_blank">Compact &amp; Repair</a>, and then upload a copy of your Clubs.accdb file, containing all your completed queries,  to the D2L Assignment Folder 'Summative03_ACCDB'.<br />
-                Note: failing to compact and repair will result in a loss of points, because you will be uploading a larger .mdb file than necessary.
-                <br />
-            </p>
-
-            <hr />
-
-        </div>
-
-
-
-        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
-
-
-        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
-
-        <div id="ExercisePDF" class="collapse in  col-lg-12">
-            <p>
-                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
-                <br />
-                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
-                <br />
-                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
-                <code><span id="Path8"></span></code>
-                ' folder.<br />
-            </p>
-            <br />
-
-            <p>
-                (50) 10. Save your file 'WebPage.pdf' to the ' 
-                 <code><span id="Path9"></span></code>
-                ' folder.<br />
-
-
-            </p>
-
-            <div class="text-danger">
-                <h2>WebPage.pdf</h2>
-                <hr />
-            </div>
-
-			<p>
-				Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
-			</p>
-
-            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+        <!-- ========== Completion Sequence ========== -->
+        <div class="col-lg-12">
+            <h2>Assignment Completion Sequence</h2>
+            <p>Use this sequence as the main checklist for completing the assignment.</p>
             <ol>
-                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
-                <li>Create a new page and name it <code>Screenshots</code></li>
-                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path10"></span></code>
-                    ' folder.<br />
-                </li>
-                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
-                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
-                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
-                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
-                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+                <li>Review all three exercises, six concise questions, and required <strong>Screenshot A, Screenshot B, and Screenshot C</strong> before beginning.</li>
+                <li>Create the <code><span class="SummativeID"></span></code> page in your OneNote Digital Artifact Notebook and copy the
+                    <a href="../DigitalArtifactNotebook/ArtifactTemplate.html" class="bg-info text-white" target="_blank">Digital Artifact Notebook Template</a> to that page.</li>
+                <li>Complete the Access/database work. Capture each required screenshot when the related exercise is correct.</li>
+                <li>For each screenshot, add a verification statement explaining what it proves and a business or course relevance statement explaining why it matters.</li>
+                <li>Enter the six short answers into the HTML file in Visual Studio. Publish the assignment and verify the published webpage.</li>
+                <li>Complete the Final Assignment Reflection in the published webpage at least once and keep a copy for the DAN page.</li>
+                <li>Submit the published webpage for formative AI feedback. Revise and republish when feedback identifies a meaningful issue.</li>
+                <li>Follow <strong>Complete and Submit the Assignment</strong> to insert <code>WebPage.pdf</code>, export the DAN page, upload the PDF to D2L, and complete the web submission.</li>
             </ol>
-            <hr>
-       
-
-
-            <p>
-                (50) 11. Save your file 'ScreenShots.pdf' to the ' 
-                 <code><span id="Path11"></span></code>
-                ' folder.<br />
-
-            </p>
-
-            <div class="text-danger">
-                <h2>ScreenShots.pdf</h2>
-                <hr />
+            <div class="alert alert-info" role="note">
+                <strong>Two separate submissions are required:</strong> the web-database submission and the D2L upload of <code><span class="SummativeID"></span>.pdf</code>.
             </div>
-
-
-            <p>&nbsp;</p>
-            <p>
-                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, <br> 
-                and save it as &#39;<strong>Summative03.pdf</strong>&#39; in the ' 
-                 <code><span id="Path12"></span></code>
-                ' folder.<br />
-
-            </p>
-
-
-            <p>(50) 12. Upload your file 'Summative03.pdf' to the D2L 'Summative03' Assignment folder.</p>
-
-            <div class="text-danger">
-                <h2>Summative03.pdf</h2>
-            </div>
-            <hr />
-
         </div>
 
-
-
-
-        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
-
-        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
-            <p>
-                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
-                <br />
-                Ensure that you have linked this assignment on your home page.
-                Note that your screen shots do not have to be completed to perform this step.<br>
-            </p>
-
-            (50) 13. Home Page Hyperlink<br />
-            Check and verify that this assignment is hyperlinked on your home page.<br />
-            <br />
-
-            (50) 14. Assignment submission<br />
-            Press the Submit button at the top or bottom of this page.
-                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
-        </div>
         <hr />
 
+        <!-- ========== Purpose ========== -->
+        <div class="col-lg-12">
+            <a href="#Purpose" class="btn btn-info" data-toggle="collapse">Assignment Purpose and Learning Outcomes</a>
+        </div>
+        <div id="Purpose" class="collapse in col-lg-12">
+            <p>Formative03 introduced how related normalized tables can be recombined with queries. Summative03 asks you to translate LuckyTire business questions into tested multi-table queries and explain the join/calculation logic.</p>
+            <p>After completing this assignment, you will be able to:</p>
+            <ol>
+                <li>Inspect relationships in an existing normalized LuckyTire database.</li>
+<li>Create a multi-table query using relationship-based joins.</li>
+<li>Create and verify calculated fields, criteria, and sorting.</li>
+<li>Read and interpret the Access SQL generated by Query Design.</li>
+<li>Evaluate whether query results answer the intended business question.</li>
+            </ol>
+            <p><strong>Primary course learning-outcome alignment:</strong> CLO 4, with supporting evidence for CLOs 3 and 8.</p>
+            <p>Questions 1 through 6 require concise answers of no more than 500 characters. The Final Assignment Reflection allows a longer response.</p>
+            <hr />
+        </div>
 
+        
+        <div class="col-lg-12">
+            <a href="#Resources" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="Resources">Resources and Help</a>
+        </div>
+        <div id="Resources" class="collapse in col-lg-12">
+            <ul>
+                <li>Review your completed MIS342 Formative03.</li>
+                <li>Use the assigned Cengage MindTap/eBook material for the Access topics in this assignment.</li>
+                <li>Use Microsoft Access in Microsoft 365.</li>
+                <li>Use Visual Studio Enterprise 2026 to edit and publish this HTML assignment.</li>
+                <li>Download <a href="LuckyTire_Normalized_Summative03.accdb" class="bg-info text-white">LuckyTire_Normalized_Summative03.accdb</a>.</li>
+            </ul>
+            
+            <hr />
+        </div>
+
+
+        
+        <!-- ========== Exercise 1 ========== -->
+        <div class="col-lg-12">
+            <a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1 — Build a Multi-Table Query</a>
+        </div>
+        <div id="Exercise01" class="collapse in col-lg-12">
+            <ol>
+                <li>Download LuckyTire_Normalized_Summative03.accdb and save a working copy as <strong>Summative03_LuckyTire.accdb</strong>.</li>
+<li>Open the Relationships window and identify the customer-to-sales and tires-to-sales relationships. Do not renormalize the database.</li>
+<li>Create a new query in Design View using the customer, sales, and tires tables in the starter database.</li>
+<li>Include customer name, invoice/date, tire model/manufacturer or tire type, quantity, and unit price fields using the actual starter field names.</li>
+<li>Add a calculated field named <strong>ExtendedAmount</strong> that multiplies Quantity by UnitPrice.</li>
+<li>Save the query as <strong>qryCustomerTireSales</strong> and run it.</li>
+            </ol>
+            
+            <p>
+                <label for="q1"><strong>(50) Question 1</strong></label>
+                <textarea class="form-control" id="q1" name="q1" rows="4" readonly aria-readonly="true">Why should qryCustomerTireSales join tables through key relationships instead of matching CustomerName or tire descriptions?</textarea>
+                <br />
+                <label for="a1"><strong>Your answer:</strong></label>
+                <input name="a1" id="a1" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            <p>
+                <label for="q2"><strong>(50) Question 2</strong></label>
+                <textarea class="form-control" id="q2" name="q2" rows="4" readonly aria-readonly="true">What calculation did you use for ExtendedAmount, and how did you verify one returned value?</textarea>
+                <br />
+                <label for="a2"><strong>Your answer:</strong></label>
+                <input name="a2" id="a2" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            
+            <h2><strong> Screenshot A — Query Design</strong></h2>
+            <p>Capture <strong>qryCustomerTireSales in Design View</strong> with the joined tables, selected fields, and ExtendedAmount expression visible.</p>
+            <p>Paste <strong>(50) Screenshot A</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence A - Query Design</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> Explain what the screenshot proves about the joins and calculation.</li>
+                <li><strong>Business or course relevance:</strong> Explain why recombining normalized data through a query is useful to LuckyTire.</li>
+            </ul>
+
+            <hr />
+        </div>
+
+
+        <!-- ========== Exercise 2 ========== -->
+        <div class="col-lg-12">
+            <a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2 — Answer a Business Question</a>
+        </div>
+        <div id="Exercise02" class="collapse in col-lg-12">
+            <ol>
+                <li>Create a copy of qryCustomerTireSales named <strong>qrySalesAnalysis</strong>.</li>
+<li>Add criteria that answer a real LuckyTire question, such as one manufacturer/tire type, a quantity threshold, or a date range that exists in the data.</li>
+<li>Sort by a useful field such as customer last name, date, or ExtendedAmount.</li>
+<li>Run the query and record the number of returned rows.</li>
+<li>Verify at least two returned rows by checking the related source table records.</li>
+            </ol>
+            
+            <p>
+                <label for="q3"><strong>(50) Question 3</strong></label>
+                <textarea class="form-control" id="q3" name="q3" rows="4" readonly aria-readonly="true">What business question does qrySalesAnalysis answer, and what criteria/sort did you use to answer it?</textarea>
+                <br />
+                <label for="a3"><strong>Your answer:</strong></label>
+                <input name="a3" id="a3" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            <p>
+                <label for="q4"><strong>(50) Question 4</strong></label>
+                <textarea class="form-control" id="q4" name="q4" rows="4" readonly aria-readonly="true">What specific source-record check showed that your filtered query returned the correct records?</textarea>
+                <br />
+                <label for="a4"><strong>Your answer:</strong></label>
+                <input name="a4" id="a4" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            
+            <h2><strong> Screenshot B — Verified Query Result</strong></h2>
+            <p>Capture <strong>qrySalesAnalysis in Datasheet View</strong> with the query name and returned records visible.</p>
+            <p>Paste <strong>(50) Screenshot B</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence B - Verified Query Result</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> Explain how the screenshot plus your source-table check support the correctness of the result.</li>
+                <li><strong>Business or course relevance:</strong> Explain one decision or task for which LuckyTire could use this information.</li>
+            </ul>
+
+            <hr />
+        </div>
+
+
+        <!-- ========== Exercise 3 ========== -->
+        <div class="col-lg-12">
+            <a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3 — Inspect and Interpret Access SQL</a>
+        </div>
+        <div id="Exercise03" class="collapse in col-lg-12">
+            <ol>
+                <li>Open qrySalesAnalysis in SQL View.</li>
+<li>Identify the SELECT fields, FROM/JOIN portion, WHERE criteria, calculated expression, and ORDER BY clause when present.</li>
+<li>Return to Design View, make one small deliberate change to the criteria or sort, and reopen SQL View.</li>
+<li>Observe which portion of the SQL changed.</li>
+<li>Run the revised query and verify that the result changed in the way you predicted.</li>
+            </ol>
+            
+            <p>
+                <label for="q5"><strong>(50) Question 5</strong></label>
+                <textarea class="form-control" id="q5" name="q5" rows="4" readonly aria-readonly="true">Which SQL clause changed when you modified the criteria or sort, and what did that clause control?</textarea>
+                <br />
+                <label for="a5"><strong>Your answer:</strong></label>
+                <input name="a5" id="a5" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            <p>
+                <label for="q6"><strong>(50) Question 6</strong></label>
+                <textarea class="form-control" id="q6" name="q6" rows="4" readonly aria-readonly="true">Why is understanding the SQL behind Query Design useful even when LuckyTire employees usually build queries visually?</textarea>
+                <br />
+                <label for="a6"><strong>Your answer:</strong></label>
+                <input name="a6" id="a6" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            
+            <h2><strong> Screenshot C — Access SQL</strong></h2>
+            <p>Capture <strong>qrySalesAnalysis in SQL View</strong> with enough of the SELECT, JOIN, criteria, calculation, and sort logic readable.</p>
+            <p>Paste <strong>(50) Screenshot C</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence C - Access SQL</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> Explain what the SQL proves about how Access translated your visual query design.</li>
+                <li><strong>Business or course relevance:</strong> Explain why being able to inspect SQL helps troubleshoot or communicate database logic.</li>
+            </ul>
+
+            <hr />
+        </div>
+
+
+        <!-- ========== Final Reflection ========== -->
+        <div class="col-lg-12">
+            <a href="#FinalReflection" class="btn btn-info" data-toggle="collapse">Final Assignment Reflection</a>
+        </div>
+        <div id="FinalReflection" class="collapse in col-lg-12">
+            <p>Complete and publish the assignment before responding.</p>
+            <label for="q7"><strong>(50) Question 7 — Final Reflection</strong></label>
+            <textarea class="form-control" style="font-weight: bold;" id="q7" name="q7" rows="6" maxlength="3000" readonly aria-readonly="true">What is the most important skill involved in turning a LuckyTire manager's verbal information request into a reliable database query? Refer to one join, criterion, calculation, or verification step you completed.</textarea>
+            <br />
+            <div class="alert alert-warning" role="alert">
+                Complete this reflection in the published webpage. Your response is submitted to the web database but is not saved back into your HTML file. Draft or copy your reflection before submitting. You may use the same reflection in your Digital Artifact Notebook.
+            </div>
+            <label for="a7"><strong>Your final reflection:</strong></label>
+            <textarea class="form-control" id="a7" name="a7" rows="12" maxlength="3000" placeholder="Type or paste your final reflection here..."></textarea>
+            <small id="charCount-a7" class="text-muted">Maximum: 3000 characters. AI feedback is formative feedback, not a grade.</small>
+            <hr />
+        </div>
+
+        <!-- ========== Complete and Submit ========== -->
+        <div class="col-lg-12">
+            <a href="#CompleteSubmission" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="CompleteSubmission">Complete and Submit the Assignment</a>
+        </div>
+        <div id="CompleteSubmission" class="collapse in col-lg-12">
+            <h2>1. Complete the Digital Artifact Notebook Page</h2>
+            <ol>
+                <li>Open OneNote to the correct MIS342 course and assignment section.</li>
+                <li>Confirm that the page is named <code><span class="SummativeID"></span></code> and contains the
+                    <a href="../DigitalArtifactNotebook/ArtifactTemplate.html" class="bg-info text-white" target="_blank">Digital Artifact Notebook Template</a>.</li>
+                <li>Confirm that <strong>Screenshot A, Screenshot B, and Screenshot C</strong> are visible, readable, and correctly labeled.</li>
+                <li>For each screenshot, include a verification statement and a business or course relevance statement.</li>
+                <li>Complete the reflection section in the DAN. You may use the same reflection entered in the published webpage.</li>
+            </ol>
+
+            <h2>2. Create and Insert WebPage.pdf</h2>
+            <ol>
+                <li>Open the final published webpage at your course website.</li>
+                <li>Verify your name, StarID, email, course information, and all six exercise answers.</li>
+                <li>Press <code>Ctrl + P</code>, or use the browser Print menu, and save the webpage as <code>WebPage.pdf</code> in <code><span id="Path6"></span></code>.</li>
+                <li>In OneNote, use <strong>Insert &gt; File Printout</strong> to insert <code>WebPage.pdf</code>. Do not insert only a link or file icon.</li>
+            </ol>
+            <p><strong>(50 points) WebPage.pdf:</strong> The readable webpage printout is included in the Digital Artifact Notebook.</p>
+
+            <h2>3. Export and Verify the Final PDF</h2>
+            <ol>
+                <li>Export or print the completed OneNote page as <code><span class="SummativeID"></span>.pdf</code> and save it in <code><span id="Path7"></span></code>.</li>
+                <li>Open the exported PDF and confirm that all screenshots, labels, verification statements, relevance statements, reflection content, and WebPage.pdf are visible and readable.</li>
+                <li>Correct the OneNote page and export again if anything is missing, cut off, too small, or unreadable.</li>
+            </ol>
+            <p><strong>(50 points) D2L PDF submission:</strong> Upload <code><span class="SummativeID"></span>.pdf</code> to the matching D2L assignment folder.</p>
+
+            <h2>4. Complete the Web Submission Requirements</h2>
+            <p><strong>(50 points) Home Page Hyperlink:</strong> Verify that Summative03 is linked correctly from your MIS342 course home page.</p>
+            <p><strong>(50 points) Web Database Submission:</strong> Press the Submit button at the top or bottom of this page. Your answers are saved to the web database and sent for formative AI feedback.</p>
+            <ul>
+                <li>The AI feedback is not a grade.</li>
+                <li>Complete the Final Assignment Reflection on at least one web submission.</li>
+                <li>Additional submissions are optional but permitted; the reflection does not have to be submitted again.</li>
+                <li>Read the confirmation page and correct or resubmit work when appropriate.</li>
+            </ul>
+            <div class="alert alert-warning" role="alert">
+                <strong>Final check:</strong> The D2L PDF upload and the web-database submission are separate requirements. Complete both.
+            </div>
+            <div class="sr-only" aria-hidden="true"><span id="Path8"></span><span id="Path9"></span></div>
+        </div>
+
+        <hr />
 
         <div class="col-lg-12">
             <br />
-            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit">
             <br />
         </div>
 
-
     </form>
 
-
-
-    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
-
-    <!-- Creative Commons License Info -->
     <footer>
         <div id="licenseInfo" class="col-lg-12 text-muted"></div>
         <div id="footerText" class="col-lg-12 text-muted"></div>
     </footer>
 
-    <!-- ========== Script Includes (Order is Critical) ========== -->
     <script src="../../ReadOnly/jquery-1.js"></script>
     <script src="../../ReadOnly/bootstrap.js"></script>
     <script src="../studentConstants.js"></script>
     <script src="../../ReadOnly/courseConstants.js"></script>
     <script src="../../ReadOnly/domForms.js"></script>
 
+    <script>
+    (function () {
+        var box = document.getElementById('a7');
+        var count = document.getElementById('charCount-a7');
+        if (!box || !count) { return; }
+        function updateCount() { count.textContent = box.value.length + ' / 3000 characters'; }
+        updateCount();
+        box.addEventListener('input', updateCount);
+    })();
+    </script>
+
 </body>
 </html>
-
-
-

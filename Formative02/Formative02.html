@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
-    <title>MIS342 Formative10</title>
+    <title>MIS342 Formative02</title>
 </head>
 
 <body class="container-fluid">
@@ -13,14 +13,14 @@
     <form class="container-fluid" action="https://eprofessor.azurewebsites.net/codex/ProcessAICall.aspx" method="post" name="frmAssignment" id="frmAssignment">
 
         <input name="InstID" id="InstID" value="00617282" type="hidden">
-        <input name="assignmentVersion" id="assignmentVersion" value="Formative10-FA2026-v1" type="hidden">
+        <input name="assignmentVersion" id="assignmentVersion" value="Formative02-FA2026-v1" type="hidden">
 
         <textarea id="datasetContext"
                   name="datasetContext"
                   readonly
-                  hidden>Assignment: MIS342 Formative10 — LuckyTire Database Application Automation. Students begin from LuckyTire_Normalized_Formative10.accdb, create or inspect a simple macro/command-button workflow, import an intentionally defective VBA module, use a known numeric test case to expose a business-logic error, use Hermes to review the .bas source, correct the function, and verify the corrected output in Access. Exercise 1 is worth 60 points and asks students to distinguish macro versus VBA/module automation and describe the test proving the corrected function. Reflection is worth 40 points and asks why AI-assisted code that compiles still requires business-rule testing. This prepares for Summative10 and Project03 and aligns with CLOs 7, 8, 11, and 12. No DAN or Hermes transcript is required.</textarea>
+                  hidden>Assignment: MIS342 Formative02 — LuckyTire Relational Structure and Normalization. Students compare a deliberately flat LuckyTire sales file with three normalized tables: tblCustomer, tblTires, and tblSales. They import the normalized CSV files into a new Access database, assign appropriate primary keys, verify data types, create one-to-many relationships from tblCustomer to tblSales and tblTires to tblSales, and enforce referential integrity. Exercise 1 is worth 60 points and asks students to identify a repeated fact removed by normalization and explain how primary and foreign keys preserve relationships. Reflection is worth 40 points and asks why normalization is worth the extra table/relationship complexity. This prepares for Summative02 and emphasizes CLO 3. No Digital Artifact Notebook, screenshot, PDF, or D2L artifact is required. Personal Hermes Agent use has not begun yet. Reward answers that connect normalization to reduced redundancy, update consistency, integrity, and maintainability rather than merely saying that multiple tables are better.</textarea>
 
-        <h1 class="text-center">LuckyTire Database Application Automation</h1>
+        <h1 class="text-center">LuckyTire Relational Structure and Normalization</h1>
 
         <h2 id="student-info" class="sr-only">Student Information</h2>
         <div class="row" aria-labelledby="student-info">
@@ -83,7 +83,7 @@
                 <div class="form-group">
                     <label for="assignment">Assignment:</label>
                     <input class="form-control" name="assignment" id="assignment" type="text"
-                        size="500" maxlength="500" value="Formative10" readonly aria-readonly="true">
+                        size="500" maxlength="500" value="Formative02" readonly aria-readonly="true">
                 </div>
             </div>
         </div>
@@ -102,19 +102,13 @@
 
         
         <div class="col-lg-12">
-            <a href="#HermesWorkContext" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="HermesWorkContext">Hermes Agent Work Context</a>
+            <a href="#AIWorkContext" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="AIWorkContext">AI Work Context</a>
         </div>
-        <div id="HermesWorkContext" class="collapse in col-lg-12">
-            <p><strong>Active profile:</strong> use your course-specific Hermes profile <code>mis342</code>.</p>
-            <p><strong>Hermes session:</strong></p>
-            <pre>First use:  /new Formative10
-Return later: /resume Formative10
-When finished using Hermes: /quit</pre>
-            <p><strong>Hermes is the default AI-assisted workflow for MIS342 when explanation, planning, troubleshooting, alternatives, review, or verification would add value.</strong> Direct Mode is allowed for routine steps you already understand.</p>
-            <p><strong>Direct Mode:</strong> Work directly in Microsoft Access or the required database tool and verify the result yourself. Choosing not to use Hermes for a routine step is acceptable unless an assignment explicitly requires an agent checkpoint.</p>
-            <p><strong>Suggested Hermes checkpoint:</strong> Read the broken VBA yourself first. Then give Hermes the .bas source and the known expected result. Ask it to classify the problem and propose the smallest correction. Compile and test the correction in Access.</p>
-            <p>Hermes is a coach. It may explain database concepts, suggest SQL or VBA, compare alternatives, and help troubleshoot, but you must perform and verify the hands-on work in the actual database environment. No Hermes screenshot or chat transcript is required.</p>
-            <p><strong>Safety and verification:</strong> do not place passwords, API keys, ODBC passwords, private information, or restricted data in prompts or course-agent files. Treat agent output as a candidate solution until you verify it in Access or the target DBMS.</p>
+        <div id="AIWorkContext" class="collapse in col-lg-12">
+            <p><strong>Complete this assignment using Microsoft Access.</strong></p>
+            <p>When using the instructor-provided MIS342 course AI assistant, treat its responses as suggestions, but verify the result in Access. You are responsible for the database objects you create and the answers you submit.</p>
+            <p><strong>Personal Hermes Agent use is not required yet.</strong> Personal Hermes use begins with Formative04 after the course personal-agent setup.</p>
+            <p><strong>Do not submit AI chat transcripts.</strong> No extra AI evidence is required for this formative assignment.</p>
             <hr>
         </div>
 
@@ -123,15 +117,15 @@ When finished using Hermes: /quit</pre>
             <a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a>
         </div>
         <div id="Objectives" class="collapse in col-lg-12">
-            <p>This assignment prepares you for Summative10 and continues the LuckyTire database application case.</p>
+            <p>This assignment prepares you for Summative02 and continues the LuckyTire database application case.</p>
             <p>After completing this assignment, you will be able to:</p>
             <ol>
-                <li>Use a macro or command button to automate a database workflow.</li>
-<li>Read and troubleshoot VBA source in a standard module.</li>
-<li>Use a known test case to detect a business-logic defect.</li>
-<li>Evaluate Hermes recommendations by testing the corrected code in Access.</li>
+                <li>Compare a flat file with a normalized relational structure.</li>
+<li>Select appropriate data types and primary keys for business tables.</li>
+<li>Create one-to-many relationships and enforce referential integrity.</li>
+<li>Explain how normalization reduces redundancy and update problems.</li>
             </ol>
-            <p><strong>Primary course learning outcome alignment:</strong> CLOs 7 and 8, with supporting practice for CLOs 11 and 12.</p>
+            <p><strong>Primary course learning outcome alignment:</strong> CLO 3, with supporting practice for CLOs 2 and 8.</p>
             <hr>
         </div>
 
@@ -141,19 +135,12 @@ When finished using Hermes: /quit</pre>
         </div>
         <div id="Resources" class="collapse in col-lg-12">
             <ul>
-                <li>Use the assigned Cengage MindTap/eBook material on macros, command buttons, events, VBA, modules, functions, and database applications.</li>
+                <li>Use the assigned Cengage MindTap/eBook material on Access tables, fields, data types, primary keys, relationships, and referential integrity.</li>
 <li>Use Microsoft Access in Microsoft 365 on your course computer.</li>
-<li>Download the clean normalized starter: <a href="LuckyTire_Normalized_Formative10.accdb" class="bg-info text-white">LuckyTire_Normalized_Formative10.accdb</a>.</li>
-<li>Download the intentionally defective VBA module: <a href="modLuckyTirePricing_Broken.bas" class="bg-info text-white">modLuckyTirePricing_Broken.bas</a>.</li>
+<li>Download <a href="LuckyTire_FlatSales.csv" class="bg-info text-white">LuckyTire_FlatSales.csv</a>.</li>
+<li>Download <a href="LuckyTire_tblCustomer.csv" class="bg-info text-white">LuckyTire_tblCustomer.csv</a>, <a href="LuckyTire_tblTires.csv" class="bg-info text-white">LuckyTire_tblTires.csv</a>, and <a href="LuckyTire_tblSales.csv" class="bg-info text-white">LuckyTire_tblSales.csv</a>.</li>
             </ul>
             
-            <p>
-                Suggested Hermes prompt (use the <code>mis342</code> profile; the MIS342 course AI assistant remains available as a secondary resource):
-                <br>
-                <code>I am completing MIS342 Formative10. This VBA function compiles, but a known business-rule test gives the wrong result. I will paste the .bas source and expected result. Identify the logic error, explain why it is wrong, and propose the smallest correction. I will verify your recommendation in Access.</code>
-            </p>
-            <p>The AI does not receive your Access database automatically. Provide only the table/field names, SQL, VBA, error text, or other non-sensitive context needed for the task, then verify the recommendation in the actual database.</p>
-
             <hr>
         </div>
 
@@ -162,36 +149,36 @@ When finished using Hermes: /quit</pre>
             <a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview — LuckyTire</a>
         </div>
         <div id="Overview" class="collapse in col-lg-12">
-            <p>LuckyTire is moving from separate database objects toward a complete application. You will combine interface automation with a small VBA module and practice a critical AI-era skill: code can compile successfully and still implement the wrong business rule.</p>
+            <p>LuckyTire originally collected sales information in one flat file. Customer and tire information is repeated every time a sale occurs. You will compare that flat structure with a normalized three-table version and then build the relationships in Access.</p>
+            <p>Formative02 is the one assignment in this sequence where you build the normalized foundation yourself. Beginning with Formative03, each Formative supplies a clean instructor-normalized LuckyTire starter database so earlier mistakes do not interfere with the new skill.</p>
             <p>This is a formative assignment. The goal is to learn by building, testing, and checking the database work. You do not need to submit screenshots, a PDF, or Digital Artifact Notebook evidence.</p>
             <hr>
         </div>
 
         <div class="col-lg-12">
-            <a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1 — Automate a LuckyTire Task and Debug a VBA Business Rule</a>
+            <a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1 — Compare, Build, and Verify a Normalized LuckyTire Structure</a>
         </div>
         <div id="Exercise01" class="collapse in col-lg-12">
             <ol>
-                <li>Download <strong>LuckyTire_Normalized_Formative10.accdb</strong> and <strong>modLuckyTirePricing_Broken.bas</strong>. Save the database as <strong>Formative10_LuckyTire.accdb</strong>.</li>
-<li>Create or identify a form that can act as a simple navigation/menu interface.</li>
-<li>Create one macro or command button that opens a useful LuckyTire query, form, or report. Run it several times and verify that it opens the intended object.</li>
-<li>Open the Visual Basic Editor and import <strong>modLuckyTirePricing_Broken.bas</strong> as a standard module.</li>
-<li>Compile the VBA project. Notice that code can compile even when its business logic is wrong.</li>
-<li>Test <strong>CalcDiscountedTotal(100, 2, 0.10)</strong>. The stated business rule says two $100 items with a 10% discount should total <strong>$180</strong>.</li>
-<li>Read the function yourself and predict the logic error before asking Hermes.</li>
-<li>Give the .bas source and the $180 expected result to Hermes. Ask it to explain the defect and propose the smallest correction.</li>
-<li>Correct the VBA function in Access. Recompile and rerun the same test. Verify that it now returns $180.</li>
-<li>If practical, use the corrected function in a query expression or another controlled test with a second known input.</li>
-<li>Save and close the database.</li>
+                <li>Download and open <strong>LuckyTire_FlatSales.csv</strong>. Identify at least two pieces of customer or tire information that repeat across multiple sales rows.</li>
+<li>Create a blank Access database named <strong>Formative02_LuckyTire.accdb</strong>.</li>
+<li>Import <strong>LuckyTire_tblCustomer.csv</strong> as <strong>tblCustomer</strong>. Set <strong>CustID</strong> as the primary key and verify the data types.</li>
+<li>Import <strong>LuckyTire_tblTires.csv</strong> as <strong>tblTires</strong>. Set <strong>PartID</strong> as the primary key. Verify that UnitPrice is stored as an appropriate numeric/currency type.</li>
+<li>Import <strong>LuckyTire_tblSales.csv</strong> as <strong>tblSales</strong>. Set <strong>Invoice</strong> as the primary key. Verify that CustID and PartID use compatible data types with their related primary keys.</li>
+<li>Open Database Tools &gt; Relationships. Create a one-to-many relationship from <strong>tblCustomer.CustID</strong> to <strong>tblSales.CustID</strong> and enforce referential integrity.</li>
+<li>Create a one-to-many relationship from <strong>tblTires.PartID</strong> to <strong>tblSales.PartID</strong> and enforce referential integrity.</li>
+<li>Verify that the Relationships window shows <strong>1</strong> on the customer/tire sides and <strong>∞</strong> on the sales side.</li>
+<li>Open all three tables and compare them with LuckyTire_FlatSales.csv. Confirm that a customer address and a tire price are stored once in the normalized structure rather than repeated in every sale.</li>
+<li>Save and close Formative02_LuckyTire.accdb.</li>
             </ol>
 
             <div class="form-group">
                 <label for="q1"><strong>1. (60) Exercise Question</strong></label>
-                <textarea class="form-control" id="q1" name="q1" rows="7" readonly aria-readonly="true">What is the difference between the macro/command-button automation and the VBA module you used? What exact test demonstrated that the original VBA function was wrong and that your corrected version now follows the business rule?</textarea>
+                <textarea class="form-control" id="q1" name="q1" rows="7" readonly aria-readonly="true">Identify one customer or tire fact that is repeated in LuckyTire_FlatSales.csv but stored only once in the normalized tables. How do the primary and foreign keys let LuckyTire reconnect that fact to each sale without copying it into every sales record?</textarea>
                 <br>
                 <label for="a1"><strong>Your brief answer:</strong></label>
                 <input class="form-control" id="a1" name="a1" type="text" size="500" maxlength="500"
-                    placeholder="Distinguish macro vs VBA and cite the before/after test result...">
+                    placeholder="Name the repeated fact and explain how the keys preserve the relationship...">
                 <small class="text-muted">Maximum: 500 characters.</small>
             </div>
             <hr>
@@ -203,7 +190,7 @@ When finished using Hermes: /quit</pre>
         <div id="Reflection" class="collapse in col-lg-12">
             <div class="form-group">
                 <label for="q2"><strong>2. (40) Reflection</strong></label>
-                <textarea class="form-control" id="q2" name="q2" rows="6" readonly aria-readonly="true">Why is 'the code compiled' not enough evidence that AI-assisted VBA is correct? What should a LuckyTire employee verify before trusting automated database code with real business data?</textarea>
+                <textarea class="form-control" id="q2" name="q2" rows="6" readonly aria-readonly="true">Normalization creates more tables and relationships than a flat file. Why is that extra structure worth the effort for LuckyTire as its database grows? Explain the most important business reason.</textarea>
                 <br>
                 <label for="a2"><strong>Your reflection:</strong></label>
                 <textarea class="form-control" id="a2" name="a2" rows="8" maxlength="1500"
@@ -218,7 +205,7 @@ When finished using Hermes: /quit</pre>
         </div>
         <div id="Submission" class="collapse in col-lg-12">
             <ol>
-                <li>Work from the clean instructor starter file <strong>LuckyTire_Normalized_Formative10.accdb</strong>; do not substitute a database altered in an earlier Formative.</li>
+                
                 <li>Verify the database objects and results required in the Exercise.</li>
                 <li>Complete the Exercise answer and Reflection on this webpage.</li>
                 <li>Press the Submit button at the top or bottom of the page.</li>

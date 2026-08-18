@@ -1,0 +1,13 @@
+Invoice,InvoiceDate,CustID,First,Last,Address,City,State,Zip,Phone,Make,Model,Year,PartID,ModelName,Manufacturer,TireType,UnitPrice,Quantity,InvoicePaid
+5001,2026-08-24,101,Avery,Johnson,1872 Juniper Ave,Upland,CA,91786,909-555-1101,Toyota,Camry,2020,201,Defender2,Michelin,Touring,198.99,4,True
+5002,2026-08-25,102,Jordan,Lee,420 Oak St,Corona,CA,92882,951-555-1202,Honda,CR-V,2018,203,TrueContact,Continental,Touring,214.75,4,True
+5003,2026-08-26,103,Morgan,Patel,88 River Rd,Riverside,CA,92501,951-555-1303,Ford,F-150,2021,202,Wrangler,Goodyear,Truck,238.50,4,True
+5004,2026-08-27,104,Taylor,Nguyen,701 Pine Ave,Upland,CA,91784,909-555-1404,Subaru,Outback,2017,205,WeatherPeak,Bridgestone,All-Season,219.50,4,True
+5005,2026-08-28,105,Casey,Martin,19 Valley Dr,Ontario,CA,91761,909-555-1505,Chevrolet,Equinox,2022,203,TrueContact,Continental,Touring,214.75,4,True
+5006,2026-08-29,106,Riley,Garcia,315 Citrus Ave,Corona,CA,92879,951-555-1606,Nissan,Rogue,2019,201,Defender2,Michelin,Touring,198.99,4,True
+5007,2026-08-31,101,Avery,Johnson,1872 Juniper Ave,Upland,CA,91786,909-555-1101,Toyota,Camry,2020,206,Pilot Sport,Michelin,Performance,289.95,2,False
+5008,2026-09-01,107,Sam,Wilson,990 Main St,Riverside,CA,92507,951-555-1707,Jeep,Cherokee,2016,204,Trail-Terrain,BFGoodrich,All-Terrain,259.99,4,True
+5009,2026-09-02,108,Alex,Kim,612 Palm Ave,Ontario,CA,91764,909-555-1808,Mazda,CX-5,2018,205,WeatherPeak,Bridgestone,All-Season,219.50,4,True
+5010,2026-09-03,103,Morgan,Patel,88 River Rd,Riverside,CA,92501,951-555-1303,Ford,F-150,2021,202,Wrangler,Goodyear,Truck,238.50,2,False
+5011,2026-09-04,102,Jordan,Lee,420 Oak St,Corona,CA,92882,951-555-1202,Honda,CR-V,2018,201,Defender2,Michelin,Touring,198.99,4,True
+5012,2026-09-05,105,Casey,Martin,19 Valley Dr,Ontario,CA,91761,909-555-1505,Chevrolet,Equinox,2022,206,Pilot Sport,Michelin,Performance,289.95,4,True

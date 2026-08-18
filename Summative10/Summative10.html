@@ -2,570 +2,401 @@
 <html lang="en">
 
 <!--
-    PgP 7/30/2025 add LinkedIn Learning as reflective assignment
-	PgP 3/2/2020 updating MIS202 files to align with other assignments 
+PgP 8/16/2026 MIS342 Summative10 redesign
+- aligned to LuckyTire Formative10
+- structure based on approved modified MIS342 Summative01
+- maximum three exercises, maximum two questions per exercise
+- Digital Artifact Notebook evidence limited to one screenshot per exercise
+- Personal Hermes Agent optional beginning with Summative04; Direct Mode remains available
 -->
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap -->
     <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
-
-    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
-
-    <title>MIS342Summative10</title>
+    <title>MIS342 Summative10</title>
 </head>
 
 <body class="container-fluid">
 
-    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/codex/ProcessAICall.aspx" method="post" name="frmAssignment" id="frmAssignment">
 
         <input name="InstID" id="InstID" value="00617282" type="hidden">
+        <input name="assignmentVersion" id="assignmentVersion" value="Summative10-FA2026-v1" type="hidden">
+        <input name="reflectionQuestion" id="reflectionQuestion" value="7" type="hidden">
 
-        <!-- had to put assignment here, because it is used in the path calculation -->
-        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+        <textarea id="datasetContext" name="datasetContext" readonly hidden>Assignment: MIS342 Summative10 — LuckyTire Database Application Automation. Aligned with Formative10 and based on the instructor-supplied LuckyTire_10 checkpoint. Students create/refine a simple menu/navigation form, implement one macro or command-button event that opens a useful object, import an intentionally defective VBA module, use a known test case to reveal a business-logic error, optionally use Hermes to review source, correct the function, and verify the corrected output. Hermes is optional; Direct Mode remains valid. Three exercises, six short answers, three DAN screenshots, reflection and standard completion total 700 points. Reward application workflow, macro/event understanding, logic debugging, test evidence, and AI verification discipline.</textarea>
 
-        <h1 class=" text-center">Database Applications </h1>
+        <h1 class="text-center">LuckyTire Database Application Automation</h1>
 
         <h2 id="student-info" class="sr-only">Student Information</h2>
-        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
         <div class="row" aria-labelledby="student-info">
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="FirstName" class="text-dark">First Name:</label>
-                    <input class="form-control"
-                        name="FirstName"
-                        id="FirstName"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        autocomplete="given-name"
-                        aria-label="First Name"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="LastName" class="text-dark">Last Name:</label>
-                    <input class="form-control"
-                        name="LastName"
-                        id="LastName"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        autocomplete="family-name"
-                        aria-label="Last Name"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="StarID" class="text-dark">StarID:</label>
-                    <input class="form-control"
-                        name="StarID"
-                        id="StarID"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        autocomplete="username"
-                        aria-label="StarID"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="email" class="text-dark">Email:</label>
-                    <input class="form-control"
-                        name="email"
-                        id="email"
-                        type="email"
-                        readonly
-                        aria-readonly="true"
-                        autocomplete="email"
-                        aria-label="Email"
-                        tabindex="0" />
-                </div>
-            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="FirstName" class="text-dark">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" readonly aria-readonly="true" autocomplete="given-name" aria-label="First Name" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="LastName" class="text-dark">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" readonly aria-readonly="true" autocomplete="family-name" aria-label="Last Name" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="StarID" class="text-dark">StarID:</label>
+                <input class="form-control" name="StarID" id="StarID" type="text" readonly aria-readonly="true" autocomplete="username" aria-label="StarID" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="email" class="text-dark">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" readonly aria-readonly="true" autocomplete="email" aria-label="Email" tabindex="0" />
+            </div></div>
         </div>
-        <input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+        <input name="pin" id="pin" type="hidden" />
 
         <h2 id="course-info" class="sr-only">Course Information</h2>
         <div class="row" aria-labelledby="course-info">
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="Semester" class="text-dark">Semester:</label>
-                    <input class="form-control"
-                        name="Semester"
-                        id="Semester"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        aria-label="Semester"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="Class" class="text-dark">Class:</label>
-                    <input class="form-control"
-                        name="Class"
-                        id="Class"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        aria-label="Class"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="Section" class="text-dark">Section:</label>
-                    <input class="form-control"
-                        name="Section"
-                        id="Section"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        aria-label="Section"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="assignment" class="text-dark">Assignment:</label>
-                    <input class="form-control"
-                        name="assignment"
-                        id="assignment"
-                        type="text"
-                        readonly
-                        value="Summative10"
-                        aria-readonly="true"
-                        aria-label="Assignment"
-                        tabindex="0" />
-                </div>
-            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Semester" class="text-dark">Semester:</label>
+                <input class="form-control" name="Semester" id="Semester" type="text" readonly aria-readonly="true" aria-label="Semester" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Class" class="text-dark">Class:</label>
+                <input class="form-control" name="Class" id="Class" type="text" readonly aria-readonly="true" aria-label="Class" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Section" class="text-dark">Section:</label>
+                <input class="form-control" name="Section" id="Section" type="text" readonly aria-readonly="true" aria-label="Section" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="assignment" class="text-dark">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" type="text" readonly value="Summative10" aria-readonly="true" aria-label="Assignment" tabindex="0" />
+            </div></div>
         </div>
-
-        <!-- -end-Student, class and assignment information-end -->
 
         <div class="col-lg-12">
             <br />
-            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit">
             <br />
         </div>
-
-
-
-
 
         <div class="col-lg-12 h3 text-danger">
             700 Points
             <hr />
         </div>
 
-        <!-- -start-objectives-start -->
-        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
-        <div id="Objectives" class=" collapse in col-lg-12">
-
-            <!--Above this line similar except for Assignment number and title   -->
-
-            <h2>Learning Objectives</h2>
-
-            <ol>
-                <li><b>Develop macros and modules to automate database tasks.</b>
-                    <ul>
-                        <li><i>Example</i>: A retail business creates a macro to automatically generate daily sales reports, saving time and reducing errors.  </li>
-                    </ul>
-                </li>
-                <li><b>Use VBA code and command button macros for form navigation and event handling.</b>
-                    <ul>
-                        <li><i>Example</i>: A hotel management system employs VBA to handle check-in and check-out events, updating room availability in real-time.  </li>
-                    </ul>
-                </li>
-                <li><b>Apply filters and subqueries to refine data views.</b>
-                    <ul>
-                        <li><i>Example</i>: A market researcher uses filters and subqueries to extract and analyze specific demographic data from survey responses.  </li>
-                    </ul>
-                </li>
-                <li><b>Enhance database performance and security using the database splitter and security features.</b>
-                    <ul>
-                        <li><i>Example</i>: An insurance company splits their database to improve performance and implements role-based security to protect sensitive customer data.  </li>
-                    </ul>
-                </li>
-            </ol>
-
-
-
-            <hr />
-            <h2>Concepts</h2>
-
-
-            <hr />
-
-
-            <p>Sample focus question: In what ways can macros and code be used to manage  a relational database?</p>
-            <p>Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
-            <ul>
-                <li>Macros</li>
-                <li>Actions</li>
-                <li>Command button macros</li>
-                <li>Form navigation</li>
-                <li>VBA code</li>
-                <li>Events</li>
-                <li>Modules</li>
-                <li>Functions</li>
-                <li>Immediate window</li>
-                <li>Filters</li>
-                <li>Subqueries</li>
-                <li>Autonumbers</li>
-                <li>Database performance</li>
-                <li>Database splitter</li>
-                <li>Security</li>
-            </ul>
-            <hr />
-
-        </div>
-
-
-        <!--Exercise 1-->
-
-        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Menus</a></div>
-
-        <div id="Exercise01" class="collapse in  col-lg-12">
-            <br />
-
-            <p>
-                Data Files needed for the Tutorial Project:<br />
-                <a href="LuckyTire10.accdb" class="bg-info text-white" target="_blank">LuckyTire10.accdb</a>
-                <br />
-                Answer the following questions using a copy of the<a href="LuckyTire_10.accdb"> <strong>LuckyTire10.accdb</strong></a> database file also located on the class network drive at:  \\store\classes\ YearTerm&nbsp; &amp; courseid &amp; &quot;\ReadOnly\&quot; ) 
-                <br />
-            </p>
-
-
-
-
-            <p>
-                Hint: turning on '<a href="SysObjects/SysObjects.html">System Objects</a>' can make working with List data sources much easier.<br />
-            </p>
-            <hr />
-            <h2>Part 10</h2>
-            <p>
-                Len Phan wants the  LuckyTire database to include an easy-to-use switchboard interface.<br />
-                You&rsquo;ll  create the interface by completing the following:
-            </p>
-            <ol start="1" type="1">
-                <li>Open the <strong>LuckyTire </strong>database.</li>
-            </ol>
-            <ol start="2" type="1">
-                <li>Design and create a form named <strong>frmQueriesDialogBox</strong>.<br />
-                    Use the figure below and the following descriptions as a guide to create the form.</li>
-            </ol>
-            <p>&nbsp;</p>
-
-            <p class="text-center">
-                <img src="Form_menu.jpg" alt="Form menu" class="img-responsive" />
-            </p>
-
-
-            <ol start="1" type="a">
-                <li>Place the text <strong>Queries </strong>in the form&rsquo;s title bar.<br />
-                    Set the following properties for the form:<br />
-                    set Record Selectors to No;<br />
-                    Navigation Buttons to No;<br />
-                    Auto Resize to No;<br />
-                    Close Button to No;<br />
-                    Modal to yes;<br />
-                    and Shortcut Menu to No.</li>
-            </ol>
-
-            <ol start="2" type="a">
-                <li>Use a list box with a Name property value of <strong>lstQueryList </strong>to display all the query names contained in the LuckyTire database, excluding those queries that start with a &ldquo;~&rdquo; character.<br />
-                    To place the query names in the list box, use an SQL SELECT statement to retrieve the query names from the       MSysObjects table.
-                            <br />
-                    Display the queries in query name order.<br />
-                    Delete the label attached to the list box, and widen the list box to approximately 2.5 inches.<br />
-                    <hr />
-                    <p>(50) 1. Remove line breaks and copy the SQL statement for the lstQueryList SQL statement below:</p>
-
-                    <!-- Enter your answer in the VALUE field below   GROK -->
-                    <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="SQL: " type="text">
-                    <br />
-                    <hr />
-
-                </li>
-            </ol>
-            <ol start="3" type="a">
-                <li>Use the heading <strong>Available Queries</strong>, formatted with a 14-point, bold font, above the list box.</li>
-            </ol>
-
-            <ol start="4" type="a">
-                <li>Three command buttons appear below the list box.<br />
-                    The left command button displays the Preview icon above the word <strong>Preview</strong>, the middle command        button displays the MS Access Query icon above the word <strong>Display</strong>, and the right command        button displays the CloseWindow icon above the word <strong>Close</strong>.
-                            <br />
-                    Double-clicking a query name has the same effect as selecting a query name in the list box and clicking the middle command button.<br />
-                    Both events cause Access to display the query datasheet for the selected query.<br />
-                    Clicking the left command button opens the selected query  in Print Preview.<br />
-                    (You will add the VBA code for these events in the tutorial project for Part 11.<br />
-                    For now, double-clicking or clicking should cause no action to occur.<br />
-                    Clicking the Close command button causes Access to close the dialog box.</li>
-            </ol>
-
-            <ol start="5" type="a">
-                <li>Resize the form&rsquo;s Detail section in Design view, and then resize the form in Form view.<br />
-                    Set the form&rsquo;s Border Style to Dialog, with the following properties:<br />
-                    Auto Center is Yes;<br />
-                    Fit to Screen is No;<br />
-                    and Scroll Bars is Neither.<br />
-                    Set the background color to any shade of Red in the Standard Colors gallery.<br />
-                    Set the background color of the list box to a lighter shade of red or equivalent.</li>
-            </ol>
-
-            <p>
-                Use the Snipping Tool to provide a screen shot of your form, showing all of the controls that you created.<br />
-
-                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-                (100) 2. Save the screen shot  as &quot;Ex2&quot; in your ' 
-                  <code><span id="Path1"></span></code>
-                ' folder.<br />
-                <br />
-            </p>
-
-
-        </div>
-
-        <div class="col-lg-12 text-danger">
-            <h2>Screen Shot Ex2</h2>
-            <hr />
-        </div>
-
-        <div>
-
-            <hr />
-
-
-            <h2>Part 11</h2>
-            <p>
-                Len Phan wants you to continue to work on the user interface of the Lucky Tire database.
-                <br />
-                You&rsquo;ll do so  by completing the following:
-            </p>
-
-            <ol start="1" type="1">
-                <li>Open the <strong>LuckyTire </strong>database.</li>
-            </ol>
-
-            <ol start="2" type="1">
-                <li>Create a Form Current event procedure  for the <strong>frmCustomer </strong>form to do the following:</li>
-            </ol>
-
-            <ol start="1" type="a">
-                <li>Display the Year field value in a bold, blue        text when the value is greater than 2005 and in normal, black text for        all other values. </li>
-                <li>Display the message <strong>New </strong>to the right of the Year text box in a bold, blue text only when the Year field value greater than 2005.</li>
-                <li>Test the procedure, and then save your form changes.</li>
-            </ol>
-
-
-            <p>
-                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-                (100) 3. Print all pages of the form as a .pdf file.<br />
-                Save the report  as &quot;Ex3&quot; in your ' 
-                  <code><span id="Path2"></span></code>
-                ' folder.<br />
-                <br />
-            </p>
-        </div>
-
-        <div class="col-lg-12 text-danger">
-            <h2>Ex3.pdf</h2>
-            <hr />
-        </div>
-
-
+        
+        <!-- ========== Hermes Agent Work Context ========== -->
         <div class="col-lg-12">
-
-            <ol start="4" type="1">
-                <li>Complete the <strong>frmQueriesDialogBox </strong>by doing the following: </li>
-            </ol>
-
-            <ol start="1" type="a">
-                <li>Create a Form Open event procedure that moves the        focus to the first query name in the list box when the        frmQueriesDialogBox form opens.</li>
-                <li>Create a <strong>basPreviewQuery </strong>function to open the selected query in the list box in Print Preview        and a <strong>basDisplayQuery </strong>function        to open the selected query in the list box in Datasheet view.</li>
-                <li>Attach the basPreviewQuery function to the On        Click property for the Preview command button in the form.</li>
-                <li>Attach the basDisplayQuery function to the On        Click property for the Display command button in the form and to the On        Dbl Click property for the form list box.</li>
-                <li>Switch to Form view, and then test all the        form&rsquo;s procedures and functions. Save and close the form.</li>
-            </ol>
-
-            <p>
-                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-                (100) 4. Use the Snipping tool to make a screen shot showing your database window after you have clicked the Preview and Display Command Buttons, so that the queries are visible.<br />
-                Save the screen shot  as &quot;Ex4&quot; in your ' 
-                <code><span id="Path3"></span></code>
-                ' folder.<br />
-                <br />
-            </p>
+            <a href="#HermesWorkContext" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="HermesWorkContext">Hermes Agent Work Context</a>
         </div>
-
-        <div class="col-lg-12 text-danger">
-            <h2>Ex4.pdf</h2>
+        <div id="HermesWorkContext" class="collapse in col-lg-12">
+            <p><strong>Active profile:</strong> use your course-specific Hermes profile <code>mis342</code> when you choose to use Hermes.</p>
+            <p><strong>Hermes session:</strong></p>
+            <pre>First use:  /new Summative10
+Return later: /resume Summative10
+When finished using Hermes: /quit</pre>
+            <p><strong>Hermes is available for explanation, planning, troubleshooting, alternatives, review, or verification, but its use is not mandatory.</strong></p>
+            <p><strong>Direct Mode:</strong> You may complete routine or entire assignment steps directly in Microsoft Access and the other required course software when you understand the task. You must still verify the result yourself.</p>
+            <p><strong>Suggested Hermes checkpoint:</strong> Read the intentionally defective VBA first. Then give Hermes the .bas source and known expected result, ask it to explain the defect, and independently test the proposed correction in Access.</p>
+            <p>Hermes is a coach. It does not replace Microsoft Access, independent verification, Digital Artifact Notebook evidence, or your final judgment. Do not add a Hermes screenshot merely to prove use.</p>
+            <p><strong>Safety and verification:</strong> do not place passwords, API keys, ODBC passwords, private information, or restricted data in prompts. Treat agent output as a candidate solution until you verify it in Access or the target DBMS.</p>
             <hr />
         </div>
 
 
-        <!-- Upload Access Database -->
-
-        <div class=" col-lg-12"><a href="#ExerciseUpload" class="btn btn-info" data-toggle="collapse">Exercise-Upload Database</a></div>
-
-        <div id="ExerciseUpload" class="collapse in  col-lg-12">
-
-
-            <p>
-                (100) 5. <a href="https://support.office.com/en-us/article/Compact-and-repair-a-database-6EE60F16-AED0-40AC-BF22-85FA9F4005B2" class="bg-info text-white" target="_blank">Compact &amp; Repair</a>, and then upload a copy of your LuckyTire10.accdb file, containing all your linked table settings,  to the D2L Assignment Folder 'Summative10_ACCDB'.<br />
-                Note: failing to compact and repair will result in a loss of points, because you will be uploading a larger .mdb file than necessary.
-            </p>
-
-            <hr />
-
-        </div>
-
-        <div class="text-danger">
-            <h2>Summative10_ACCDB</h2>
-            <hr />
-        </div>
-
-
-
-        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
-
-
-        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
-
-        <div id="ExercisePDF" class="collapse in  col-lg-12">
-            <p>
-                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
-                <br />
-                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
-                <br />
-                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
-                 <code><span id="Path4"></span></code>
-                ' folder.<br />
-            </p>
-            <br />
-
-            <p>
-                (50) 6. Save your file 'WebPage.pdf' in your ' 
-                <code><span id="Path5"></span></code>
-                ' folder.<br />
-
-
-            </p>
-
-            <div class="text-danger">
-                <h2>WebPage.pdf</h2>
-                <hr />
-            </div>
-
-            <p>
-                Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
-            </p>
-
-            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+        <!-- ========== Completion Sequence ========== -->
+        <div class="col-lg-12">
+            <h2>Assignment Completion Sequence</h2>
+            <p>Use this sequence as the main checklist for completing the assignment.</p>
             <ol>
-                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
-                <li>Create a new page and name it <code>Screenshots</code></li>
-                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path7"></span></code>
-                    ' folder.<br />
-                </li>
-                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
-                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
-                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
-                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
-                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+                <li>Review all three exercises, six concise questions, and required <strong>Screenshot A, Screenshot B, and Screenshot C</strong> before beginning.</li>
+                <li>Create the <code><span class="SummativeID"></span></code> page in your OneNote Digital Artifact Notebook and copy the
+                    <a href="../DigitalArtifactNotebook/ArtifactTemplate.html" class="bg-info text-white" target="_blank">Digital Artifact Notebook Template</a> to that page.</li>
+                <li>Complete the Access/database work. Capture each required screenshot when the related exercise is correct.</li>
+                <li>For each screenshot, add a verification statement explaining what it proves and a business or course relevance statement explaining why it matters.</li>
+                <li>Enter the six short answers into the HTML file in Visual Studio. Publish the assignment and verify the published webpage.</li>
+                <li>Complete the Final Assignment Reflection in the published webpage at least once and keep a copy for the DAN page.</li>
+                <li>Submit the published webpage for formative AI feedback. Revise and republish when feedback identifies a meaningful issue.</li>
+                <li>Follow <strong>Complete and Submit the Assignment</strong> to insert <code>WebPage.pdf</code>, export the DAN page, upload the PDF to D2L, and complete the web submission.</li>
             </ol>
-            <hr>
-
-
-            <p>
-                (50) 7. Save your file 'ScreenShots.pdf' in your ' 
-                 <code><span id="Path8"></span></code>
-                ' folder.<br />
-
-            </p>
-
-            <div class="text-danger">
-                <h2>ScreenShots.pdf</h2>
-                <hr />
+            <div class="alert alert-info" role="note">
+                <strong>Two separate submissions are required:</strong> the web-database submission and the D2L upload of <code><span class="SummativeID"></span>.pdf</code>.
             </div>
-
-
-            <p>&nbsp;</p>
-            <p>
-                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative10.pdf</strong>&#39; in your ' 
-                 <code><span id="Path9"></span></code>
-                ' folder.<br />
-
-            </p>
-
-
-            <p>(50) 8. Upload your file 'Summative10.pdf' to the D2L 'Summative10' Assignment folder.</p>
-
-            <div class="text-danger">
-                <h2>Summative10.pdf</h2>
-            </div>
-            <hr />
-
         </div>
 
-
-
-
-        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
-
-        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
-            <p>
-                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
-                <br />
-                Ensure that you have linked this assignment on your home page.
-                Note that your screen shots do not have to be completed to perform this step.<br>
-            </p>
-
-            (50) 9. Home Page Hyperlink<br />
-            Check and verify that this assignment is hyperlinked on your home page.<br />
-            <br />
-
-            (50) 10. Assignment submission<br />
-            Press the Submit button at the top or bottom of this page.
-                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
-        </div>
         <hr />
 
+        <!-- ========== Purpose ========== -->
+        <div class="col-lg-12">
+            <a href="#Purpose" class="btn btn-info" data-toggle="collapse">Assignment Purpose and Learning Outcomes</a>
+        </div>
+        <div id="Purpose" class="collapse in col-lg-12">
+            <p>Formative10 introduced database automation and showed that code can compile while still implementing the wrong business rule. Summative10 asks you to assemble a more application-like LuckyTire interface and independently test both macro/event behavior and VBA business logic.</p>
+            <p>After completing this assignment, you will be able to:</p>
+            <ol>
+                <li>Create a simple navigation/menu interface for a database application.</li>
+<li>Use a macro or command-button event to automate a repeatable task.</li>
+<li>Import, read, test, and troubleshoot VBA in a standard module.</li>
+<li>Use a known expected result to identify a logic defect.</li>
+<li>Evaluate AI-assisted code recommendations by compiling and testing them in Access.</li>
+            </ol>
+            <p><strong>Primary course learning-outcome alignment:</strong> CLOs 7 and 8, with supporting evidence for CLOs 11 and 12.</p>
+            <p>Questions 1 through 6 require concise answers of no more than 500 characters. The Final Assignment Reflection allows a longer response.</p>
+            <hr />
+        </div>
 
+        
+        <div class="col-lg-12">
+            <a href="#Resources" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="Resources">Resources and Help</a>
+        </div>
+        <div id="Resources" class="collapse in col-lg-12">
+            <ul>
+                <li>Review your completed MIS342 Formative10.</li>
+                <li>Use the assigned Cengage MindTap/eBook material for the Access topics in this assignment.</li>
+                <li>Use Microsoft Access in Microsoft 365.</li>
+                <li>Use Visual Studio Enterprise 2026 to edit and publish this HTML assignment.</li>
+                <li>Download <a href="LuckyTire_Normalized_Summative10.accdb" class="bg-info text-white">LuckyTire_Normalized_Summative10.accdb</a>.</li>
+<li>Download the intentionally defective module <a href="modLuckyTireServiceFee_Broken.bas" class="bg-info text-white">modLuckyTireServiceFee_Broken.bas</a>.</li>
+            </ul>
+            
+            <p>Hermes in the <code>mis342</code> profile is optional. Direct Mode is always available unless an instructor later states otherwise.</p>
+            <p>Suggested Hermes prompt:<br><code>I am completing MIS342 Summative10. I will paste a VBA function that compiles but fails a known business-rule test. Explain the logic defect and propose the smallest correction. I will compile and test the change in Microsoft Access before accepting it.</code></p>
+            <p>Hermes does not automatically receive your Access database. Provide only the non-sensitive object names, SQL, VBA, or error text needed for the question, then verify the recommendation in the actual software.</p>
+
+            <hr />
+        </div>
+
+
+        
+        <!-- ========== Exercise 1 ========== -->
+        <div class="col-lg-12">
+            <a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1 — Application Menu</a>
+        </div>
+        <div id="Exercise01" class="collapse in col-lg-12">
+            <ol>
+                <li>Download LuckyTire_Normalized_Summative10.accdb and save a working copy as <strong>Summative10_LuckyTire.accdb</strong>.</li>
+<li>Create or refine a form named <strong>frmLuckyTireMenu</strong> that serves as a simple application menu.</li>
+<li>Add a clear LuckyTire title and at least three controls/buttons that provide access to useful existing forms, queries, or reports.</li>
+<li>Set menu/form properties so the screen behaves like an application interface rather than a raw data-entry table when practical.</li>
+<li>Open the menu and test every control.</li>
+            </ol>
+            
+            <p>
+                <label for="q1"><strong>(50) Question 1</strong></label>
+                <textarea class="form-control" id="q1" name="q1" rows="4" readonly aria-readonly="true">What is the main business benefit of giving LuckyTire employees a menu/navigation form instead of requiring them to use the Access Navigation Pane?</textarea>
+                <br />
+                <label for="a1"><strong>Your answer:</strong></label>
+                <input name="a1" id="a1" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            <p>
+                <label for="q2"><strong>(50) Question 2</strong></label>
+                <textarea class="form-control" id="q2" name="q2" rows="4" readonly aria-readonly="true">What did you test to verify that every menu control opened the intended database object?</textarea>
+                <br />
+                <label for="a2"><strong>Your answer:</strong></label>
+                <input name="a2" id="a2" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            
+            <h2><strong> Screenshot A — LuckyTire Menu</strong></h2>
+            <p>Capture <strong>frmLuckyTireMenu in Form View</strong> with its title and at least three navigation controls visible.</p>
+            <p>Paste <strong>(50) Screenshot A</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence A - LuckyTire Menu</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> Explain what each visible control is intended to open and how you verified it.</li>
+                <li><strong>Business or course relevance:</strong> Explain how a controlled menu can simplify or standardize employee workflow.</li>
+            </ul>
+
+            <hr />
+        </div>
+
+
+        <!-- ========== Exercise 2 ========== -->
+        <div class="col-lg-12">
+            <a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2 — Macro or Event Automation</a>
+        </div>
+        <div id="Exercise02" class="collapse in col-lg-12">
+            <ol>
+                <li>Choose one button/control on frmLuckyTireMenu or another form and implement a simple macro or event action that opens a useful query, form, or report.</li>
+<li>Name/label the control so the action is clear to a user.</li>
+<li>Run the action from the form at least three times, including after closing/reopening the target object.</li>
+<li>Verify that it consistently opens the correct target.</li>
+<li>Inspect the control's event property or macro design so you can explain what triggers the automation.</li>
+            </ol>
+            
+            <p>
+                <label for="q3"><strong>(50) Question 3</strong></label>
+                <textarea class="form-control" id="q3" name="q3" rows="4" readonly aria-readonly="true">What event or macro action triggers your automated database task, and what object does it open?</textarea>
+                <br />
+                <label for="a3"><strong>Your answer:</strong></label>
+                <input name="a3" id="a3" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            <p>
+                <label for="q4"><strong>(50) Question 4</strong></label>
+                <textarea class="form-control" id="q4" name="q4" rows="4" readonly aria-readonly="true">What test showed that the automation was reliable rather than working only once by accident?</textarea>
+                <br />
+                <label for="a4"><strong>Your answer:</strong></label>
+                <input name="a4" id="a4" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            
+            <h2><strong> Screenshot B — Automated Form Action</strong></h2>
+            <p>Capture the <strong>form/control plus the successfully opened target object</strong>, or the relevant macro/event design when that more clearly proves the automation.</p>
+            <p>Paste <strong>(50) Screenshot B</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence B - Automated Form Action</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> Explain the test evidence that the action consistently performed the intended task.</li>
+                <li><strong>Business or course relevance:</strong> Explain why automating a repeatable navigation/task can improve LuckyTire employee workflow.</li>
+            </ul>
+
+            <hr />
+        </div>
+
+
+        <!-- ========== Exercise 3 ========== -->
+        <div class="col-lg-12">
+            <a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3 — Debug and Verify VBA Business Logic</a>
+        </div>
+        <div id="Exercise03" class="collapse in col-lg-12">
+            <ol>
+                <li>Import <strong>modLuckyTireServiceFee_Broken.bas</strong> as a standard VBA module.</li>
+<li>Compile the VBA project. Notice that successful compilation does not prove the business calculation is correct.</li>
+<li>Run the known test: LaborAmount = 200, PartsAmount = 300, ShopFeeRate = 0.05. The correct total is <strong>$525</strong>.</li>
+<li>Read the function yourself and predict why the original result is wrong.</li>
+<li>Use Hermes optionally, or Direct Mode, to review the .bas source and propose the smallest correction.</li>
+<li>Correct the function so it returns base labor + parts plus the percentage shop fee.</li>
+<li>Recompile and rerun the $525 test, then test a second known input of your choice.</li>
+<li>Save the corrected module/database.</li>
+            </ol>
+            
+            <p>
+                <label for="q5"><strong>(50) Question 5</strong></label>
+                <textarea class="form-control" id="q5" name="q5" rows="4" readonly aria-readonly="true">Why can the original VBA function compile successfully while still being wrong for LuckyTire's business rule?</textarea>
+                <br />
+                <label for="a5"><strong>Your answer:</strong></label>
+                <input name="a5" id="a5" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            <p>
+                <label for="q6"><strong>(50) Question 6</strong></label>
+                <textarea class="form-control" id="q6" name="q6" rows="4" readonly aria-readonly="true">What exact before/after test evidence proved that your corrected CalcServiceTotal function now follows the intended rule?</textarea>
+                <br />
+                <label for="a6"><strong>Your answer:</strong></label>
+                <input name="a6" id="a6" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            
+            <h2><strong> Screenshot C — Corrected VBA Test</strong></h2>
+            <p>Capture the <strong>VBA Immediate Window or other Access test output</strong> showing the corrected $525 result, with enough context to identify CalcServiceTotal.</p>
+            <p>Paste <strong>(50) Screenshot C</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence C - Corrected VBA Test</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> Explain why the known expected value proves more than successful compilation.</li>
+                <li><strong>Business or course relevance:</strong> Explain why automated business code requires explicit tests before LuckyTire relies on it.</li>
+            </ul>
+
+            <hr />
+        </div>
+
+
+        <!-- ========== Final Reflection ========== -->
+        <div class="col-lg-12">
+            <a href="#FinalReflection" class="btn btn-info" data-toggle="collapse">Final Assignment Reflection</a>
+        </div>
+        <div id="FinalReflection" class="collapse in col-lg-12">
+            <p>Complete and publish the assignment before responding.</p>
+            <label for="q7"><strong>(50) Question 7 — Final Reflection</strong></label>
+            <textarea class="form-control" style="font-weight: bold;" id="q7" name="q7" rows="6" maxlength="3000" readonly aria-readonly="true">If LuckyTire begins using AI assistants to help create macros or VBA, what should remain the employee's responsibility before the automation is allowed to affect real business data? Use evidence from your menu, macro/event, or VBA tests.</textarea>
+            <br />
+            <div class="alert alert-warning" role="alert">
+                Complete this reflection in the published webpage. Your response is submitted to the web database but is not saved back into your HTML file. Draft or copy your reflection before submitting. You may use the same reflection in your Digital Artifact Notebook.
+            </div>
+            <label for="a7"><strong>Your final reflection:</strong></label>
+            <textarea class="form-control" id="a7" name="a7" rows="12" maxlength="3000" placeholder="Type or paste your final reflection here..."></textarea>
+            <small id="charCount-a7" class="text-muted">Maximum: 3000 characters. AI feedback is formative feedback, not a grade.</small>
+            <hr />
+        </div>
+
+        <!-- ========== Complete and Submit ========== -->
+        <div class="col-lg-12">
+            <a href="#CompleteSubmission" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="CompleteSubmission">Complete and Submit the Assignment</a>
+        </div>
+        <div id="CompleteSubmission" class="collapse in col-lg-12">
+            <h2>1. Complete the Digital Artifact Notebook Page</h2>
+            <ol>
+                <li>Open OneNote to the correct MIS342 course and assignment section.</li>
+                <li>Confirm that the page is named <code><span class="SummativeID"></span></code> and contains the
+                    <a href="../DigitalArtifactNotebook/ArtifactTemplate.html" class="bg-info text-white" target="_blank">Digital Artifact Notebook Template</a>.</li>
+                <li>Confirm that <strong>Screenshot A, Screenshot B, and Screenshot C</strong> are visible, readable, and correctly labeled.</li>
+                <li>For each screenshot, include a verification statement and a business or course relevance statement.</li>
+                <li>Complete the reflection section in the DAN. You may use the same reflection entered in the published webpage.</li>
+            </ol>
+
+            <h2>2. Create and Insert WebPage.pdf</h2>
+            <ol>
+                <li>Open the final published webpage at your course website.</li>
+                <li>Verify your name, StarID, email, course information, and all six exercise answers.</li>
+                <li>Press <code>Ctrl + P</code>, or use the browser Print menu, and save the webpage as <code>WebPage.pdf</code> in <code><span id="Path6"></span></code>.</li>
+                <li>In OneNote, use <strong>Insert &gt; File Printout</strong> to insert <code>WebPage.pdf</code>. Do not insert only a link or file icon.</li>
+            </ol>
+            <p><strong>(50 points) WebPage.pdf:</strong> The readable webpage printout is included in the Digital Artifact Notebook.</p>
+
+            <h2>3. Export and Verify the Final PDF</h2>
+            <ol>
+                <li>Export or print the completed OneNote page as <code><span class="SummativeID"></span>.pdf</code> and save it in <code><span id="Path7"></span></code>.</li>
+                <li>Open the exported PDF and confirm that all screenshots, labels, verification statements, relevance statements, reflection content, and WebPage.pdf are visible and readable.</li>
+                <li>Correct the OneNote page and export again if anything is missing, cut off, too small, or unreadable.</li>
+            </ol>
+            <p><strong>(50 points) D2L PDF submission:</strong> Upload <code><span class="SummativeID"></span>.pdf</code> to the matching D2L assignment folder.</p>
+
+            <h2>4. Complete the Web Submission Requirements</h2>
+            <p><strong>(50 points) Home Page Hyperlink:</strong> Verify that Summative10 is linked correctly from your MIS342 course home page.</p>
+            <p><strong>(50 points) Web Database Submission:</strong> Press the Submit button at the top or bottom of this page. Your answers are saved to the web database and sent for formative AI feedback.</p>
+            <ul>
+                <li>The AI feedback is not a grade.</li>
+                <li>Complete the Final Assignment Reflection on at least one web submission.</li>
+                <li>Additional submissions are optional but permitted; the reflection does not have to be submitted again.</li>
+                <li>Read the confirmation page and correct or resubmit work when appropriate.</li>
+            </ul>
+            <div class="alert alert-warning" role="alert">
+                <strong>Final check:</strong> The D2L PDF upload and the web-database submission are separate requirements. Complete both.
+            </div>
+            <div class="sr-only" aria-hidden="true"><span id="Path8"></span><span id="Path9"></span></div>
+        </div>
+
+        <hr />
 
         <div class="col-lg-12">
             <br />
-            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit">
             <br />
         </div>
+
     </form>
 
-
-
-    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
-
-    <!-- Creative Commons License Info -->
     <footer>
         <div id="licenseInfo" class="col-lg-12 text-muted"></div>
         <div id="footerText" class="col-lg-12 text-muted"></div>
     </footer>
 
-    <!-- ========== Script Includes (Order is Critical) ========== -->
     <script src="../../ReadOnly/jquery-1.js"></script>
     <script src="../../ReadOnly/bootstrap.js"></script>
     <script src="../studentConstants.js"></script>
     <script src="../../ReadOnly/courseConstants.js"></script>
     <script src="../../ReadOnly/domForms.js"></script>
+
+    <script>
+    (function () {
+        var box = document.getElementById('a7');
+        var count = document.getElementById('charCount-a7');
+        if (!box || !count) { return; }
+        function updateCount() { count.textContent = box.value.length + ' / 3000 characters'; }
+        updateCount();
+        box.addEventListener('input', updateCount);
+    })();
+    </script>
 
 </body>
 </html>

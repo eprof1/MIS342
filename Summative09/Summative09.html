@@ -2,158 +2,78 @@
 <html lang="en">
 
 <!--
-    PgP 7/30/2025 add LinkedIn Learning as reflective assignment
-	PgP 3/2/2020 updating MIS202 files to align with other assignments 
+PgP 8/16/2026 MIS342 Summative09 redesign
+- aligned to LuckyTire Formative09
+- structure based on approved modified MIS342 Summative01
+- maximum three exercises, maximum two questions per exercise
+- Digital Artifact Notebook evidence limited to one screenshot per exercise
+- Personal Hermes Agent optional beginning with Summative04; Direct Mode remains available
 -->
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap -->
     <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
-
-    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
-
-    <title>MIS342Summative09</title>
+    <title>MIS342 Summative09</title>
 </head>
 
 <body class="container-fluid">
 
-    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/codex/ProcessAICall.aspx" method="post" name="frmAssignment" id="frmAssignment">
 
         <input name="InstID" id="InstID" value="00617282" type="hidden">
+        <input name="assignmentVersion" id="assignmentVersion" value="Summative09-FA2026-v1" type="hidden">
+        <input name="reflectionQuestion" id="reflectionQuestion" value="7" type="hidden">
 
-        <!-- had to put assignment here, because it is used in the path calculation -->
-        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+        <textarea id="datasetContext" name="datasetContext" readonly hidden>Assignment: MIS342 Summative09 — LuckyTire Action Queries and Advanced Relationships. Aligned with Formative09 and based on the instructor-supplied LuckyTire_09 checkpoint. Students analyze a many-to-many relationship through tblAssignment and a one-to-one customer/credit-card relationship, then create previewed make-table/append/update/delete queries only on a local working table and add useful indexes. Hermes is optional; Direct Mode remains valid. Students must back up first and never run destructive queries against shared linked data. Three exercises, six answers, three DAN screenshots, reflection and standard completion total 700 points. Reward correct relationship interpretation, SELECT-before-action safeguards, scoped action SQL, index reasoning, and risk awareness.</textarea>
 
-        <h1 class=" text-center">Action Queries and Advanced Table Relationships </h1>
+        <h1 class="text-center">LuckyTire Action Queries and Advanced Relationships</h1>
 
         <h2 id="student-info" class="sr-only">Student Information</h2>
-        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
         <div class="row" aria-labelledby="student-info">
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="FirstName" class="text-dark">First Name:</label>
-                    <input class="form-control"
-                        name="FirstName"
-                        id="FirstName"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        autocomplete="given-name"
-                        aria-label="First Name"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="LastName" class="text-dark">Last Name:</label>
-                    <input class="form-control"
-                        name="LastName"
-                        id="LastName"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        autocomplete="family-name"
-                        aria-label="Last Name"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="StarID" class="text-dark">StarID:</label>
-                    <input class="form-control"
-                        name="StarID"
-                        id="StarID"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        autocomplete="username"
-                        aria-label="StarID"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="email" class="text-dark">Email:</label>
-                    <input class="form-control"
-                        name="email"
-                        id="email"
-                        type="email"
-                        readonly
-                        aria-readonly="true"
-                        autocomplete="email"
-                        aria-label="Email"
-                        tabindex="0" />
-                </div>
-            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="FirstName" class="text-dark">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" readonly aria-readonly="true" autocomplete="given-name" aria-label="First Name" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="LastName" class="text-dark">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" readonly aria-readonly="true" autocomplete="family-name" aria-label="Last Name" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="StarID" class="text-dark">StarID:</label>
+                <input class="form-control" name="StarID" id="StarID" type="text" readonly aria-readonly="true" autocomplete="username" aria-label="StarID" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="email" class="text-dark">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" readonly aria-readonly="true" autocomplete="email" aria-label="Email" tabindex="0" />
+            </div></div>
         </div>
-        <input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+        <input name="pin" id="pin" type="hidden" />
 
         <h2 id="course-info" class="sr-only">Course Information</h2>
         <div class="row" aria-labelledby="course-info">
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="Semester" class="text-dark">Semester:</label>
-                    <input class="form-control"
-                        name="Semester"
-                        id="Semester"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        aria-label="Semester"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="Class" class="text-dark">Class:</label>
-                    <input class="form-control"
-                        name="Class"
-                        id="Class"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        aria-label="Class"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="Section" class="text-dark">Section:</label>
-                    <input class="form-control"
-                        name="Section"
-                        id="Section"
-                        type="text"
-                        readonly
-                        aria-readonly="true"
-                        aria-label="Section"
-                        tabindex="0" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group">
-                    <label for="assignment" class="text-dark">Assignment:</label>
-                    <input class="form-control"
-                        name="assignment"
-                        id="assignment"
-                        type="text"
-                        readonly
-                        value="Summative09"
-                        aria-readonly="true"
-                        aria-label="Assignment"
-                        tabindex="0" />
-                </div>
-            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Semester" class="text-dark">Semester:</label>
+                <input class="form-control" name="Semester" id="Semester" type="text" readonly aria-readonly="true" aria-label="Semester" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Class" class="text-dark">Class:</label>
+                <input class="form-control" name="Class" id="Class" type="text" readonly aria-readonly="true" aria-label="Class" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Section" class="text-dark">Section:</label>
+                <input class="form-control" name="Section" id="Section" type="text" readonly aria-readonly="true" aria-label="Section" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="assignment" class="text-dark">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" type="text" readonly value="Summative09" aria-readonly="true" aria-label="Assignment" tabindex="0" />
+            </div></div>
         </div>
-
-        <!-- -end-Student, class and assignment information-end -->
-
 
         <div class="col-lg-12">
             <br />
-            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit">
             <br />
         </div>
 
@@ -162,445 +82,319 @@
             <hr />
         </div>
 
-        <!-- -start-objectives-start -->
-        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
-        <div id="Objectives" class=" collapse in col-lg-12">
-
-            <!--Above this line similar except for Assignment number and title   -->
-
-<h2 >Learning Objectives</h2>
-
-            <ol start="1" type="1">
-                <li  ><b>Create and execute action queries to make tables, append, delete, and update records.</b>  
-                    <ul type="circle">
-                        <li  ><i>Example</i>: A logistics company uses an append query to add new shipping records to their database from partner systems.  </li>
-                    </ul>
-                </li>
-                <li  ><b>Design advanced table relationships, including many-to-many and one-to-one relationships.</b>  
-                    <ul type="circle">
-                        <li  ><i>Example</i>: An ecommerce platform designs many-to-many relationships to associate products with multiple categories, facilitating flexible browsing options.  </li>
-                    </ul>
-                </li>
-                <li  ><b>Implement table joins and indexes to enhance data retrieval and integrity.</b>  
-                    <ul type="circle">
-                        <li  ><i>Example</i>: A legal firm implements indexes on client and case data to improve search speeds and ensure data accuracy across linked tables.  </li>
-                    </ul>
-                </li>
-            </ol>
-
-            
-            
-            <hr />
-            <h2 >Concepts</h2>
-
-            <p>Sample focus question: How can Action Queries and relationships be used to enhance the functionality of a relational database?</p>
-            <p>Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
-            <ul>
-                <li>Action queries</li>
-                <li>Make-table</li>
-                <li>Append</li>
-                <li>Delete</li>
-                <li>Update</li>
-                <li>Relationships</li>
-                <li>Many-to-many</li>
-                <li>One-to-one</li>
-                <li>Table joins</li>
-                <li>Inner join</li>
-                <li>Outer join</li>
-                <li>Indexes</li>
-            </ul>
-            <hr />
-
-            <hr />
-
+        
+        <!-- ========== Hermes Agent Work Context ========== -->
+        <div class="col-lg-12">
+            <a href="#HermesWorkContext" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="HermesWorkContext">Hermes Agent Work Context</a>
         </div>
-
-        <!--Exercise 1-->
-
-
-        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1- Many-to-Many Relationship</a></div>
-
-        <div id="Exercise01" class="collapse in  col-lg-12">
-            <br />
-
-            <p>
-                Data Files needed for the Tutorial Project:<br />
-                <a href="LuckyTire_09.accdb" class="bg-info text-white" target="_blank">LuckyTire09.accdb</a>
-                <br />
-                Answer the following questions using a copy of the <strong>LuckyTire09.accdb</strong> database file also located on the class network drive at:  \\store\classes\ YearTerm&nbsp; &amp; courseid &amp; &quot;\ReadOnly\&quot; ) 
-                <br />
-            </p>
-
-
-
-
-
-
-
-            <hr />
-
-            <p>
-                Len Phan is the owner of  Lucky Tire, a chain of tire and auto service centers.
-                <br />
-                Len has an Access  database named LuckyTire to store information about customers, tires,  manufacturers, invoices, and credit cards.
-                <br />
-                The tblCustomer table contains data  about Lucky Tire&rsquo;s customers;<br />
-                tblTires contains data about the tires stocked by  Lucky Tires;<br />
-                the tblSales contains data about tire sales;<br />
-                the tblEmployee  contains data about Lucky Tire&rsquo;s employees;
-                <br />
-                the tblAssignment contains data  about which invoices which employees worked on;
-                <br />
-                and the tblCreditCard contains  data about the credit cards used to pay invoices.
-                <br />
-                Len asks you to define table  relationships and create some new queries for him.
-                <br />
-                You&rsquo;ll do so by completing  the following:<br />
-                &nbsp;
-            </p>
-
-            <ul>
-                <li>Open the <strong>LuckyTire </strong>database. </li>
-                <li>Change the first record in the <strong>tblCustomer </strong>table datasheet so the       First Name and Last Name columns contain your first and last names.<br />
-                    Close       the table.</li>
-                <li>Define a many-to-many relationship between the       tblSales and tbEmployee tables.<br />
-                    Use the tblAssignment table as the related or intermediate table. 
-            </ul>
-
-            <p>
-                Use the Snipping Tool to provide a screen shot of the Relationships window 
-   showing the three tables.
-            </p>
-            <br />
-
-            <p>
-                It will look something like this, but yours 
-		 must have the appropriate linkages between the tables:
-            </p>
-
-            <img alt="Relationships" src="ManyToManyRelationship.jpg" class="img-responsive" /><br />
-
-            <p>
-                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-                (50) 1. Save the screen shot  as &quot;Ex1&quot; in your ' 
-                 <code><span id="Path1"></span></code>
-                ' folder.<br />
-                <br />
-            </p>
-        </div>
-
-        <div class="col-lg-12 text-danger">
-            <h2>Screen Shot Ex1</h2>
+        <div id="HermesWorkContext" class="collapse in col-lg-12">
+            <p><strong>Active profile:</strong> use your course-specific Hermes profile <code>mis342</code> when you choose to use Hermes.</p>
+            <p><strong>Hermes session:</strong></p>
+            <pre>First use:  /new Summative09
+Return later: /resume Summative09
+When finished using Hermes: /quit</pre>
+            <p><strong>Hermes is available for explanation, planning, troubleshooting, alternatives, review, or verification, but its use is not mandatory.</strong></p>
+            <p><strong>Direct Mode:</strong> You may complete routine or entire assignment steps directly in Microsoft Access and the other required course software when you understand the task. You must still verify the result yourself.</p>
+            <p><strong>Suggested Hermes checkpoint:</strong> Before running an action query, paste the Access SQL and intended change into Hermes and ask it to identify the expected affected rows and a SELECT-query preview. Run changes only on the local working copy.</p>
+            <p>Hermes is a coach. It does not replace Microsoft Access, independent verification, Digital Artifact Notebook evidence, or your final judgment. Do not add a Hermes screenshot merely to prove use.</p>
+            <p><strong>Safety and verification:</strong> do not place passwords, API keys, ODBC passwords, private information, or restricted data in prompts. Treat agent output as a candidate solution until you verify it in Access or the target DBMS.</p>
             <hr />
         </div>
 
 
-
-        <!--Exercise 2-->
-
-        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2- One-to-one Relationship</a></div>
-
-        <div id="Exercise02" class="collapse in  col-lg-12">
-            <br />
-
-            <p>
-                Define a one-to-one relationship between the primary tblCustomer table and the related tblCreditCard table.
-                <br />
-                Select the referential integrity option and the cascade updates option for the       relationships.
-            </p>
-            <br />
-
-            <p>(50) 2. Briefly explain the purpose of a one-to-one relationship.</p>
-
-            <!-- Enter your answer in the VALUE field below   GROK -->
-            <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="1 to 1: " type="text">
-            <br />
-
-        </div>
-        <hr />
-
-
-        <!--Exercise 3-->
-
-        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3- Action Queries</a></div>
-
-        <div id="Exercise03" class="collapse in col-lg-12">
-            <br />
-
-            <p>
-                Create a make-table query based on the qryInvoiceTotal query.<br />
-                Select all fields from the query and only those records where the TireType field value is <strong>Performance</strong> or <strong>Truck</strong>.
-                <br />
-                Use <strong>tblSpecialTire </strong>as the new table name.<br />
-                Store the table in the current database.
-                <br />
-                Run the query, and then save the query as qryMake_tblSpecialTire.
-            </p>
-            <br />
-
-
-            <p>(<strong>50</strong>) 3. Remove line breaks and copy the SQL statement for the make table query below</p>
-
-            <!-- Enter your answer in the VALUE field below   GROK -->
-            <input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="SQL: " type="text">
-            <br />
-
-            <p>
-                Create an append query based on the qryInvoiceTotal query.<br />
-                Select all fields and selecting only those records where the ModelName field value is <strong>Harmony</strong>, <strong>Kestral</strong>, or <strong>Peregrine</strong>.                
-                <br />
-                Append the records to the tblSpecialTire table, run the query, and then save the query as qryAppend_tblSpecialTire.
-            </p>
-            <br />
-
-            <p>(<strong>50</strong>) 4. Remove line breaks and copy the SQL statement for the append query below. </p>
-
-            <!-- Enter your answer in the VALUE field below   GROK -->
-            <input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="SQL: " type="text">
-            <br />
-
-            <p>
-                Create an update query to select all records in the tblSpecialTire table where the TireType field value is <strong>Performance</strong>.<br />
-                Change (update) the field value to <strong>PerfPlus</strong>.
-                <br />
-                Run the query, and then save the query as qryUpdate_tblSpecialTire.
-            </p>
-            <br />
-
-            <p>(<strong>50</strong>) 5. Remove line breaks and copy the SQL statement for the update query below </p>
-
-            <!-- Enter your answer in the VALUE field below   GROK -->
-            <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="SQL: " type="text">
-            <br />
-
-
-            <p>
-                Create a delete query that deletes all records in the tblSpecialTire table in which the UnitPrice field value is less than <strong>30</strong>.    
-                <br />
-                Run the query, and then save the query as qryDelete_UnitPrice. 
-                <br />
-                Open the <strong>tblSpecialTire </strong>table, resize all columns to their best fit, and then save and close the table.<br />
-            </p>
-
-            <p>(<strong>50</strong>) 6. Remove the line breaks and copy the SQL statement for the delete query below</p>
-
-            <!-- Enter your answer in the VALUE field below   GROK -->
-            <input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="SQL: " type="text">
-            <br />
-
-            <p>
-                Create a query that performs an outer join between the tblCustomer and tblCreditCard tables.<br />
-                Select all records from the tblCreditCard table and any matching records from the tblCustomer table.
-                <br />
-                Display the       First and Last fields from the tblCustomer table, and the FirstName and       LastName fields from the tblCreditCard table.<br />
-                Change the column names for       the FirstName and LastName fields from the tblCreditCard table to <strong>Credit First Name </strong>and <strong>Credit Last Name</strong>.
-                <br />
-                Save the query as <strong>qryCustomerCreditCardOuterJoin</strong><br />
-                Run the query, resize all columns to their best fit, and then save and close the query.<br />
-            </p>
-
-            <p>(<strong>50</strong>) 7. Remove line breaks and copy the SQL statement for qryCustomerCreditCardOuterJoin below. </p>
-
-            <!-- Enter your answer in the VALUE field below   GROK -->
-            <input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="SQL: " type="text">
-            <br />
-
-
-        </div>
-        <hr />
-
-        <!--Exercise 4-->
-
-        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4- Indexes</a></div>
-
-        <div id="Exercise04" class="collapse in  col-lg-12">
-            <br />
-
-
-            <p>
-                Open the <strong>tblSpecialTire </strong>table in Design view.<br />
-                Add an index for the CustID field, allowing duplicates.<br />
-                Add an index for the TireType field, allowing duplicates.<br />
-                Save and close the table.
-            </p>
-            <br />
-
-            <p>
-                Provide a screen shot of the Indexes dialog box, showing the appropriate settings.<br />
-
-                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
-                (50) 8. Save the screen shot  as &quot;Ex8&quot; in your ' 
-                <code><span id="Path2"></span></code>
-                ' folder.<br />
-                <br />
-            </p>
-        </div>
-
-        <div class="col-lg-12 text-danger">
-            <h2>Screen Shot Ex8</h2>
-            <hr />
-        </div>
-
-
-        <!-- Exercise 5-->
-
-
-        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5- Action Query Dangers</a></div>
-
-        <div id="Exercise05" class="collapse in  col-lg-12">
-            <br />
-
-            <p>Compact and repair the <strong>LuckyTire</strong> database, close the database, and then exit Access.</p>
-
-            <p>
-                (<strong>50</strong>) 9. Briefly explain  the danger in allowing an employee to use Microsoft Access Action Queries in an organization that uses Linked Tables 
-   and other linked data sources.
-            </p>
-
-            <!-- Enter your answer in the VALUE field below   GROK -->
-            <input name="q9" id="q9" size="120" maxlength="120" class="form-control" value="Danger: " type="text">
-            <br />
-
-
-        </div>
-        <hr />
-
-        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
-
-
-        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
-
-        <div id="ExercisePDF" class="collapse in  col-lg-12">
-            <p>
-                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
-                <br />
-                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
-                <br />
-                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
-                <code><span id="Path3"></span></code>
-                ' folder.<br />
-            </p>
-            <br />
-
-            <p>
-                (50) 10. Save your file 'WebPage.pdf' to the ' 
-                 <code><span id="Path4"></span></code>
-                ' folder.<br />
-
-
-            </p>
-
-            <div class="text-danger">
-                <h2>WebPage.pdf</h2>
-                <hr />
-            </div>
-
-
-
-			<p>
-				Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
-			</p>
-
-            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+        <!-- ========== Completion Sequence ========== -->
+        <div class="col-lg-12">
+            <h2>Assignment Completion Sequence</h2>
+            <p>Use this sequence as the main checklist for completing the assignment.</p>
             <ol>
-                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
-                <li>Create a new page and name it <code>Screenshots</code></li>
-                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path7"></span></code>
-                    ' folder.<br />
-                </li>
-                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
-                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
-                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
-                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
-                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+                <li>Review all three exercises, six concise questions, and required <strong>Screenshot A, Screenshot B, and Screenshot C</strong> before beginning.</li>
+                <li>Create the <code><span class="SummativeID"></span></code> page in your OneNote Digital Artifact Notebook and copy the
+                    <a href="../DigitalArtifactNotebook/ArtifactTemplate.html" class="bg-info text-white" target="_blank">Digital Artifact Notebook Template</a> to that page.</li>
+                <li>Complete the Access/database work. Capture each required screenshot when the related exercise is correct.</li>
+                <li>For each screenshot, add a verification statement explaining what it proves and a business or course relevance statement explaining why it matters.</li>
+                <li>Enter the six short answers into the HTML file in Visual Studio. Publish the assignment and verify the published webpage.</li>
+                <li>Complete the Final Assignment Reflection in the published webpage at least once and keep a copy for the DAN page.</li>
+                <li>Submit the published webpage for formative AI feedback. Revise and republish when feedback identifies a meaningful issue.</li>
+                <li>Follow <strong>Complete and Submit the Assignment</strong> to insert <code>WebPage.pdf</code>, export the DAN page, upload the PDF to D2L, and complete the web submission.</li>
             </ol>
-            <hr>
-
-
-            <p>
-                (50) 11. Save your file 'ScreenShots.pdf' in your ' 
-                 <code><span id="Path8"></span></code>
-                ' folder.<br />
-
-            </p>
-
-            <div class="text-danger">
-                <h2>ScreenShots.pdf</h2>
-                <hr />
+            <div class="alert alert-info" role="note">
+                <strong>Two separate submissions are required:</strong> the web-database submission and the D2L upload of <code><span class="SummativeID"></span>.pdf</code>.
             </div>
-
-
-            <p>&nbsp;</p>
-            <p>
-                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative09.pdf</strong>&#39; in your ' 
-               <code><span id="Path9"></span></code>
-                ' folder.<br />
-
-            </p>
-
-
-            <p>(50) 12. Upload your file 'Summative09.pdf' to the D2L 'Summative09' Assignment folder.</p>
-
-            <div class="text-danger">
-                <h2>Summative09.pdf</h2>
-            </div>
-            <hr />
-
         </div>
 
-
-
-
-        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
-
-        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
-            <p>
-                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
-                <br />
-                Ensure that you have linked this assignment on your home page.
-                Note that your screen shots do not have to be completed to perform this step.<br>
-            </p>
-
-            (50) 13. Home Page Hyperlink<br />
-            Check and verify that this assignment is hyperlinked on your home page.<br />
-            <br />
-
-            (50) 14. Assignment submission<br />
-            Press the Submit button at the top or bottom of this page.
-                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
-        </div>
         <hr />
 
+        <!-- ========== Purpose ========== -->
+        <div class="col-lg-12">
+            <a href="#Purpose" class="btn btn-info" data-toggle="collapse">Assignment Purpose and Learning Outcomes</a>
+        </div>
+        <div id="Purpose" class="collapse in col-lg-12">
+            <p>Formative09 introduced advanced relationships and the danger of action queries. Summative09 requires you to create, preview, run, and verify controlled data-changing queries while protecting the original/shared data.</p>
+            <p>After completing this assignment, you will be able to:</p>
+            <ol>
+                <li>Analyze many-to-many and one-to-one relationships.</li>
+<li>Use a junction table to explain many-to-many data.</li>
+<li>Preview affected rows before running action queries.</li>
+<li>Create and verify make-table, append, update, or delete queries on a local working table.</li>
+<li>Create indexes and evaluate the risk of action queries against shared linked data.</li>
+            </ol>
+            <p><strong>Primary course learning-outcome alignment:</strong> CLOs 3, 4, and 8, with supporting evidence for CLOs 9 and 11.</p>
+            <p>Questions 1 through 6 require concise answers of no more than 500 characters. The Final Assignment Reflection allows a longer response.</p>
+            <hr />
+        </div>
 
+        
+        <div class="col-lg-12">
+            <a href="#Resources" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="Resources">Resources and Help</a>
+        </div>
+        <div id="Resources" class="collapse in col-lg-12">
+            <ul>
+                <li>Review your completed MIS342 Formative09.</li>
+                <li>Use the assigned Cengage MindTap/eBook material for the Access topics in this assignment.</li>
+                <li>Use Microsoft Access in Microsoft 365.</li>
+                <li>Use Visual Studio Enterprise 2026 to edit and publish this HTML assignment.</li>
+                <li>Download <a href="LuckyTire_Normalized_Summative09.accdb" class="bg-info text-white">LuckyTire_Normalized_Summative09.accdb</a>.</li>
+            </ul>
+            
+            <p>Hermes in the <code>mis342</code> profile is optional. Direct Mode is always available unless an instructor later states otherwise.</p>
+            <p>Suggested Hermes prompt:<br><code>I am completing MIS342 Summative09. I will paste Microsoft Access action-query SQL plus the change I intend. Identify which rows should be affected, flag overly broad criteria, and show how I can preview the same rows with a SELECT query. Do not recommend running destructive SQL against linked/shared tables.</code></p>
+            <p>Hermes does not automatically receive your Access database. Provide only the non-sensitive object names, SQL, VBA, or error text needed for the question, then verify the recommendation in the actual software.</p>
+
+            <hr />
+        </div>
+
+
+        
+        <!-- ========== Exercise 1 ========== -->
+        <div class="col-lg-12">
+            <a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1 — Advanced Relationships</a>
+        </div>
+        <div id="Exercise01" class="collapse in col-lg-12">
+            <ol>
+                <li>Download LuckyTire_Normalized_Summative09.accdb. Create an untouched backup, then save a working copy as <strong>Summative09_LuckyTire.accdb</strong>.</li>
+<li>Open the Relationships window and locate tblSales, tblEmployee, and tblAssignment.</li>
+<li>Verify/create the two one-to-many relationships that use tblAssignment as the junction/intermediate table for the sales-to-employee many-to-many relationship.</li>
+<li>Locate/define the one-to-one relationship between tblCustomer and tblCreditCard when available and enforce referential integrity as appropriate.</li>
+<li>Save the Relationships layout.</li>
+            </ol>
+            
+            <p>
+                <label for="q1"><strong>(50) Question 1</strong></label>
+                <textarea class="form-control" id="q1" name="q1" rows="4" readonly aria-readonly="true">How does tblAssignment allow one sale/invoice to involve multiple employees while also allowing an employee to work on multiple sales?</textarea>
+                <br />
+                <label for="a1"><strong>Your answer:</strong></label>
+                <input name="a1" id="a1" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            <p>
+                <label for="q2"><strong>(50) Question 2</strong></label>
+                <textarea class="form-control" id="q2" name="q2" rows="4" readonly aria-readonly="true">Why might LuckyTire use a one-to-one relationship for a customer/credit-card extension table instead of putting every credit-card field in tblCustomer?</textarea>
+                <br />
+                <label for="a2"><strong>Your answer:</strong></label>
+                <input name="a2" id="a2" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            
+            <h2><strong> Screenshot A — Advanced Relationships</strong></h2>
+            <p>Capture the <strong>Relationships window</strong> showing tblSales, tblEmployee, tblAssignment and the one-to-one customer/credit-card relationship when available.</p>
+            <p>Paste <strong>(50) Screenshot A</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence A - Advanced Relationships</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> Explain how the shown relationship lines support your many-to-many/one-to-one explanation.</li>
+                <li><strong>Business or course relevance:</strong> Explain why choosing the correct relationship structure protects data meaning and integrity.</li>
+            </ul>
+
+            <hr />
+        </div>
+
+
+        <!-- ========== Exercise 2 ========== -->
+        <div class="col-lg-12">
+            <a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2 — Create a Safe Local Action-Query Target</a>
+        </div>
+        <div id="Exercise02" class="collapse in col-lg-12">
+            <ol>
+                <li>Use an existing invoice-total query (such as qryInvoiceTotal) as the source for a <strong>make-table query</strong> that selects a limited tire subset, such as TireType = Performance or Truck.</li>
+<li>Before converting/running it as an action query, run the equivalent SELECT criteria and record the expected row count.</li>
+<li>Create the local table <strong>tblSpecialTire</strong> with the make-table query.</li>
+<li>Create an append query for a second explicitly limited subset and preview the same criteria with SELECT first.</li>
+<li>Run the append only after the previewed rows match your intended scope.</li>
+<li>Verify the resulting row count and representative values in tblSpecialTire.</li>
+            </ol>
+            
+            <p>
+                <label for="q3"><strong>(50) Question 3</strong></label>
+                <textarea class="form-control" id="q3" name="q3" rows="4" readonly aria-readonly="true">What SELECT-preview safeguard did you use before creating/appending tblSpecialTire, and how many rows did you expect to affect?</textarea>
+                <br />
+                <label for="a3"><strong>Your answer:</strong></label>
+                <input name="a3" id="a3" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            <p>
+                <label for="q4"><strong>(50) Question 4</strong></label>
+                <textarea class="form-control" id="q4" name="q4" rows="4" readonly aria-readonly="true">Why is using a new local tblSpecialTire safer for this exercise than testing the action query against shared or linked production-like data?</textarea>
+                <br />
+                <label for="a4"><strong>Your answer:</strong></label>
+                <input name="a4" id="a4" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            
+            <h2><strong> Screenshot B — Action Query Result</strong></h2>
+            <p>Capture <strong>tblSpecialTire in Datasheet View</strong> after the controlled make-table/append operations, with representative rows visible.</p>
+            <p>Paste <strong>(50) Screenshot B</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence B - Action Query Result</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> Explain how the row count/values compare with your SELECT previews.</li>
+                <li><strong>Business or course relevance:</strong> Explain why previewing and isolating changes is a good organizational control.</li>
+            </ul>
+
+            <hr />
+        </div>
+
+
+        <!-- ========== Exercise 3 ========== -->
+        <div class="col-lg-12">
+            <a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3 — Update/Delete and Index Safely</a>
+        </div>
+        <div id="Exercise03" class="collapse in col-lg-12">
+            <ol>
+                <li>Create a SELECT query identifying a small, explicit subset of tblSpecialTire to update. Verify the rows first.</li>
+<li>Convert the copy to an update query and make a harmless instructional change to a local descriptive value; run and verify it.</li>
+<li>Create a SELECT query identifying a small subset that could be deleted. Record the expected count, then convert a copy to a delete query and run it only on tblSpecialTire.</li>
+<li>Open tblSpecialTire and verify the update/delete results.</li>
+<li>Add indexes to two fields useful for lookup/join/filtering while allowing duplicates when the business data can repeat.</li>
+<li>Do not run any action query against ODBC-linked/shared tables.</li>
+            </ol>
+            
+            <p>
+                <label for="q5"><strong>(50) Question 5</strong></label>
+                <textarea class="form-control" id="q5" name="q5" rows="4" readonly aria-readonly="true">What evidence showed that your update/delete affected only the records you intended?</textarea>
+                <br />
+                <label for="a5"><strong>Your answer:</strong></label>
+                <input name="a5" id="a5" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            <p>
+                <label for="q6"><strong>(50) Question 6</strong></label>
+                <textarea class="form-control" id="q6" name="q6" rows="4" readonly aria-readonly="true">Why can action queries become dangerous when Access is connected to shared linked tables, and what control should LuckyTire require?</textarea>
+                <br />
+                <label for="a6"><strong>Your answer:</strong></label>
+                <input name="a6" id="a6" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            
+            <h2><strong> Screenshot C — Indexes and Controlled Local Table</strong></h2>
+            <p>Capture the <strong>Indexes dialog for tblSpecialTire</strong> showing the two indexes and duplicate settings you selected.</p>
+            <p>Paste <strong>(50) Screenshot C</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence C - Indexes and Controlled Local Table</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> Explain why those fields are appropriate/not appropriate for duplicate values.</li>
+                <li><strong>Business or course relevance:</strong> Explain how indexes and controlled action-query practices support reliable database use.</li>
+            </ul>
+
+            <hr />
+        </div>
+
+
+        <!-- ========== Final Reflection ========== -->
+        <div class="col-lg-12">
+            <a href="#FinalReflection" class="btn btn-info" data-toggle="collapse">Final Assignment Reflection</a>
+        </div>
+        <div id="FinalReflection" class="collapse in col-lg-12">
+            <p>Complete and publish the assignment before responding.</p>
+            <label for="q7"><strong>(50) Question 7 — Final Reflection</strong></label>
+            <textarea class="form-control" style="font-weight: bold;" id="q7" name="q7" rows="6" maxlength="3000" readonly aria-readonly="true">What is the most important control LuckyTire should require before employees run action queries against business data? Explain how your backup, SELECT previews, local working table, or verification steps support your recommendation.</textarea>
+            <br />
+            <div class="alert alert-warning" role="alert">
+                Complete this reflection in the published webpage. Your response is submitted to the web database but is not saved back into your HTML file. Draft or copy your reflection before submitting. You may use the same reflection in your Digital Artifact Notebook.
+            </div>
+            <label for="a7"><strong>Your final reflection:</strong></label>
+            <textarea class="form-control" id="a7" name="a7" rows="12" maxlength="3000" placeholder="Type or paste your final reflection here..."></textarea>
+            <small id="charCount-a7" class="text-muted">Maximum: 3000 characters. AI feedback is formative feedback, not a grade.</small>
+            <hr />
+        </div>
+
+        <!-- ========== Complete and Submit ========== -->
+        <div class="col-lg-12">
+            <a href="#CompleteSubmission" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="CompleteSubmission">Complete and Submit the Assignment</a>
+        </div>
+        <div id="CompleteSubmission" class="collapse in col-lg-12">
+            <h2>1. Complete the Digital Artifact Notebook Page</h2>
+            <ol>
+                <li>Open OneNote to the correct MIS342 course and assignment section.</li>
+                <li>Confirm that the page is named <code><span class="SummativeID"></span></code> and contains the
+                    <a href="../DigitalArtifactNotebook/ArtifactTemplate.html" class="bg-info text-white" target="_blank">Digital Artifact Notebook Template</a>.</li>
+                <li>Confirm that <strong>Screenshot A, Screenshot B, and Screenshot C</strong> are visible, readable, and correctly labeled.</li>
+                <li>For each screenshot, include a verification statement and a business or course relevance statement.</li>
+                <li>Complete the reflection section in the DAN. You may use the same reflection entered in the published webpage.</li>
+            </ol>
+
+            <h2>2. Create and Insert WebPage.pdf</h2>
+            <ol>
+                <li>Open the final published webpage at your course website.</li>
+                <li>Verify your name, StarID, email, course information, and all six exercise answers.</li>
+                <li>Press <code>Ctrl + P</code>, or use the browser Print menu, and save the webpage as <code>WebPage.pdf</code> in <code><span id="Path6"></span></code>.</li>
+                <li>In OneNote, use <strong>Insert &gt; File Printout</strong> to insert <code>WebPage.pdf</code>. Do not insert only a link or file icon.</li>
+            </ol>
+            <p><strong>(50 points) WebPage.pdf:</strong> The readable webpage printout is included in the Digital Artifact Notebook.</p>
+
+            <h2>3. Export and Verify the Final PDF</h2>
+            <ol>
+                <li>Export or print the completed OneNote page as <code><span class="SummativeID"></span>.pdf</code> and save it in <code><span id="Path7"></span></code>.</li>
+                <li>Open the exported PDF and confirm that all screenshots, labels, verification statements, relevance statements, reflection content, and WebPage.pdf are visible and readable.</li>
+                <li>Correct the OneNote page and export again if anything is missing, cut off, too small, or unreadable.</li>
+            </ol>
+            <p><strong>(50 points) D2L PDF submission:</strong> Upload <code><span class="SummativeID"></span>.pdf</code> to the matching D2L assignment folder.</p>
+
+            <h2>4. Complete the Web Submission Requirements</h2>
+            <p><strong>(50 points) Home Page Hyperlink:</strong> Verify that Summative09 is linked correctly from your MIS342 course home page.</p>
+            <p><strong>(50 points) Web Database Submission:</strong> Press the Submit button at the top or bottom of this page. Your answers are saved to the web database and sent for formative AI feedback.</p>
+            <ul>
+                <li>The AI feedback is not a grade.</li>
+                <li>Complete the Final Assignment Reflection on at least one web submission.</li>
+                <li>Additional submissions are optional but permitted; the reflection does not have to be submitted again.</li>
+                <li>Read the confirmation page and correct or resubmit work when appropriate.</li>
+            </ul>
+            <div class="alert alert-warning" role="alert">
+                <strong>Final check:</strong> The D2L PDF upload and the web-database submission are separate requirements. Complete both.
+            </div>
+            <div class="sr-only" aria-hidden="true"><span id="Path8"></span><span id="Path9"></span></div>
+        </div>
+
+        <hr />
 
         <div class="col-lg-12">
             <br />
-            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit">
             <br />
         </div>
 
-
     </form>
 
-
-
-    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
-
-    <!-- Creative Commons License Info -->
     <footer>
         <div id="licenseInfo" class="col-lg-12 text-muted"></div>
         <div id="footerText" class="col-lg-12 text-muted"></div>
     </footer>
 
-    <!-- ========== Script Includes (Order is Critical) ========== -->
     <script src="../../ReadOnly/jquery-1.js"></script>
     <script src="../../ReadOnly/bootstrap.js"></script>
     <script src="../studentConstants.js"></script>
     <script src="../../ReadOnly/courseConstants.js"></script>
     <script src="../../ReadOnly/domForms.js"></script>
 
+    <script>
+    (function () {
+        var box = document.getElementById('a7');
+        var count = document.getElementById('charCount-a7');
+        if (!box || !count) { return; }
+        function updateCount() { count.textContent = box.value.length + ' / 3000 characters'; }
+        updateCount();
+        box.addEventListener('input', updateCount);
+    })();
+    </script>
+
 </body>
 </html>
-
-
-        
