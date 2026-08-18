@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="../../ReadOnly/bootstrap.css" rel="stylesheet"/>
+<title>GenAI02 — Personal Agent Setup and Organizational Adoption</title>
+<style>
+    body { padding-bottom: 3rem; line-height: 1.55; }
+    h1, h2, h3 { margin-top: 1.25rem; }
+    .callout { border-left: 5px solid #31708f; background: #f5fbfd; padding: 1rem; margin: 1rem 0; }
+    .callout-warning { border-left-color: #8a6d3b; background: #fcf8e3; }
+    .callout-danger { border-left-color: #a94442; background: #f2dede; }
+    .callout-success { border-left-color: #3c763d; background: #dff0d8; }
+    .template-box { border: 2px solid #999; padding: 1rem; margin: 1rem 0 2rem 0; background: #fff; }
+    .artifact-placeholder { border: 2px dashed #777; padding: 1.25rem; margin: 0.75rem 0; text-align: center; font-weight: bold; color: #555; }
+    .small-note { font-size: 0.95rem; color: #555; }
+    pre { white-space: pre-wrap; background: #f7f7f7; border: 1px solid #ddd; padding: 1rem; }
+    table th { background: #f5f5f5; }
+</style>
+</head>
+<body class="container-fluid">
+<form action="https://eprofessor.azurewebsites.net/codex/ProcessAICall.aspx" class="container-fluid" id="frmAssignment" method="post" name="frmAssignment">
+<input id="InstID" name="InstID" type="hidden" value="00617282"/>
+<input id="assignmentVersion" name="assignmentVersion" type="hidden" value="GenAI02-FA2026-v6"/>
+<input id="reflectionQuestion" name="reflectionQuestion" type="hidden" value="1"/>
+<textarea hidden="" id="datasetContext" name="datasetContext" readonly="">MIS342 GenAI02. Evaluate the final reflection comparing the organization-controlled MIS342 course agent with a student-controlled Hermes Agent connected through OpenRouter. The student must install Hermes Desktop, create and activate the separate mis342 profile before configuring the MIS342_API_Key01 credential, and keep credentials out of OneDrive and assignment evidence. The artifact is graded separately. Reward discussion of organizational policy, training, support, privacy, security, verification, profile separation, and human approval.</textarea>
+<h1 class="text-center">Generative AI Personal Agent Setup and Organizational Adoption</h1>
+<h2 class="sr-only" id="student-info">Student Information</h2>
+<div aria-labelledby="student-info" class="row">
+<div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+<label for="FirstName">First Name:</label>
+<input aria-readonly="true" autocomplete="given-name" class="form-control" id="FirstName" name="FirstName" readonly="" type="text"/>
+</div></div>
+<div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+<label for="LastName">Last Name:</label>
+<input aria-readonly="true" autocomplete="family-name" class="form-control" id="LastName" name="LastName" readonly="" type="text"/>
+</div></div>
+<div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+<label for="StarID">StarID:</label>
+<input aria-readonly="true" autocomplete="username" class="form-control" id="StarID" name="StarID" readonly="" type="text"/>
+</div></div>
+<div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+<label for="email">Email:</label>
+<input aria-readonly="true" autocomplete="email" class="form-control" id="email" name="email" readonly="" type="email"/>
+</div></div>
+</div>
+<input id="pin" name="pin" type="hidden"/>
+<h2 class="sr-only" id="course-info">Course Information</h2>
+<div aria-labelledby="course-info" class="row">
+<div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+<label for="Semester">Semester:</label>
+<input aria-readonly="true" class="form-control" id="Semester" name="Semester" readonly="" type="text"/>
+</div></div>
+<div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+<label for="Class">Class:</label>
+<input aria-readonly="true" class="form-control" id="Class" name="Class" readonly="" type="text"/>
+</div></div>
+<div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+<label for="Section">Section:</label>
+<input aria-readonly="true" class="form-control" id="Section" name="Section" readonly="" type="text"/>
+</div></div>
+<div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+<label for="assignment">Assignment:</label>
+<input aria-readonly="true" class="form-control" id="assignment" name="Assignment" readonly="" type="text" value="GenAI02"/>
+</div></div>
+</div>
+<div class="col-lg-12">
+<br/>
+<input class="btn btn-danger btn-block btn-lg" name="Submit" type="submit" value="Submit to the web database and receive AI feedback"/>
+<br/>
+</div>
+<div class="col-lg-12 h3 text-danger">100 Points: 50 Artifact + 50 Reflection<hr/></div>
+<div class="col-lg-12">
+<a aria-controls="Overview" aria-expanded="true" class="btn btn-info" data-toggle="collapse" href="#Overview">Assignment Overview</a>
+</div>
+<div class="collapse in col-lg-12" id="Overview">
+<p>This assignment is synchronized with Summative02. You will install and verify Hermes Agent Desktop for Windows 11, configure a limited personal Hermes Agent through OpenRouter, and compare it with the organization-controlled MIS362 course agent.</p>
+<p>Download <a href="GenAI02_AgentComparison_Template.md" target="_blank">GenAI02_AgentComparison_Template.md</a>. Open the template in Notepad++ and save the completed file as <code>GenAI02_AgentComparison.md</code> in your GenAI02 assignment folder. You will move this file into the Hermes workspace in GenAI03.</p>
+<div class="callout-warning"><strong>Dependency:</strong> GenAI03 through GenAI09 assume that the Hermes Desktop application, Hermes command-line interface, OpenRouter provider, and approved model are working at the end of this assignment.</div>
+
+<div class="callout-warning">
+<strong>Stop if the profile or workspace is wrong.</strong> MIS362 work must use the active Hermes profile <code>MIS342</code> and, beginning with GenAI03, the local OneDrive workspace folder <code>mis362_hermes</code>. Do not continue in <code>default</code>, another course profile, Downloads, or the course website folder.
+</div>
+<hr/>
+</div>
+
+<div class="col-lg-12">
+<a aria-controls="Workstation" aria-expanded="true" class="btn btn-info" data-toggle="collapse" href="#Workstation">Recommended Workstation Layout and File Formats</a>
+</div>
+<div class="collapse in col-lg-12" id="Workstation">
+<h2>Use the multiple monitors</h2>
+<p>Use the classroom workstation displays instead of stacking every application on one screen. Keep the important windows visible so you can compare instructions, agent actions, files, and verification evidence as you work.</p>
+<ul>
+<li><strong>Monitor 1:</strong> Keep Hermes Desktop open with the active <code>MIS342</code> profile visible.</li>
+<li><strong>Monitor 2:</strong> Keep a browser open to OpenRouter and the published assignment in separate tabs. During API-key creation, use the OpenRouter tab, then navigate away from the key page before capturing any evidence.</li>
+<li><strong>Laptop display or third monitor:</strong> Keep Notepad++ open with the required course file. Use File Explorer or OneNote beside it when organizing workspace files or evidence.</li>
+</ul>
+<p>Use Windows Snap (<kbd>Windows</kbd> + <kbd>Left Arrow</kbd> or <kbd>Right Arrow</kbd>) when two windows must share a display. Before taking a screenshot, close or hide API-key, billing, authentication, and private-information pages.</p>
+
+<h2>Use Notepad++ for Markdown and plain-text files</h2>
+<p>Use <strong>Markdown (<code>.md</code>)</strong> for student-created artifacts that benefit from headings, lists, checklists, or tables. Use <strong>plain text (<code>.txt</code>)</strong> for simple source excerpts, rules, prompts, or configuration notes where formatting adds no value. Hermes can read both formats.</p>
+<ol>
+<li>Open File Explorer and turn on <strong>View &gt; Show &gt; File name extensions</strong>.</li>
+<li>Open the starter file in Notepad++.</li>
+<li>For a Markdown file, select <strong>Language &gt; M &gt; Markdown</strong> so headings and lists are easier to read.</li>
+<li>Use <strong>File &gt; Save As</strong>, select <strong>All types (*.*)</strong>, and enter the exact required filename ending in <code>.md</code> or <code>.txt</code>.</li>
+<li>Use UTF-8 encoding and confirm the file did not become <code>filename.md.txt</code>.</li>
+<li>Do not use Microsoft Word to create these files because it can add formatting and change the file type.</li>
+</ol>
+<p>If Notepad++ is not installed, use the official Notepad++ installer or contact the instructor before continuing. Windows Notepad may be used only as a temporary fallback.</p>
+<hr/>
+</div>
+<div class="col-lg-12">
+<a aria-controls="Objectives" aria-expanded="true" class="btn btn-info" data-toggle="collapse" href="#Objectives">Learning Objectives and Course Alignment</a>
+</div>
+<div class="collapse in col-lg-12" id="Objectives">
+<p>Primary course outcomes: <strong>4, 8, 9, 10, 11, and 12</strong>.</p>
+<ul><li>Install or open Hermes Desktop on Windows 11.</li><li>Configure an approved OpenRouter provider and model.</li><li>Protect an API key as a credential.</li><li>Compare organization-controlled and personal-agent approaches.</li><li>Recommend an organizational adoption control.</li></ul>
+<hr/>
+</div>
+<div class="col-lg-12">
+<a aria-controls="Setup" aria-expanded="true" class="btn btn-info" data-toggle="collapse" href="#Setup">Install and Verify Hermes Agent Desktop</a>
+</div>
+<div class="collapse in col-lg-12" id="Setup">
+<h2>Required before beginning</h2>
+<ul>
+<li>A Windows 11 course computer.</li>
+<li>PowerShell 7.6 installed and verified in Formative00.</li>
+<li>An Internet connection and a current web browser.</li>
+<li>Permission to install software in your Windows user profile.</li>
+<li>The instructor-designated OpenRouter model name.</li>
+<li>Notepad++ installed. If it is missing, complete the installation step below before creating the Markdown artifact.</li>
+</ul>
+<h2>Install or verify Notepad++</h2>
+<ol>
+<li>Open Notepad++ from the Windows Start menu.</li>
+<li>If it is not installed, open the official <a href="https://notepad-plus-plus.org/downloads/" target="_blank">Notepad++ Downloads page</a>.</li>
+<li>Download the current 64-bit Windows installer and use the normal installation choices unless the instructor directs otherwise.</li>
+<li>Open Notepad++, select <strong>Settings &gt; Preferences &gt; New Document</strong>, and confirm UTF-8 is the default encoding.</li>
+<li>Do not save an API key or password in Notepad++.</li>
+</ol>
+<h2>Step 1 — Install Hermes Agent Desktop for Windows 11</h2>
+<ol>
+<li>Open the official <a href="https://hermes-agent.nousresearch.com/" target="_blank">Hermes Agent website</a>.</li>
+<li>Download the current Hermes Desktop installer for Windows.</li>
+<li>Close any older Hermes Desktop or Hermes terminal sessions.</li>
+<li>Run the installer for your Windows user account using the normal defaults unless the instructor directs otherwise.</li>
+<li>Launch Hermes Desktop. On first launch, allow the official application to install its managed Hermes runtime and required components.</li>
+<li>Do not disable Windows security or antivirus software. If Windows blocks the official installer or the source cannot be verified, stop and contact the instructor.</li>
+</ol>
+<p><strong>PowerShell fallback:</strong> use this only when the Desktop installer is unavailable or the instructor directs you to use it.</p>
+<pre>iex (irm https://hermes-agent.nousresearch.com/install.ps1)
+hermes desktop</pre>
+<h2>Step 2 — Verify Hermes before creating the course profile</h2>
+<p>Close and reopen PowerShell 7.6 after installation, then run:</p>
+<pre>hermes --version
+hermes doctor
+hermes desktop</pre>
+<ul>
+<li><code>hermes --version</code> must display an installed version.</li>
+<li><code>hermes doctor</code> must not report a blocking installation problem.</li>
+<li><code>hermes desktop</code> must open the Desktop application.</li>
+</ul>
+<h2>Step 3 — Create the separate MIS362 profile before adding any course credential</h2>
+<div class="callout">
+<p>A profile separates Hermes configuration, API keys, memory, sessions, skills, and other course-specific state. Students taking more than one course must not mix course work in the same profile.</p>
+</div>
+<ol>
+<li>In Hermes Desktop, open the profile selector or Profiles page.</li>
+<li>If a profile named <code>MIS342</code> already exists, select it and skip to Step 4. Do not create <code>MIS342-2</code> or another duplicate.</li>
+<li>Select <strong>New profile</strong>.</li>
+<li>For the profile name enter exactly <code>MIS342</code>. Use lowercase letters.</li>
+<li>For <strong>Clone from</strong>, select <code>default</code>. Keep <code>default</code> as a clean general profile rather than a course workspace.</li>
+<li>Leave the optional <code>SOUL.md</code> box blank for now.</li>
+<li>Select <strong>Create profile</strong>, then set or switch to <code>MIS342</code> as the active profile.</li>
+</ol>
+<p>Verify in PowerShell 7.6:</p>
+<pre>hermes profile list
+hermes profile use MIS342
+hermes profile show MIS342</pre>
+<p>The list must mark <code>MIS342</code> as active. From this point forward, perform MIS362 provider, model, memory, skill, and tool configuration only while <code>MIS342</code> is active.</p>
+<h2>Step 4 — Create and install the OpenRouter credential inside the active MIS342 profile</h2>
+<ol>
+<li>Create or sign in to your OpenRouter account.</li>
+<li>Open the <a href="https://openrouter.ai/keys" target="_blank">OpenRouter API Keys page</a>.</li>
+<li>Create a normal model-access API key named exactly <code>MIS362_API_Key01</code>. Do not create a management-only key.</li>
+<li>Use a reasonable spending or credit limit when that option is available.</li>
+<li>Copy the key and paste it directly into Hermes Desktop under <strong>Settings &gt; Providers &gt; API keys &gt; OpenRouter</strong> while the active profile is <code>MIS342</code>.</li>
+<li><strong>Do not save the key in OneDrive, Notepad, OneNote, D2L, source code, GitHub, email, Teams, screenshots, prompts, or an assignment workspace.</strong> If the key is lost, revoke it and create a new one.</li>
+<li>Select the instructor-designated OpenRouter model.</li>
+<li>Start a new Hermes session in the <code>MIS342</code> profile and send: <code>Reply with exactly: MIS362 Hermes connection verified.</code></li>
+</ol>
+<h2>Step 5 — Final verification</h2>
+<ul>
+<li>Hermes Desktop opens.</li>
+<li>The active profile is <code>MIS342</code>.</li>
+<li>The OpenRouter provider and instructor-designated model respond inside that profile.</li>
+<li>No API key is visible in screenshots or stored in a course file.</li>
+<li>No Hermes workspace is created yet; the OneDrive workspace is created in GenAI03.</li>
+</ul>
+<div class="callout-warning"><strong>Do not bypass security controls.</strong> Keep normal approval prompts enabled. Capture errors without exposing credentials and contact the instructor before continuing.</div>
+<hr/></div>
+<div class="col-lg-12">
+<a aria-controls="Tools" aria-expanded="true" class="btn btn-info" data-toggle="collapse" href="#Tools">Hermes Tools and Safety Boundaries</a>
+</div>
+<div class="collapse in col-lg-12" id="Tools">
+<div class="callout-success">
+<h3>Enabled AI tools for this assignment</h3>
+<ul><li>Chat, model selection, provider configuration, session creation, and viewing tool activity.</li><li>The instructor-designated OpenRouter model.</li></ul>
+</div>
+<div class="callout-danger">
+<h3>Prohibited AI tools and actions</h3>
+<ul><li>Hermes file writing, terminal execution, browser automation, messaging, account connections, scheduled tasks, purchases, record changes, and autonomous external actions.</li><li>Displaying or storing the API key in OneNote, D2L, screenshots, source code, GitHub, email, Teams, or ordinary project files.</li></ul>
+</div>
+<p><strong>Approval rule:</strong> Keep normal Hermes approval prompts enabled. Review every proposed file write, command, browser action, or configuration change before approving it.</p>
+<hr/>
+</div>
+<div class="col-lg-12">
+<a aria-controls="Exercise01" aria-expanded="true" class="btn btn-info" data-toggle="collapse" href="#Exercise01">Exercise 1 — Confirm the Installation and Configure OpenRouter Safely</a>
+</div>
+<div class="collapse in col-lg-12" id="Exercise01">
+<ol>
+<li>Install and verify Hermes Desktop and the CLI.</li>
+<li>Create or select the profile <code>MIS342</code>, make it active, and verify it with <code>hermes profile list</code> and <code>hermes profile show MIS342</code>.</li>
+<li>While <code>MIS342</code> is active, create and install the OpenRouter key named <code>MIS362_API_Key01</code>.</li>
+<li>Confirm that Hermes Desktop lists the approved OpenRouter provider and instructor-designated model.</li>
+<li>Run the exact connection-verification prompt and retain the response for the artifact.</li>
+<li>Record the profile name, provider, model category, and connection-test result in <code>GenAI02_AgentComparison.md</code>. Never record the API key.</li>
+</ol>
+<div class="callout-warning"><strong>Never include the API key in an artifact.</strong> Evidence may show the active <code>MIS342</code> profile, working provider, selected model, version check, doctor result, and test response, but not a credential field or secret value.</div>
+<hr/></div>
+<div class="col-lg-12">
+<a aria-controls="Exercise02" aria-expanded="true" class="btn btn-info" data-toggle="collapse" href="#Exercise02">Exercise 2 — Compare the Course Agent and Hermes</a>
+</div>
+<div class="collapse in col-lg-12" id="Exercise02">
+<p>Run this same prompt in both agents:</p><pre>SmartBean is considering whether employees should use personal AI agents for routine planning and explanation. Identify two benefits, two risks, and three organizational requirements involving policy, training, support, verification, privacy, security, or human approval. Use a concise comparison table.</pre>
+<p>Complete <code>GenAI02_AgentComparison.md</code>. Compare instruction-following, usefulness, limitations, and the organizational controls required.</p>
+<hr/>
+</div>
+<div class="col-lg-12">
+<a aria-controls="Reflection" aria-expanded="true" class="btn btn-info" data-toggle="collapse" href="#Reflection">Final Reflection — 50 Points</a>
+</div>
+<div class="collapse in col-lg-12" id="Reflection">
+<p>Complete this reflection after finishing and verifying the required artifact.</p>
+<label for="q1"><strong>(50) Question 1 — Final Reflection</strong></label>
+<textarea aria-readonly="true" class="form-control" id="q1" maxlength="3000" name="q1" readonly="" rows="6">Compare the MIS362 course agent with Hermes connected to OpenRouter. Which approach was more useful for the SmartBean task, why, and what organizational control should be required before employees use personal agents?</textarea>
+<br/>
+<div class="alert alert-warning" role="alert">
+    Complete this reflection in the published webpage. The response is submitted to the web database but is not saved back into the HTML file. Keep a copy for your Digital Artifact Notebook.
+</div>
+<label for="a1"><strong>Your reflection:</strong></label>
+<textarea class="form-control" id="a1" maxlength="3000" name="a1" placeholder="Type or paste your reflection here..." rows="12"></textarea>
+<small class="text-muted" id="charCount-a1">Maximum: 3000 characters. AI feedback is formative feedback, not a grade.</small>
+<hr/>
+</div>
+<div class="col-lg-12">
+<a aria-controls="Artifact" aria-expanded="true" class="btn btn-info" data-toggle="collapse" href="#Artifact">Digital Artifact Notebook Evidence — 50 Points</a>
+</div>
+<div class="collapse in col-lg-12" id="Artifact">
+<p>Create or open the OneNote Digital Artifact Notebook page named <code><span class="SummativeID"></span></code>.</p>
+<p><strong>(50 points)</strong> Add exactly one primary artifact:</p>
+<div class="template-box">
+<p>Arrange the course-agent response, Hermes response, and GenAI02_AgentComparison.md so they are visible in one split-screen screenshot. Also show a non-secret profile indicator confirming that MIS342 is active.</p>
+<div class="artifact-placeholder">[PASTE ONE SPLIT-SCREEN AGENT-COMPARISON ARTIFACT HERE]</div>
+<h3>Evidence 1 — What Hermes did</h3>
+<p>Describe the prompt, approved tools, and work performed. Name the required output file.</p>
+<h3>Evidence 2 — How I verified it</h3>
+<p>Describe the independent check, comparison, source review, calculation, test case, or approval review used to verify the result.</p>
+<h3>Evidence 3 — My business conclusion</h3>
+<p>State the business meaning, recommendation, limitation, or human-approval decision supported by the work.</p>
+</div>
+<p>Do not include passwords, API keys, authentication screens, private information, or real customer data. Add the same final reflection used in the web form to the OneNote page.</p>
+<p>Export the completed OneNote page as <code><span class="SummativeID"></span>.pdf</code> and upload it to the matching D2L assignment folder.</p>
+<hr/>
+</div>
+<div class="col-lg-12">
+<a aria-controls="Submission" aria-expanded="true" class="btn btn-info" data-toggle="collapse" href="#Submission">Assignment Submission</a>
+</div>
+<div class="collapse in col-lg-12" id="Submission">
+<ol>
+<li>Install and verify Hermes, create and activate the MIS342 profile, configure OpenRouter inside that profile, compare both agents, and save GenAI02_AgentComparison.md using Notepad++.</li>
+<li>Confirm that the required output file exists in the required folder and contains no credentials or private information.</li>
+<li>Complete the Final Reflection at least once and keep a copy.</li>
+<li>Add one primary artifact, the three labeled evidence statements, and the reflection to the OneNote page named <code><span class="SummativeID"></span></code>.</li>
+<li>Export the OneNote page as <code><span class="SummativeID"></span>.pdf</code> and upload it to the matching D2L folder.</li>
+<li>Submit this webpage using the button at the top or bottom and review the formative AI feedback.</li>
+</ol>
+<div class="callout-warning"><strong>Two separate submissions are required:</strong> the D2L PDF upload and the web-form submission.</div>
+<hr/>
+</div>
+<div class="col-lg-12">
+<br/>
+<input class="btn btn-danger btn-block btn-lg" name="Submit" type="submit" value="Submit to the web database and receive AI feedback"/>
+<br/>
+</div>
+</form>
+<footer>
+<div class="col-lg-12 text-muted" id="licenseInfo"></div>
+<div class="col-lg-12 text-muted" id="footerText"></div>
+</footer>
+<script src="../../ReadOnly/jquery-1.js"></script>
+<script src="../../ReadOnly/bootstrap.js"></script>
+<script src="../studentConstants.js"></script>
+<script src="../../ReadOnly/courseConstants.js"></script>
+<script src="../../ReadOnly/domForms.js"></script>
+</body>
+</html>

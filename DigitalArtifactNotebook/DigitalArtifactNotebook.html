@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+    <title>Digital Artifact Notebook</title>
+    <style>
+
+    body { padding-bottom: 3rem; line-height: 1.55; }
+    h1, h2, h3 { margin-top: 1.25rem; }
+    .assignment-header { margin-top: 1rem; }
+    .callout { border-left: 5px solid #31708f; background: #f5fbfd; padding: 1rem; margin: 1rem 0; }
+    .callout-warning { border-left-color: #8a6d3b; background: #fcf8e3; }
+    .callout-danger { border-left-color: #a94442; background: #f2dede; }
+    .callout-success { border-left-color: #3c763d; background: #dff0d8; }
+    .callout-neutral { border-left-color: #777; background: #f7f7f7; }
+    .table th { background: #f7f7f7; }
+    .step { margin-bottom: 1.25rem; }
+    .filename { font-family: Consolas, "Courier New", monospace; font-weight: bold; color: #a94442; }
+    code { color: #a94442; background: #f9f2f4; }
+    .small-note { font-size: 0.95rem; color: #555; }
+    .checklist li { margin-bottom: 0.35rem; }
+    .evidence-list li { margin-bottom: 0.3rem; }
+    .template-box { border: 2px solid #999; padding: 1rem; margin: 1rem 0 2rem 0; background: #fff; }
+    .template-box .artifact-placeholder { border: 2px dashed #777; padding: 1.5rem; margin: 0.75rem 0; text-align: center; font-weight: bold; color: #555; }
+    .template-copy-note { background: #f7f7f7; border: 1px solid #ddd; padding: 0.75rem; margin: 0.75rem 0; }
+    @media print {
+        a[href]:after { content: ""; }
+        .no-print { display: none; }
+        body { padding-bottom: 0; }
+    }
+
+    </style>
+</head>
+<body class="container-fluid" onload="if (typeof setVariables === 'function') { setVariables(); }">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <hr>
+        <h1 class="text-center assignment-header">Digital Artifact Notebook</h1>
+
+
+       <div class="row" aria-labelledby="student-info">
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group"><label for="FirstName" class="text-dark">First Name:</label><input class="form-control" name="FirstName" id="FirstName" type="text" readonly aria-readonly="true" autocomplete="given-name" aria-label="First Name" tabindex="0" /></div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group"><label for="LastName" class="text-dark">Last Name:</label><input class="form-control" name="LastName" id="LastName" type="text" readonly aria-readonly="true" autocomplete="family-name" aria-label="Last Name" tabindex="0" /></div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group"><label for="StarID" class="text-dark">StarID:</label><input class="form-control" name="StarID" id="StarID" type="text" readonly aria-readonly="true" autocomplete="username" aria-label="StarID" tabindex="0" /></div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group"><label for="email" class="text-dark">Email:</label><input class="form-control" name="email" id="email" type="email" readonly aria-readonly="true" autocomplete="email" aria-label="Email" tabindex="0" /></div></div>
+        </div>
+        <input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+        <h2 id="course-info" class="sr-only">Course Information</h2>
+        <div class="row" aria-labelledby="course-info">
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group"><label for="Semester" class="text-dark">Semester:</label><input class="form-control" name="Semester" id="Semester" type="text" readonly aria-readonly="true" aria-label="Semester" tabindex="0" /></div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group"><label for="Class" class="text-dark">Class:</label><input class="form-control" name="Class" id="Class" type="text" readonly aria-readonly="true" aria-label="Class" tabindex="0" /></div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group"><label for="Section" class="text-dark">Section:</label><input class="form-control" name="Section" id="Section" type="text" readonly aria-readonly="true" aria-label="Section" tabindex="0" /></div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group"><label for="assignment" class="text-dark">Assignment:</label><input class="form-control" name="assignment" id="assignment" type="text" readonly value="DigArtNB" aria-readonly="true" aria-label="Assignment" tabindex="0" /></div></div>
+        </div>
+
+
+        <hr>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-4 h3 text-danger">200 points</div>
+            <div class="col-lg-8 h4">&nbsp;</div>
+        </div>
+
+
+        <div id="Overview" class="col-lg-12">
+            <h2 class="text-center">Assignment Overview</h2>
+            <div class="callout">
+                <p>Create a <strong>Digital Artifact Notebook</strong>, a course notebook used to save visible evidence, verification statements, and reflections for Summative assignments in this course.</p>
+                <p>The introductory tool is <strong>Microsoft OneNote</strong> through WSU Microsoft 365. The desktop application is the preferred tool.</p>
+            </div>
+            <p>Business professionals need to document completed work, preserve evidence, explain technology decisions, and submit work in a format another person can review. This notebook gives you a consistent way to organize evidence across courses and in your professional career.</p>
+            <h3>Required Software and Tools</h3>
+            <ol>
+                <li>Windows 11</li>
+                <li>Microsoft OneNote through <a href="https://m365.cloud.microsoft/launch/OneNote" target="_blank" class="bg-info text-white">Microsoft 365 / Office 365</a>. The OneNote desktop application is recommended; the web version is acceptable.</li>
+                <li>Access to your WSU Microsoft account and OneDrive for Business</li>
+                <li>A screenshot tool: Windows Snipping Tool, Print Screen, Windows + Shift + S</li>
+                <li>Ability to print or export a OneNote page as a PDF</li>
+                <li>D2L access for assignment submission</li>
+            </ol>
+            <div class="callout-warning">
+                <p><strong>Help and responsible AI use:</strong> If you do not understand how to complete a step, use an AI tool, web search, the <a href="https://services.winona.edu/TDClient/120/WSUServicePortal/KB" target="_blank">WSU Technology Services Knowledge Base</a>, a teaching assistant, a classmate, or the instructor. You are responsible for verifying the accuracy of any help you receive. </p>
+            </div>
+            <div class="callout-danger">
+                <p><strong>Privacy check:</strong> Do not include passwords, private messages, student ID numbers, financial information, unrelated browser tabs, or other sensitive personal information in screenshots or evidence.</p>
+            </div>
+            <hr>
+        </div>
+
+        <div id="Objectives" class="col-lg-12">
+            <h2 class="text-center">Learning Objectives</h2>
+            <p>After completing this assignment, you will be able to:</p>
+            <ol>
+                <li>Create and organize a Microsoft OneNote notebook for course work.</li>
+                <li>Create an Assignments section and a Digital Artifact Notebook page.</li>
+                <li>Copy the current Digital Artifact Template into the required page.</li>
+                <li>Capture and insert visible evidence of completed digital work.</li>
+                <li>Write verification and business or course relevance statements.</li>
+                <li>Reflect on what you learned and identify help resources when used.</li>
+                <li>Export or print a OneNote page as a PDF and submit it to D2L.</li>
+                <li>Apply basic privacy and professionalism standards when documenting digital work.</li>
+            </ol>
+            <hr>
+        </div>
+
+
+        <div id="Instructions" class="col-lg-12">
+            <h2 class="text-center">Assignment Instructions — OneNote</h2>
+            <div class="step"><h3>Step 1: Open OneNote</h3><p>Make sure you can access your WSU account and Microsoft 365 applications. If you cannot access them, contact WSU Technology Services.</p><p>Open a browser and navigate to <a href="https://m365.cloud.microsoft/launch/OneNote?auth=2" target="_blank" class="bg-info text-white">OneNote in Microsoft 365</a>.</p></div>
+            <div class="step"><h3>Step 2: Create a new notebook</h3><p>Create a new blank notebook. Name it using this format:</p><p class="filename">SemesterYearCourse_YourName</p><p>Example:</p><p class="filename">Fa26MIS362_PatPaulson</p><p class="small-note">Use your actual semester, course, and name. This assignment is used in multiple MIS courses, so the course part may vary.</p></div>
+            <div class="step"><h3>Step 3: Create the assignment structure</h3><ol><li>Create a section named <strong>Assignments</strong>.</li><li>Create a page named <strong>Digital Artifact Notebook</strong>.</li><li>Use this same section and page pattern for future summative course assignments.</li>
+                <li>Future assignments are created on separate pages</li></ol></div>
+            <div class="step"><h3>Step 4: Copy the artifact template</h3><p>Copy the <strong><a href="ArtifactTemplate.html">Current Digital Artifact Template</a></strong> and paste it into your <strong>Digital Artifact Notebook</strong> page.</p><p>The template includes four sections: Task Evidence, Reflection, Final Check, and Submission.</p></div>
+            <div class="step"><h3>Step 5: Capture task evidence</h3><p>Use a screenshot tool to capture visible evidence showing:</p><ol class="evidence-list"><li>Your OneNote notebook name.</li><li>The <strong>Assignments</strong> section.</li><li>The <strong>Digital Artifact Notebook</strong> page.</li><li>The Digital Artifact Template pasted into the page.</li></ol><p>Paste or insert the screenshot into <strong>Section 1 — Task Evidence</strong> of the template, replacing the placeholder text.</p><p><strong>Important:</strong> Do not submit only a file icon. The evidence must be visible in the final PDF.</p><p>Write a verification statement in your own words. Example:</p><blockquote>This artifact verifies that I created a OneNote notebook named &#39;Fa26MIS362_MyName&#39; with an Assignments section and a Digital Artifact Notebook page containing the artifact template with appropriate evidence.</blockquote><p>Complete the business or course relevance sentence. Example:</p><blockquote>This matters because I will use this notebook to organize evidence and reflection for future MIS assignments.</blockquote></div>
+            <div class="step"><h3>Step 6: Reflect on what you learned</h3><p>Complete <strong>Section 2 — Final Reflection</strong>. Answer in complete sentences.</p></div>
+            <div class="step"><h3>Step 7: Complete the final check</h3><p>Complete <strong>Section 3 — Final Check</strong>. Each checklist item should be reviewed before exporting the PDF.</p></div>
+            <div class="step"><h3>Step 8: Save as PDF</h3><p>Print, export, or save the completed OneNote page as a PDF. Make sure the PDF shows the evidence, verification statement, business or course relevance sentence, reflection, checklist, and submission section.</p><p>Use the file name required by your instructor. If no specific file name is given, use:</p><p class="filename">SemesterYearCourse_YourName_DigitalArtifactNotebook.pdf</p><p>Example:</p><p class="filename">Fa26MIS362_PatPaulson_DigitalArtifactNotebook.pdf</p></div>
+            <div class="step"><h3>Step 9: Submit to D2L</h3><p>Upload the PDF file to the D2L assignment folder named <strong>Digital Artifact Notebook</strong> or the assignment folder specified by your instructor.</p></div>
+            <hr>
+        </div>
+
+
+        <div id="FinalCheck" class="col-lg-12">
+            <h2 class="text-center">Assignment Final Check</h2>
+            <ul class="checklist">
+                <li>[&nbsp;&nbsp;] The notebook is correctly named using <span class="filename">SemesterYearCourse_YourName</span>.</li>
+                <li>[&nbsp;&nbsp;] The assignment area exists and is named <strong>Assignments</strong>.</li>
+                <li>[&nbsp;&nbsp;] The required page or note exists and is named <strong>Digital Artifact Notebook</strong>.</li>
+                <li>[&nbsp;&nbsp;] The current <strong>Digital Artifact Template</strong> is pasted into the page or note.</li>
+                <li>[&nbsp;&nbsp;] Task Evidence 1 shows a readable, visible artifact of the notebook structure and template.</li>
+                <li>[&nbsp;&nbsp;] The evidence is not just a file icon and will be visible in the final PDF.</li>
+                <li>[&nbsp;&nbsp;] The verification statement is written in your own words.</li>
+                <li>[&nbsp;&nbsp;] The business or course relevance sentence is completed.</li>
+                <li>[&nbsp;&nbsp;] The final reflection section is done using complete sentences.</li>
+                <li>[&nbsp;&nbsp;] The privacy check is complete; private information has been removed or avoided.</li>
+                <li>[&nbsp;&nbsp;] The final PDF opens correctly and can be reviewed without additional explanation.</li>
+            </ul>
+            <hr>
+        </div>
+
+        <div id="GoFurther" class="col-lg-12">
+            <h3 >Go Further</h3>
+            <p> Use the course Agent to learn how to save the recommended Digital Artifact Notebook as a reusable template in your OneNote notebook. 
+
+            </p>
+
+
+        </div>
+
+
+
+    </form>
+
+    <hr>
+
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+</body>
+</html>

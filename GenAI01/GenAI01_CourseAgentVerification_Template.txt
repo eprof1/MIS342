@@ -1,0 +1,13 @@
+MIS342 GenAI01 Course Agent Verification
+
+Prompt used:
+
+What the course agent did:
+
+Course source used for verification:
+
+How I verified the response:
+
+My business conclusion:
+
+Limitation or uncertainty:

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+    <title>GenAI01 — Course Agent, Prompting, and Responsible Verification</title>
+
+<style>
+    body { padding-bottom: 3rem; line-height: 1.55; }
+    h1, h2, h3 { margin-top: 1.25rem; }
+    .callout { border-left: 5px solid #31708f; background: #f5fbfd; padding: 1rem; margin: 1rem 0; }
+    .callout-warning { border-left-color: #8a6d3b; background: #fcf8e3; }
+    .callout-danger { border-left-color: #a94442; background: #f2dede; }
+    .callout-success { border-left-color: #3c763d; background: #dff0d8; }
+    .template-box { border: 2px solid #999; padding: 1rem; margin: 1rem 0 2rem 0; background: #fff; }
+    .artifact-placeholder { border: 2px dashed #777; padding: 1.25rem; margin: 0.75rem 0; text-align: center; font-weight: bold; color: #555; }
+    .small-note { font-size: 0.95rem; color: #555; }
+    pre { white-space: pre-wrap; background: #f7f7f7; border: 1px solid #ddd; padding: 1rem; }
+    table th { background: #f5f5f5; }
+</style>
+</head>
+<body class="container-fluid">
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/codex/ProcessAICall.aspx" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+        <input name="assignmentVersion" id="assignmentVersion" value="GenAI01-FA2026-v3" type="hidden">
+        <input name="reflectionQuestion" id="reflectionQuestion" value="1" type="hidden">
+        <textarea id="datasetContext" name="datasetContext" readonly hidden>GenAI01. Evaluate only the student final reflection about course-agent use, prompt improvement, verification, and human responsibility. The artifact is graded separately in D2L. Do not require transcripts. Reward a clear distinction between receiving an answer and verifying it.</textarea>
+
+        <h1 class="text-center">Generative AI Course Agent, Prompting, and Responsible Verification</h1>
+
+<h2 id="student-info" class="sr-only">Student Information</h2>
+<div class="row" aria-labelledby="student-info">
+    <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+        <label for="FirstName">First Name:</label>
+        <input class="form-control" name="FirstName" id="FirstName" type="text" readonly aria-readonly="true" autocomplete="given-name">
+    </div></div>
+    <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+        <label for="LastName">Last Name:</label>
+        <input class="form-control" name="LastName" id="LastName" type="text" readonly aria-readonly="true" autocomplete="family-name">
+    </div></div>
+    <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+        <label for="StarID">StarID:</label>
+        <input class="form-control" name="StarID" id="StarID" type="text" readonly aria-readonly="true" autocomplete="username">
+    </div></div>
+    <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+        <label for="email">Email:</label>
+        <input class="form-control" name="email" id="email" type="email" readonly aria-readonly="true" autocomplete="email">
+    </div></div>
+</div>
+<input name="pin" id="pin" type="hidden">
+
+<h2 id="course-info" class="sr-only">Course Information</h2>
+<div class="row" aria-labelledby="course-info">
+    <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+        <label for="Semester">Semester:</label>
+        <input class="form-control" name="Semester" id="Semester" type="text" readonly aria-readonly="true">
+    </div></div>
+    <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+        <label for="Class">Class:</label>
+        <input class="form-control" name="Class" id="Class" type="text" readonly aria-readonly="true">
+    </div></div>
+    <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+        <label for="Section">Section:</label>
+        <input class="form-control" name="Section" id="Section" type="text" readonly aria-readonly="true">
+    </div></div>
+    <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+        <label for="assignment">Assignment:</label>
+        <input class="form-control" name="Assignment" id="assignment" type="text" value="GenAI01" readonly aria-readonly="true">
+    </div></div>
+</div>
+
+
+<div class="col-lg-12">
+    <br>
+    <input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit">
+    <br>
+</div>
+
+        <div class="col-lg-12 h3 text-danger">100 Points: 50 Artifact + 50 Reflection<hr></div>
+
+        <div class="col-lg-12">
+            <a href="#Overview" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="Overview">Assignment Overview</a>
+        </div>
+        <div id="Overview" class="collapse in col-lg-12">
+
+<p>This assignment introduces the instructor-provided Course Agent before students configure a personal Hermes Agent. It is synchronized with Summative01 and emphasizes how people, processes, data, technology, and controls create business value.</p>
+<p>Download <a href="GenAI01_CourseAgentVerification_Template.txt" target="_blank">GenAI01_CourseAgentVerification_Template.txt</a>. Complete and save it as <code>GenAI01_CourseAgentVerification.txt</code> in your GenAI01 assignment folder.</p>
+<div class="callout-warning"><strong>Safety:</strong> Use only course-related information. Do not enter passwords, API keys, private information, or another student's work.</div>
+
+            <hr>
+        </div>
+
+        <div class="col-lg-12">
+            <a href="#Objectives" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="Objectives">Learning Objectives and Course Alignment</a>
+        </div>
+        <div id="Objectives" class="collapse in col-lg-12">
+
+<p>Primary course outcomes: <strong>1, 10, 11, and 12</strong>.</p>
+<ul><li>Distinguish a course-controlled agent from a general-purpose AI service.</li><li>Improve a vague prompt by adding task, context, constraints, and desired output.</li><li>Verify an AI response against an authoritative course source.</li><li>Explain why the student remains responsible for learning and submitted work.</li></ul>
+
+            <hr>
+        </div>
+
+        <div class="col-lg-12">
+            <a href="#Tools" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="Tools">Permitted and Prohibited AI Use</a>
+        </div>
+        <div id="Tools" class="collapse in col-lg-12">
+
+<div class="callout-success">
+    <h3>Enabled AI tools for this assignment</h3>
+    <ul><li>Course-Agent chat for explanation, planning, checklists, and formative assistance.</li><li>Course materials and authoritative assignment instructions for verification.</li></ul>
+</div>
+<div class="callout-danger">
+    <h3>Prohibited AI tools and actions</h3>
+    <ul><li>Submitting unverified AI output as your own reasoning.</li><li>Entering credentials, private information, or another student's work.</li><li>Asking the agent to impersonate you, fabricate evidence, or bypass course requirements.</li></ul>
+</div>
+<p><strong>Approval rule:</strong> Keep normal the course agent approval prompts enabled. Review every proposed file write, command, browser action, or configuration change before approving it.</p>
+
+            <hr>
+        </div>
+
+        <div class="col-lg-12">
+            <a href="#Exercise01" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="Exercise01">Exercise 1 — Improve a Prompt</a>
+        </div>
+        <div id="Exercise01" class="collapse in col-lg-12">
+
+<ol><li>Ask the course agent a vague question about Summative01.</li><li>Rewrite the prompt to include the assignment, business context, specific task, constraints, and desired output.</li><li>Compare the two responses.</li><li>Record the prompts and comparison in <code>GenAI01_CourseAgentVerification.txt</code>.</li></ol>
+
+            <hr>
+        </div>
+
+        <div class="col-lg-12">
+            <a href="#Exercise02" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="Exercise02">Exercise 2 — Verify a Course Answer</a>
+        </div>
+        <div id="Exercise02" class="collapse in col-lg-12">
+
+<ol><li>Ask one factual question about the Digital Artifact Notebook or Summative01 instructions.</li><li>Locate the relevant authoritative course instruction.</li><li>Determine whether the response was correct, incomplete, or unsupported.</li><li>Record the source and verification result in the required output file.</li></ol>
+
+            <hr>
+        </div>
+
+        <div class="col-lg-12">
+            <a href="#Reflection" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="Reflection">Final Reflection — 50 Points</a>
+        </div>
+        <div id="Reflection" class="collapse in col-lg-12">
+
+<p>Complete this reflection after finishing and verifying the required artifact.</p>
+<label for="q1"><strong>(50) Question 1 — Final Reflection</strong></label>
+<textarea class="form-control" id="q1" name="q1" rows="6" maxlength="3000" readonly aria-readonly="true">Explain how improved prompting and independent verification changed the usefulness of the course agent. Identify one task the agent can support and one responsibility that must remain with you.</textarea>
+<br>
+<div class="alert alert-warning" role="alert">
+    Complete this reflection in the published webpage. The response is submitted to the web database but is not saved back into the HTML file. Keep a copy for your Digital Artifact Notebook.
+</div>
+<label for="a1"><strong>Your reflection:</strong></label>
+<textarea class="form-control" id="a1" name="a1" rows="12" maxlength="3000" placeholder="Type or paste your reflection here..."></textarea>
+<small id="charCount-a1" class="text-muted">Maximum: 3000 characters. AI feedback is formative feedback, not a grade.</small>
+
+            <hr>
+        </div>
+
+        <div class="col-lg-12">
+            <a href="#Artifact" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="Artifact">Digital Artifact Notebook Evidence — 50 Points</a>
+        </div>
+        <div id="Artifact" class="collapse in col-lg-12">
+
+<p>Create or open the OneNote Digital Artifact Notebook page named <code><span class="SummativeID"></span></code>.</p>
+<p><strong>(50 points)</strong> Add exactly one primary artifact:</p>
+<div class="template-box">
+    <p>Show the course-agent response and the completed <code>GenAI01_CourseAgentVerification.txt</code> file together in one readable screenshot.</p>
+    <div class="artifact-placeholder">[PASTE ONE COURSE-AGENT AND VERIFICATION-FILE SCREENSHOT HERE]</div>
+    <h3>Evidence 1 — What the course agent did</h3>
+    <p>Describe the prompt, approved tools, and work performed. Name the required output file.</p>
+    <h3>Evidence 2 — How I verified it</h3>
+    <p>Describe the independent check, comparison, source review, calculation, test case, or approval review used to verify the result.</p>
+    <h3>Evidence 3 — My business conclusion</h3>
+    <p>State the business meaning, recommendation, limitation, or human-approval decision supported by the work.</p>
+</div>
+<p>Do not include passwords, API keys, authentication screens, private information, or real customer data. Add the same final reflection used in the web form to the OneNote page.</p>
+<p>Export the completed OneNote page as <code><span class="SummativeID"></span>.pdf</code> and upload it to the matching D2L assignment folder.</p>
+
+            <hr>
+        </div>
+
+        <div class="col-lg-12">
+            <a href="#Submission" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="Submission">Assignment Submission</a>
+        </div>
+        <div id="Submission" class="collapse in col-lg-12">
+
+<ol>
+    <li>Complete the prompt-improvement and verification exercises and save <code>GenAI01_CourseAgentVerification.txt</code>.</li>
+    <li>Confirm that the required output file exists in the required folder and contains no credentials or private information.</li>
+    <li>Complete the Final Reflection at least once and keep a copy.</li>
+    <li>Add one primary artifact, the three labeled evidence statements, and the reflection to the OneNote page named <code><span class="SummativeID"></span></code>.</li>
+    <li>Export the OneNote page as <code><span class="SummativeID"></span>.pdf</code> and upload it to the matching D2L folder.</li>
+    <li>Submit this webpage using the button at the top or bottom and review the formative AI feedback.</li>
+</ol>
+<div class="callout-warning"><strong>Two separate submissions are required:</strong> the D2L PDF upload and the web-form submission.</div>
+
+            <hr>
+        </div>
+
+
+<div class="col-lg-12">
+    <br>
+    <input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit">
+    <br>
+</div>
+
+
+    </form>
+
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+</body>
+</html>
