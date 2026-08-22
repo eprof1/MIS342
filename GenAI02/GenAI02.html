@@ -76,12 +76,12 @@
 <a aria-controls="Overview" aria-expanded="true" class="btn btn-info" data-toggle="collapse" href="#Overview">Assignment Overview</a>
 </div>
 <div class="collapse in col-lg-12" id="Overview">
-<p>This assignment is synchronized with Summative02. You will install and verify Hermes Agent Desktop for Windows 11, configure a limited personal Hermes Agent through OpenRouter, and compare it with the organization-controlled MIS362 course agent.</p>
+<p>This assignment is synchronized with Summative02. You will install and verify Hermes Agent Desktop for Windows 11, configure a limited personal Hermes Agent through OpenRouter, and compare it with the organization-controlled MIS342 course agent.</p>
 <p>Download <a href="GenAI02_AgentComparison_Template.md" target="_blank">GenAI02_AgentComparison_Template.md</a>. Open the template in Notepad++ and save the completed file as <code>GenAI02_AgentComparison.md</code> in your GenAI02 assignment folder. You will move this file into the Hermes workspace in GenAI03.</p>
 <div class="callout-warning"><strong>Dependency:</strong> GenAI03 through GenAI09 assume that the Hermes Desktop application, Hermes command-line interface, OpenRouter provider, and approved model are working at the end of this assignment.</div>
 
 <div class="callout-warning">
-<strong>Stop if the profile or workspace is wrong.</strong> MIS362 work must use the active Hermes profile <code>MIS342</code> and, beginning with GenAI03, the local OneDrive workspace folder <code>mis362_hermes</code>. Do not continue in <code>default</code>, another course profile, Downloads, or the course website folder.
+<strong>Stop if the profile or workspace is wrong.</strong> MIS342 work must use the active Hermes profile <code>MIS342</code> and, beginning with GenAI03, the local OneDrive workspace folder <code>mis342_hermes</code>. Do not continue in <code>default</code>, another course profile, Downloads, or the course website folder.
 </div>
 <hr/>
 </div>
@@ -93,7 +93,7 @@
 <h2>Use the multiple monitors</h2>
 <p>Use the classroom workstation displays instead of stacking every application on one screen. Keep the important windows visible so you can compare instructions, agent actions, files, and verification evidence as you work.</p>
 <ul>
-<li><strong>Monitor 1:</strong> Keep Hermes Desktop open with the active <code>MIS342</code> profile visible.</li>
+<li><strong>Monitor 1:</strong> Keep Hermes Desktop open with the active <code>mis342</code> profile visible.</li>
 <li><strong>Monitor 2:</strong> Keep a browser open to OpenRouter and the published assignment in separate tabs. During API-key creation, use the OpenRouter tab, then navigate away from the key page before capturing any evidence.</li>
 <li><strong>Laptop display or third monitor:</strong> Keep Notepad++ open with the required course file. Use File Explorer or OneNote beside it when organizing workspace files or evidence.</li>
 </ul>
@@ -163,7 +163,7 @@ hermes desktop</pre>
 <li><code>hermes doctor</code> must not report a blocking installation problem.</li>
 <li><code>hermes desktop</code> must open the Desktop application.</li>
 </ul>
-<h2>Step 3 — Create the separate MIS362 profile before adding any course credential</h2>
+<h2>Step 3 — Create the separate MIS342 profile before adding any course credential</h2>
 <div class="callout">
 <p>A profile separates Hermes configuration, API keys, memory, sessions, skills, and other course-specific state. Students taking more than one course must not mix course work in the same profile.</p>
 </div>
@@ -180,17 +180,17 @@ hermes desktop</pre>
 <pre>hermes profile list
 hermes profile use MIS342
 hermes profile show MIS342</pre>
-<p>The list must mark <code>MIS342</code> as active. From this point forward, perform MIS362 provider, model, memory, skill, and tool configuration only while <code>MIS342</code> is active.</p>
+<p>The list must mark <code>MIS342</code> as active. From this point forward, perform MIS342 provider, model, memory, skill, and tool configuration only while <code>MIS342</code> is active.</p>
 <h2>Step 4 — Create and install the OpenRouter credential inside the active MIS342 profile</h2>
 <ol>
 <li>Create or sign in to your OpenRouter account.</li>
 <li>Open the <a href="https://openrouter.ai/keys" target="_blank">OpenRouter API Keys page</a>.</li>
-<li>Create a normal model-access API key named exactly <code>MIS362_API_Key01</code>. Do not create a management-only key.</li>
+<li>Create a normal model-access API key named exactly <code>MIS342_API_Key01</code>. Do not create a management-only key.</li>
 <li>Use a reasonable spending or credit limit when that option is available.</li>
 <li>Copy the key and paste it directly into Hermes Desktop under <strong>Settings &gt; Providers &gt; API keys &gt; OpenRouter</strong> while the active profile is <code>MIS342</code>.</li>
 <li><strong>Do not save the key in OneDrive, Notepad, OneNote, D2L, source code, GitHub, email, Teams, screenshots, prompts, or an assignment workspace.</strong> If the key is lost, revoke it and create a new one.</li>
 <li>Select the instructor-designated OpenRouter model.</li>
-<li>Start a new Hermes session in the <code>MIS342</code> profile and send: <code>Reply with exactly: MIS362 Hermes connection verified.</code></li>
+<li>Start a new Hermes session in the <code>MIS342</code> profile and send: <code>Reply with exactly: MIS342 Hermes connection verified.</code></li>
 </ol>
 <h2>Step 5 — Final verification</h2>
 <ul>
@@ -224,7 +224,7 @@ hermes profile show MIS342</pre>
 <ol>
 <li>Install and verify Hermes Desktop and the CLI.</li>
 <li>Create or select the profile <code>MIS342</code>, make it active, and verify it with <code>hermes profile list</code> and <code>hermes profile show MIS342</code>.</li>
-<li>While <code>MIS342</code> is active, create and install the OpenRouter key named <code>MIS362_API_Key01</code>.</li>
+<li>While <code>MIS342</code> is active, create and install the OpenRouter key named <code>MIS342_API_Key01</code>.</li>
 <li>Confirm that Hermes Desktop lists the approved OpenRouter provider and instructor-designated model.</li>
 <li>Run the exact connection-verification prompt and retain the response for the artifact.</li>
 <li>Record the profile name, provider, model category, and connection-test result in <code>GenAI02_AgentComparison.md</code>. Never record the API key.</li>
@@ -245,7 +245,7 @@ hermes profile show MIS342</pre>
 <div class="collapse in col-lg-12" id="Reflection">
 <p>Complete this reflection after finishing and verifying the required artifact.</p>
 <label for="q1"><strong>(50) Question 1 — Final Reflection</strong></label>
-<textarea aria-readonly="true" class="form-control" id="q1" maxlength="3000" name="q1" readonly="" rows="6">Compare the MIS362 course agent with Hermes connected to OpenRouter. Which approach was more useful for the SmartBean task, why, and what organizational control should be required before employees use personal agents?</textarea>
+<textarea aria-readonly="true" class="form-control" id="q1" maxlength="3000" name="q1" readonly="" rows="6">Compare the MIS342 course agent with Hermes connected to OpenRouter. Which approach was more useful for the SmartBean task, why, and what organizational control should be required before employees use personal agents?</textarea>
 <br/>
 <div class="alert alert-warning" role="alert">
     Complete this reflection in the published webpage. The response is submitted to the web database but is not saved back into the HTML file. Keep a copy for your Digital Artifact Notebook.
